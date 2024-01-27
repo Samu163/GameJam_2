@@ -2,24 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueController: MonoBehaviour
 {
-    public TextMeshProUGUI dialogue;
-    public string[] lines;
+    public TextMeshProUGUI displayText;
     public int index;
     public float textSpeed = 0.1f;
+    public DialogueConfig dialogueConfig;
+    UnityAction _onDialogueEnd;
 
-    public void AsignText(string[] lines)
+    public void Init(UnityAction onDialogueEnd)
     {
-        this.lines = lines;
+        _onDialogueEnd = onDialogueEnd;
+    }
+
+    //assign the config
+    public void AsignConfig(DialogueConfig dialogue)
+    {
+        dialogueConfig = dialogue;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogue.text = string.Empty;
+        displayText.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -27,14 +35,14 @@ public class DialogueController: MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(dialogue.text == lines[index])
+            if(displayText.text == dialogueConfig.lines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                dialogue.text = lines[index];
+                displayText.text = dialogueConfig.lines[index];
 
             }
         }
@@ -49,26 +57,29 @@ public class DialogueController: MonoBehaviour
 
     IEnumerator WriteLine()
     {
-        foreach (var letter in lines[index].ToCharArray())
+        foreach (var letter in dialogueConfig.lines[index].ToCharArray())
         {
-            dialogue.text += letter;
+            displayText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
     public void NextLine()
     {
-        if(index < lines.Length - 1)
+        if(index < dialogueConfig.lines.Length-1)
         {
             index++;
-            dialogue.text = string.Empty;
+            displayText.text = string.Empty;
             StartCoroutine(WriteLine());
 
         }
         else
         {
             //Acaban las lineas, se desactiva de momento 
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
+            displayText.text = string.Empty;
+            _onDialogueEnd.Invoke();
+
         }
     }
 }
