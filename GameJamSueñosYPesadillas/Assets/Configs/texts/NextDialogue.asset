@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
   m_Name: NextDialogue
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - Vale has hecho click
+  - Ahora te voy a poner el ultimo texto
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

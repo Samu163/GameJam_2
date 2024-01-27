@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: FinalDialogueTest
+  m_Name: End
   m_EditorClassIdentifier: 
   lines:
-  - 'Este es el ultimo texto '
-  - Felicidades
-  - "Ahora te aparecer\xE1 una decision"
-  - Elige sabiamente
-  hasDecision: 1
-  decision: {fileID: 11400000, guid: 76de731e0fab1e94494bd1a18f95b2c2, type: 2}
+  - "Se acab\xF3"
+  hasDecision: 0
+  decision: {fileID: 0}
   changeScenario: 0
-  endsDay: 0
+  endsDay: 1

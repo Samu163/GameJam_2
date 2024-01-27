@@ -6,15 +6,9 @@ using UnityEngine;
 
 public class DecisionConfig : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string headDisplay;
+    public string[] decisions;
+    //Importante, las decisiones y el texto tienen que tener el mismo indice, si dos decisiones sacan el mismo texto se repite el texto y listo
+    public List<DialogueConfig> nextDecisionsDialogues;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -75,11 +75,9 @@ public class DialogueController: MonoBehaviour
         }
         else
         {
-            //Acaban las lineas, se desactiva de momento 
-            // gameObject.SetActive(false);
+            //Acaban las lineas
             displayText.text = string.Empty;
             _onDialogueEnd.Invoke();
-
         }
     }
 }

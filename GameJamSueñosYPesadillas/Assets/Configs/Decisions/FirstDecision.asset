@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e22132782e4334a9530837fd6db9b7, type: 3}
   m_Name: FirstDecision
   m_EditorClassIdentifier: 
+  headDisplay: Elige una opcion
+  decisions:
+  - Opcion 1
+  - fdsfds
+  - Wow esta si que es mala
+  nextDecisionsDialogues:
+  - {fileID: 11400000, guid: eaa77a48fba7a5745a24dfd825f98db6, type: 2}
+  - {fileID: 11400000, guid: eaa77a48fba7a5745a24dfd825f98db6, type: 2}
+  - {fileID: 11400000, guid: d04699e61338ead4d989637fd32a2ce4, type: 2}

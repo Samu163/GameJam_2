@@ -6,8 +6,15 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public DialogueController dialogue;
+    public DecisionController decision;
     public List<DialogueConfig> dialogueTexts;
+    public List<DecisionConfig> decisionsTexts;
+    public List<int> decisions;
     public int indexText = 0;
+    public int indexDecisions = 0;
+
+
+    //Notas: no pongais en la lista de dialogos los dialogos de la recompensa de decisiones
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +22,7 @@ public class GameManager : MonoBehaviour
         dialogue.Init(TriggerEvent);
         dialogue.AsignConfig(dialogueTexts[indexText]);
         dialogue.StartDialogue();
+        decision.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +36,10 @@ public class GameManager : MonoBehaviour
         if (dialogue.dialogueConfig.hasDecision)
         {
             //Carga la decision y cuando la decision se ejecute carga el siguiente dialogo (pero eso en otra parte)
+            dialogue.gameObject.SetActive(false);
+            decision.gameObject.SetActive(true);
+            decision.Init(decisionsTexts[indexDecisions], DecisionResult);
+            indexDecisions++;
         }
         else if (dialogue.dialogueConfig.endsDay)
         {
@@ -40,5 +52,14 @@ public class GameManager : MonoBehaviour
             dialogue.AsignConfig(dialogueTexts[indexText]);
             dialogue.StartDialogue();
         }
+    }
+
+    public void DecisionResult(int result, DialogueConfig nextDialogue)
+    {
+        decisions.Add(result);
+        decision.gameObject.SetActive(false);
+        dialogue.gameObject.SetActive(true);
+        dialogue.AsignConfig(nextDialogue);
+        dialogue.StartDialogue();
     }
 }
