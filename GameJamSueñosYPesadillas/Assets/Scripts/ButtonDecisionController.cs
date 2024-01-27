@@ -35,7 +35,7 @@ public class ButtonDecisionController : MonoBehaviour, IPointerEnterHandler, IPo
         decisionText.color = Color.black;
     }
 
-public void Clicked()
+    public void Clicked()
     {
         onButtonClick.Invoke(indexOfDecision);
     }
