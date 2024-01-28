@@ -3086,3 +3086,47 @@ System memory in use after: 89.5 MB.
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2435.
 Total: 2.442500 ms (FindLiveObjects: 0.370200 ms CreateObjectMapping: 0.139000 ms MarkObjects: 1.917000 ms  DeleteObjects: 0.015100 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001762 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.195 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1811 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.4 MB.
+System memory in use after: 89.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2439.
+Total: 2.552700 ms (FindLiveObjects: 0.283000 ms CreateObjectMapping: 0.160800 ms MarkObjects: 2.094600 ms  DeleteObjects: 0.013600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.315634 seconds.
+  path: Assets/Configs
+  artifactKey: Guid(39075e9b0267d0f499e0f46ac9a6189a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Configs using Guid(39075e9b0267d0f499e0f46ac9a6189a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541cd5d79128dff41fb69590252d04d9') in 0.007484 seconds
+  Import took 0.011729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000986 seconds.
+  path: Assets/Configs
+  artifactKey: Guid(39075e9b0267d0f499e0f46ac9a6189a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Configs using Guid(39075e9b0267d0f499e0f46ac9a6189a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541cd5d79128dff41fb69590252d04d9') in 0.003617 seconds
+  Import took 0.007329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.750821 seconds.
+  path: Assets/Configs/texts
+  artifactKey: Guid(ebef728c191942349860906ad9bc6320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Configs/texts using Guid(ebef728c191942349860906ad9bc6320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4dd42da4f9b4be9df722d7f77b99ff9') in 0.003953 seconds
+  Import took 0.008385 seconds .
+
