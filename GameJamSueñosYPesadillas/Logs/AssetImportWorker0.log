@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.5f1 (8095aa901b9b) revision 8426922'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19045.3930; Version 2009; 64bit' Language: 'es' Physical Memory: 16291 MB
+OS: 'Windows 10 Pro; OS build 19045.3930; Version 2009; 64bit' Language: 'es' Physical Memory: 8028 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,402 +11,210 @@ C:\Program Files\Unity\Hub\Editor\2020.3.5f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/didac/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
+C:/Users/Samuel/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56863
-Successfully changed project path to: C:/Users/didac/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
-C:/Users/didac/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
+63081
+Successfully changed project path to: C:/Users/Samuel/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
+C:/Users/Samuel/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 34.31 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 36.63 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.5f1 (8095aa901b9b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/didac/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Samuel/Documents/GitHub/GameJam_2/GameJamSueñosYPesadillas/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
     Vendor:   
-    VRAM:     3949 MB
-    Driver:   31.0.15.3734
+    VRAM:     4037 MB
+    Driver:   31.0.15.4601
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56792
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002148 seconds.
+Registered in 0.004535 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 36.49 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 43.06 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.074 seconds
+- Completed reload, in  1.680 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001692 seconds.
+Registered in 0.002017 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 40.43 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 32.76 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.037 seconds
+- Completed reload, in  1.091 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1838 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 87.3 MB.
 System memory in use after: 87.4 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2286.
-Total: 2.020400 ms (FindLiveObjects: 0.277500 ms CreateObjectMapping: 0.127900 ms MarkObjects: 1.552500 ms  DeleteObjects: 0.061200 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2285.
+Total: 3.701100 ms (FindLiveObjects: 0.316400 ms CreateObjectMapping: 0.079000 ms MarkObjects: 3.221000 ms  DeleteObjects: 0.083200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/PlayerConfig.cs
-  artifactKey: Guid(25b779a5313e942429ffbcb13d00a1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerConfig.cs using Guid(25b779a5313e942429ffbcb13d00a1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33e6b22bea7eddf429decfb018c99f93') in 0.030579 seconds
-  Import took 0.037851 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001066 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.843 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.5 MB.
-System memory in use after: 85.6 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2290.
-Total: 6.520000 ms (FindLiveObjects: 0.463500 ms CreateObjectMapping: 0.096500 ms MarkObjects: 5.934500 ms  DeleteObjects: 0.024100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 539.467692 seconds.
-  path: Assets/Prefabs/HabilityButton.prefab
-  artifactKey: Guid(4fa064e1c41fec6498830c2edf31b32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HabilityButton.prefab using Guid(4fa064e1c41fec6498830c2edf31b32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70e726f7ed351db027a702392d851d64') in 0.087191 seconds
-  Import took 0.090433 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.338804 seconds.
   path: Assets/Prefabs/ShotButton.prefab
   artifactKey: Guid(26acce0ea8096a1458efa127d77f4a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ShotButton.prefab using Guid(26acce0ea8096a1458efa127d77f4a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e06c9722e2c2ff97b97c2f60003783') in 0.029808 seconds
-  Import took 0.032523 seconds .
+Start importing Assets/Prefabs/ShotButton.prefab using Guid(26acce0ea8096a1458efa127d77f4a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6a16407cb7e3e3637cbfb8401089c8') in 0.132856 seconds
+  Import took 0.137624 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.015882 seconds.
-  path: Assets/Prefabs/ShotButton.prefab
-  artifactKey: Guid(26acce0ea8096a1458efa127d77f4a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ShotButton.prefab using Guid(26acce0ea8096a1458efa127d77f4a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e06c9722e2c2ff97b97c2f60003783') in 0.021682 seconds
-  Import took 0.024380 seconds .
+  Time since last request: 0.000267 seconds.
+  path: Assets/Prefabs/DrinkButton.prefab
+  artifactKey: Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DrinkButton.prefab using Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe70b453c68e4e8a35915b95b22e23f9') in 0.033725 seconds
+  Import took 0.037435 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.200637 seconds.
-  path: Assets/Prefabs/PunchButton.prefab
-  artifactKey: Guid(56c79672cdea62348b250582482f8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/PunchButton.prefab using Guid(56c79672cdea62348b250582482f8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4102fb7ecaafd36901360658164c5305') in 0.026935 seconds
-  Import took 0.030043 seconds .
+  Time since last request: 0.000235 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Open Sprite Shape.prefab
+  artifactKey: Guid(86ae7de409eb54f619fb1328e4d42480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Open Sprite Shape.prefab using Guid(86ae7de409eb54f619fb1328e4d42480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f3a56ff8141ad63330637fc206baf27') in 0.015130 seconds
+  Import took 0.018705 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.039873 seconds.
-  path: Assets/Prefabs/HelpButton.prefab
-  artifactKey: Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HelpButton.prefab using Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7600ee1e8a81ad37b583b531a1200b59') in 0.026915 seconds
-  Import took 0.029815 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003769 seconds.
-  path: Assets/Prefabs/HelpButton.prefab
-  artifactKey: Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HelpButton.prefab using Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7600ee1e8a81ad37b583b531a1200b59') in 0.021100 seconds
-  Import took 0.023929 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000960 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.801 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.6 MB.
-System memory in use after: 85.7 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2294.
-Total: 1.941000 ms (FindLiveObjects: 0.204200 ms CreateObjectMapping: 0.096100 ms MarkObjects: 1.615600 ms  DeleteObjects: 0.024000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000932 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.766 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.6 MB.
-System memory in use after: 85.7 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2298.
-Total: 1.630800 ms (FindLiveObjects: 0.224400 ms CreateObjectMapping: 0.071900 ms MarkObjects: 1.321800 ms  DeleteObjects: 0.011300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 212.297299 seconds.
-  path: Assets/Prefabs/ShoutButton.prefab
-  artifactKey: Guid(0fc641608b7963b43a7f8a5700b5cd3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ShoutButton.prefab using Guid(0fc641608b7963b43a7f8a5700b5cd3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6fb1e76814e8d2fdad0e7e9d3a53631') in 0.079446 seconds
-  Import took 0.082546 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000940 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.767 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.6 MB.
-System memory in use after: 85.7 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2302.
-Total: 1.769500 ms (FindLiveObjects: 0.163300 ms CreateObjectMapping: 0.074900 ms MarkObjects: 1.513900 ms  DeleteObjects: 0.016700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 99.884687 seconds.
+  Time since last request: 0.000340 seconds.
   path: Assets/Prefabs/HideEmotionsButton.prefab
   artifactKey: Guid(34b82fedcbb0b4e45b8d45c0c4933f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HideEmotionsButton.prefab using Guid(34b82fedcbb0b4e45b8d45c0c4933f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd827577973aae614818755771e1ccd7b') in 0.079912 seconds
-  Import took 0.083542 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000897 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.765 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.6 MB.
-System memory in use after: 85.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2306.
-Total: 1.877800 ms (FindLiveObjects: 0.216300 ms CreateObjectMapping: 0.099300 ms MarkObjects: 1.539000 ms  DeleteObjects: 0.022100 ms)
+Start importing Assets/Prefabs/HideEmotionsButton.prefab using Guid(34b82fedcbb0b4e45b8d45c0c4933f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b98a06c00c988eb519e36359519bd7b0') in 0.030316 seconds
+  Import took 0.034800 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 187.426643 seconds.
-  path: Assets/Prefabs/RunButton.prefab
-  artifactKey: Guid(f583b075854bfe64caf9438b766d3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/RunButton.prefab using Guid(f583b075854bfe64caf9438b766d3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6198d17edaa4589dcce5384cfa29969a') in 0.079753 seconds
-  Import took 0.083016 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000961 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.768 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.7 MB.
-System memory in use after: 85.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2310.
-Total: 2.015700 ms (FindLiveObjects: 0.179700 ms CreateObjectMapping: 0.069900 ms MarkObjects: 1.746600 ms  DeleteObjects: 0.018300 ms)
+  Time since last request: 0.000457 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Closed Sprite Shape.prefab
+  artifactKey: Guid(c0583b4e855c74b8c82e7b9b5efb5ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Closed Sprite Shape.prefab using Guid(c0583b4e855c74b8c82e7b9b5efb5ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58e05f613fdb0b5b0fafc13f3190a853') in 0.010223 seconds
+  Import took 0.016484 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 178.410315 seconds.
-  path: Assets/Prefabs/LetsGoButton.prefab
-  artifactKey: Guid(c7852085c2abeb449bb5eb98c2f5b226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/LetsGoButton.prefab using Guid(c7852085c2abeb449bb5eb98c2f5b226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf0d4d175b3b9a17104b11694002023') in 0.080095 seconds
-  Import took 0.083376 seconds .
+  Time since last request: 0.000264 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(8cf4ec981b41a3642a29ed3db5214ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(8cf4ec981b41a3642a29ed3db5214ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be2f2f5ff0659b5054111c127927d885') in 0.005010 seconds
+  Import took 0.009832 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 62.337103 seconds.
-  path: Assets/Prefabs/DrinkButton.prefab
-  artifactKey: Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DrinkButton.prefab using Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed3dd33dc5cdabf295caebf105e6d14a') in 0.030346 seconds
-  Import took 0.034465 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001368 seconds.
-  path: Assets/Prefabs/DrinkButton.prefab
-  artifactKey: Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DrinkButton.prefab using Guid(e5319af64b82b9d48bff90dce2b8c984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed3dd33dc5cdabf295caebf105e6d14a') in 0.021626 seconds
-  Import took 0.024502 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000877 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.788 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.7 MB.
-System memory in use after: 85.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2314.
-Total: 2.159300 ms (FindLiveObjects: 0.281800 ms CreateObjectMapping: 0.154300 ms MarkObjects: 1.672100 ms  DeleteObjects: 0.049700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 139.620505 seconds.
+  Time since last request: 0.000299 seconds.
   path: Assets/Prefabs/BlowBottleButton.prefab
   artifactKey: Guid(67836587165ca96438ec6b10e847e406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BlowBottleButton.prefab using Guid(67836587165ca96438ec6b10e847e406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd80f3ae63daf9792b35c39ef96c998b7') in 0.081797 seconds
-  Import took 0.084506 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000960 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.769 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.7 MB.
-System memory in use after: 85.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2318.
-Total: 1.950000 ms (FindLiveObjects: 0.302900 ms CreateObjectMapping: 0.090700 ms MarkObjects: 1.540000 ms  DeleteObjects: 0.015300 ms)
+Start importing Assets/Prefabs/BlowBottleButton.prefab using Guid(67836587165ca96438ec6b10e847e406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478466c01d7241cd6116efd734bb7cdf') in 0.030230 seconds
+  Import took 0.034182 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 581.995686 seconds.
-  path: Assets/Prefabs/FightButton.prefab
-  artifactKey: Guid(90a9c1ab0bd5d0e4c89be650861fdf79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/FightButton.prefab using Guid(90a9c1ab0bd5d0e4c89be650861fdf79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d89c3a8649e4d45a0bfb666f202cd2e') in 0.082551 seconds
-  Import took 0.085958 seconds .
+  Time since last request: 0.000274 seconds.
+  path: Assets/Prefabs/HelpButton.prefab
+  artifactKey: Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HelpButton.prefab using Guid(cb11aa0f64504e0478bcd8519ec4c8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9196c86802e0deeb3b5f8563e59b7eb4') in 0.031305 seconds
+  Import took 0.035360 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 54.780886 seconds.
+  Time since last request: 0.000238 seconds.
   path: Assets/Prefabs/ItemButton.prefab
   artifactKey: Guid(a401206fb6ee74e4fb48f76ad743b5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ItemButton.prefab using Guid(a401206fb6ee74e4fb48f76ad743b5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97a9e7212ea9abe4f226ecf1d1fb79e1') in 0.029244 seconds
-  Import took 0.031937 seconds .
+Start importing Assets/Prefabs/ItemButton.prefab using Guid(a401206fb6ee74e4fb48f76ad743b5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc01636b6be23c3ebbefac3d0e013597') in 0.030355 seconds
+  Import took 0.033669 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002611 seconds.
-  path: Assets/Prefabs/ItemButton.prefab
-  artifactKey: Guid(a401206fb6ee74e4fb48f76ad743b5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ItemButton.prefab using Guid(a401206fb6ee74e4fb48f76ad743b5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97a9e7212ea9abe4f226ecf1d1fb79e1') in 0.021157 seconds
-  Import took 0.024273 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001809 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.813 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.7 MB.
-System memory in use after: 85.8 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2322.
-Total: 1.814000 ms (FindLiveObjects: 0.203100 ms CreateObjectMapping: 0.057400 ms MarkObjects: 1.532900 ms  DeleteObjects: 0.019900 ms)
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/LetsGoButton.prefab
+  artifactKey: Guid(c7852085c2abeb449bb5eb98c2f5b226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LetsGoButton.prefab using Guid(c7852085c2abeb449bb5eb98c2f5b226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4795ea445f63ffddc0e210ba1f025259') in 0.031601 seconds
+  Import took 0.035195 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 72.759024 seconds.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Scenes/Narrative.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Narrative.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c61e6347e74f2cfd3e414fea604c87') in 0.005333 seconds
+  Import took 0.009252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Scenes/RPG.unity
+  artifactKey: Guid(f15716cbff56ca04ea57b788451210f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RPG.unity using Guid(f15716cbff56ca04ea57b788451210f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63ecb66705107bb6198f3a8b050fe0d3') in 0.003868 seconds
+  Import took 0.007210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Prefabs/ShoutButton.prefab
+  artifactKey: Guid(0fc641608b7963b43a7f8a5700b5cd3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ShoutButton.prefab using Guid(0fc641608b7963b43a7f8a5700b5cd3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a1f9f6e9b605c3cfddb535e4a70dfa8') in 0.032454 seconds
+  Import took 0.035967 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
   path: Assets/Prefabs/FleeButton.prefab
   artifactKey: Guid(1848a736195f8c64c91a9a2d880d3eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/FleeButton.prefab using Guid(1848a736195f8c64c91a9a2d880d3eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94813578d949e755a3e33c10f811bba5') in 0.079492 seconds
-  Import took 0.082421 seconds .
+Start importing Assets/Prefabs/FleeButton.prefab using Guid(1848a736195f8c64c91a9a2d880d3eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3be19aaa9d64b7ac2d08381091c183c') in 0.032006 seconds
+  Import took 0.036704 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000994 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.770 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1815 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.7 MB.
-System memory in use after: 85.8 MB.
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/Prefabs/PunchButton.prefab
+  artifactKey: Guid(56c79672cdea62348b250582482f8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PunchButton.prefab using Guid(56c79672cdea62348b250582482f8d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8022bb4b93ed7aeb35641db511f61821') in 0.029517 seconds
+  Import took 0.033557 seconds .
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2326.
-Total: 1.571900 ms (FindLiveObjects: 0.171100 ms CreateObjectMapping: 0.058600 ms MarkObjects: 1.321800 ms  DeleteObjects: 0.015500 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Prefabs/FightButton.prefab
+  artifactKey: Guid(90a9c1ab0bd5d0e4c89be650861fdf79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/FightButton.prefab using Guid(90a9c1ab0bd5d0e4c89be650861fdf79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4591684717cb88149b4850cfd23c2ce') in 0.029578 seconds
+  Import took 0.034730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Prefabs/HabilityButton.prefab
+  artifactKey: Guid(4fa064e1c41fec6498830c2edf31b32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HabilityButton.prefab using Guid(4fa064e1c41fec6498830c2edf31b32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70e726f7ed351db027a702392d851d64') in 0.031834 seconds
+  Import took 0.035955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Prefabs/ButtonDecisionPrefab.prefab
+  artifactKey: Guid(f2771b0abaa62814989f5ee876937f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ButtonDecisionPrefab.prefab using Guid(f2771b0abaa62814989f5ee876937f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a666828cafee844180750291c599fa6') in 0.031148 seconds
+  Import took 0.034597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Prefabs/RunButton.prefab
+  artifactKey: Guid(f583b075854bfe64caf9438b766d3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/RunButton.prefab using Guid(f583b075854bfe64caf9438b766d3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf91c24c6529b3b9921891de789b7ef8') in 0.031879 seconds
+  Import took 0.035398 seconds .
 
