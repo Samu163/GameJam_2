@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public EnemyConfig data;
 
 
+
     // Start is called before the first frame update
     void Start()
     {

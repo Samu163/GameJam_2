@@ -7,6 +7,7 @@ public class BoardController : MonoBehaviour
 {
     public Image rpgBg;
 
+
     public void ChangeBg(Sprite newBg)
     {
         rpgBg.sprite = newBg;
