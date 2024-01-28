@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BoardManager : MonoBehaviour
+public class BoardController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Image rpgBg;
+
+    public void ChangeBg(Sprite newBg)
     {
-        
+        rpgBg.sprite = newBg;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
 }
