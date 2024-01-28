@@ -12,6 +12,7 @@ public class RpgManager : MonoBehaviour
     public List<HabilityConfig> allHabilities;
     public List<PlayerConfig> alliesInCombatConfig;
     public List<PlayerController> allies;
+    public ItemManager itemInventoryPrefabRef;
 
 
 
@@ -43,6 +44,8 @@ public class RpgManager : MonoBehaviour
     // Botón para usar Items
     public void itemButton()
     {
+        var inventory = Instantiate(itemInventoryPrefabRef, transform);
+        inventory.transform.position = new Vector3(100, 100, 0);
 
     }
 
