@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyConfig data;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void Init(EnemyConfig config)
     {
-        
+        data = config;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+   
+
+
+
 }

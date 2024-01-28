@@ -49,6 +49,26 @@ public class RpgManager : MonoBehaviour
 
     }
 
+    public void GetRandomIndex(int maxValue)
+    {
+
+    }
+
+    public void CheckEnemyHabilityResult(string habilityName)
+    {
+        switch (habilityName)
+        {
+            case "fuego":
+                //Añadir animacion de ataque
+                break;
+            case "hielo":
+                break;
+            default:
+                break;
+        }
+    }
+
+
     // Botón para Huir del combate
     public void fleeButton()
     {

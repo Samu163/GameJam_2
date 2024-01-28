@@ -4,10 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEnemyConfig", menuName = "Configs/Enemy")]
 
 
-public class EnemyConfig : ScriptableObject
+public class EnemyHabilityConfig : ScriptableObject
 {
-    public int life;
-    public int attack;
-    public List<EnemyHabilityConfig> habilities;
+    public string habilityName;
+
 
 }
