@@ -13,6 +13,8 @@ public class RpgManager : MonoBehaviour
     public List<PlayerConfig> alliesInCombatConfig;
     public List<PlayerController> allies;
     public ItemManager itemInventoryPrefabRef;
+    public int indexOfAlly = 0;
+    public bool hasInitHabilities = false;
 
 
 
@@ -23,8 +25,10 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < alliesInCombatConfig.Count; i++)
         {
             var ally = Instantiate(playerPrefabRef, transform);
-            ally.transform.position = new Vector3(ally.transform.position.x - 300, ally.transform.position.y - 50 * i, ally.transform.position.z);
-            ally.Init(alliesInCombatConfig[i]);
+            ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
+            ally.Init(alliesInCombatConfig[i],CheckHabilityResult);
+            ally.InitHabilities();
+            ally.ShowHabilities(false);
             allies.Add(ally);
         }
     }
@@ -33,12 +37,6 @@ public class RpgManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    // Botón para Luchar
-    public void fightButton()
-    {
-
     }
 
     // Botón para usar Items
@@ -67,12 +65,41 @@ public class RpgManager : MonoBehaviour
                 break;
         }
     }
+    
+    public void CheckHabilityResult(string habilityName, PlayerController playerAffected)
+    {
+        switch (habilityName)
+        {
+            case "fuego":
+                //Añadir animacion de ataque
+                playerAffected.life += 10;
+                Debug.Log(playerAffected.life);
+                break;
+            case "hielo":
+                playerAffected.life -= 10;
+                Debug.Log(playerAffected.life);
+                break;
+            default:
+                break;
+        }
+        indexOfAlly++;
+    }
+
+    public void FightButton()
+    {
+        if (allies.Count <= indexOfAlly)
+        {
+            indexOfAlly = 0;
+        }
+
+        allies[indexOfAlly].ShowHabilities(true);
+    }
 
 
     // Botón para Huir del combate
     public void fleeButton()
     {
-
+        //allies[indexOfAlly].DestroyHabilities();
     }
 
     // Acción cuando pulsamos botón de Punch
