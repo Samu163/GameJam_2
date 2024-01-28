@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: ayudante
   m_EditorClassIdentifier: 
-  life: 0
-  habilities: []
+  life: 10
+  habilities:
+  - {fileID: 11400000, guid: 2a925bb6e6236f84f8fe01ff13bc2177, type: 2}
