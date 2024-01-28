@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RpgManager : MonoBehaviour
 {
+    public BoardController board;
     public PlayerController playerPrefabRef;
     public EnemyController enemyPrefabsRef;
     public List<EnemyController> listOfEnemies;
