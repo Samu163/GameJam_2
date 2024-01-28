@@ -33,4 +33,76 @@ public class RpgManager : MonoBehaviour
     {
         
     }
+
+    // Botón para Luchar
+    public void fightButton()
+    {
+
+    }
+
+    // Botón para usar Items
+    public void itemButton()
+    {
+
+    }
+
+    // Botón para Huir del combate
+    public void fleeButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Punch
+    public void punchButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Shot
+    public void shotButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Help
+    public void helpButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Shout
+    public void shoutButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Hide Emotions
+    public void hideEmotionsButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Run
+    public void runButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Let's Go
+    public void letsGoButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Drink
+    public void drinkButton()
+    {
+
+    }
+
+    // Acción cuando pulsamos botón de Blow Bottle
+    public void blowBottleButton()
+    {
+
+    }
 }
