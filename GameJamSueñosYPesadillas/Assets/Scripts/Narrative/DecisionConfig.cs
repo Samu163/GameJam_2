@@ -10,5 +10,6 @@ public class DecisionConfig : ScriptableObject
     public string[] decisions;
     //Importante, las decisiones y el texto tienen que tener el mismo indice, si dos decisiones sacan el mismo texto se repite el texto y listo
     public List<DialogueConfig> nextDecisionsDialogues;
+    public List<int> skipDialogues;
 
 }

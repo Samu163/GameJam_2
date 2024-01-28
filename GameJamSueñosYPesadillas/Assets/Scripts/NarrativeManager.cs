@@ -54,9 +54,10 @@ public class NarrativeManager : MonoBehaviour
         }
     }
 
-    public void DecisionResult(int result, DialogueConfig nextDialogue)
+    public void DecisionResult(int result, DialogueConfig nextDialogue, int dialoguesToSkip)
     {
         decisions.Add(result);
+        indexText += dialoguesToSkip;
         decision.gameObject.SetActive(false);
         dialogue.gameObject.SetActive(true);
         dialogue.AsignConfig(nextDialogue);

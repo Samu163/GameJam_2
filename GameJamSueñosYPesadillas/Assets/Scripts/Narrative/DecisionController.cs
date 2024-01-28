@@ -15,11 +15,11 @@ public class DecisionController : MonoBehaviour
     public DecisionConfig decisionConfig;
     public List<ButtonDecisionController> buttonDecisions;
     public ButtonDecisionController buttonDecisionPrefabRef;
-    UnityAction<int, DialogueConfig> _onButtonClick;
+    UnityAction<int, DialogueConfig, int> _onButtonClick;
 
     bool isHeadTextDisplayed = false;
 
-    public void Init(DecisionConfig decisionConfig, UnityAction<int, DialogueConfig> onButtonClick)
+    public void Init(DecisionConfig decisionConfig, UnityAction<int, DialogueConfig, int> onButtonClick)
     {
         this.decisionConfig = decisionConfig;
         _onButtonClick = onButtonClick;
@@ -72,7 +72,7 @@ public class DecisionController : MonoBehaviour
     public void OnButtonClick(int index)
     {
         resultIndex = index;
-        _onButtonClick.Invoke(resultIndex, decisionConfig.nextDecisionsDialogues[resultIndex]);
+        _onButtonClick.Invoke(resultIndex, decisionConfig.nextDecisionsDialogues[resultIndex], decisionConfig.skipDialogues[resultIndex]);
         for (int i = 0; i < buttonDecisions.Count; i++)
         {
             Destroy(buttonDecisions[i].gameObject);
