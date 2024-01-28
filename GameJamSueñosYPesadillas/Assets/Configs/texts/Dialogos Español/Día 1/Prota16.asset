@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Prota16
+  m_EditorClassIdentifier: 
+  lines:
+  - "Mart\xEDn\u2026 S\xED, ir\xE9. Gracias. Todav\xEDa se me hace dif\xEDcil de
+    creer que haya tenido un hijo todo este tiempo\u2026"
+  - "Pero supongo que presentarle un asesino a tu hijo reci\xE9n nacido no es la
+    mejor decisi\xF3n."
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 0
+  endsDay: 0

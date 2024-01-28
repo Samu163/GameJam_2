@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e22132782e4334a9530837fd6db9b7, type: 3}
+  m_Name: "D\xEDa1_Decision2"
+  m_EditorClassIdentifier: 
+  headDisplay: "\xBFQuieres quedar ahora un rato ahora para vernos en persona?"
+  decisions:
+  - Mmmmm, de acuerdo. Nos vemos en 10 min en la puerta de mi piso. Hasta luego.
+  - "No, lo siento. No estoy con ganas de eso ahora, necesito estar solo por ahora.
+    Nos vemos en 2 d\xEDas, espero."
+  nextDecisionsDialogues:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 47470e5183d54e34f92dbc5bb404642b, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Prota3
+  m_EditorClassIdentifier: 
+  lines:
+  - "Por fin libre, no me puedo creer que despu\xE9s de tanto tiempo haya conseguido
+    salir de aqu\xED."
+  - "Pens\xE9 que me acabar\xEDa pudriendo dentro de la prisi\xF3n."
+  - "\xBFMe pregunto, qu\xE9 ser\xE1 de m\xED a partir de ahora? \xBFC\xF3mo se supone
+    que uno retoma su vida despu\xE9s de esto?"
+  - "En fin, solo quiero ir a mi piso y descansar un rato. \xBFCu\xE1ndo llegar\xE1
+    el despreocupado de mi hermano? Se supon\xEDa que deber\xEDa haber llegado ya\u2026"
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 1
+  endsDay: 0
