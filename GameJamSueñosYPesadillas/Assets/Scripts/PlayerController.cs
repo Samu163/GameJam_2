@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Image playerImage;
-    public int health;
-    public int damage;
+    public PlayerConfig config;
 
     public GameObject DispararButton;
 
     public bool isFighting = false;
+
+    public void Init(PlayerConfig config)
+    {
+        this.config = config;
+    }
+
 
     public void ShowFightMenu()
     {
