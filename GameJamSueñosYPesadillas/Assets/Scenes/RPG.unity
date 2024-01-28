@@ -272,6 +272,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &740418402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740418403}
+  m_Layer: 0
+  m_Name: sssss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740418403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740418402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993472910
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,8 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerImage: {fileID: 0}
-  health: 0
-  damage: 0
+  config: {fileID: 0}
   DispararButton: {fileID: 2134400507}
   isFighting: 0
 --- !u!1 &1305733755
@@ -691,7 +720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rpgBg: {fileID: 0}
-  buttonMenu: []
 --- !u!1 &1537158020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1035,9 @@ MonoBehaviour:
   enemyPrefabsRef: {fileID: 0}
   listOfEnemies: []
   enemyConfigs: []
+  allHabilities: []
+  alliesInCombatConfig: []
+  allies: []
 --- !u!1 &2134400507
 GameObject:
   m_ObjectHideFlags: 0
