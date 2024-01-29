@@ -1069,9 +1069,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1305733759}
   playerPrefabRef: {fileID: 8683557723586508047, guid: 8711cf4badd102e4996c465215574d1c, type: 3}
-  enemyPrefabsRef: {fileID: 0}
-  listOfEnemies: []
-  enemyConfigs: []
+  enemyPrefabsRef: {fileID: 3053618120847106187, guid: ccf0fa641e86cd44baa834fc74d794ed, type: 3}
+  enemies: []
+  enemyConfigs:
+  - {fileID: 11400000, guid: 1e1c674c5eec2064da0f4206d17304c2, type: 2}
+  - {fileID: 11400000, guid: fa4aa47a2b9cc3b40a230a66b861f0a8, type: 2}
   allHabilities: []
   alliesInCombatConfig:
   - {fileID: 11400000, guid: c5ad58295a8613a4684709cbd7ce3106, type: 2}
@@ -1086,8 +1088,10 @@ MonoBehaviour:
   activePlayer: 0
   activeAction: 0
   activeHability: 0
+  activeEnemy: 0
   indexOfAlly: 0
   hasInitHabilities: 0
   isPlayerTurn: 0
   selectCharacter: 0
   selectAction: 0
+  habilityName: 

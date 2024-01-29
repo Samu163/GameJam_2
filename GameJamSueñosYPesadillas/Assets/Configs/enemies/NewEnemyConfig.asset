@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 10
   attack: 2
-  enemyIcon: {fileID: 21300000, guid: 1e0f2b45945c8254abd59f40d783c11f, type: 3}
+  enemyIcon: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
   habilities:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c30ccab703e1a9d42819daf11d6396a4, type: 2}
+  - {fileID: 11400000, guid: d0d5818687206134e915cd706b023029, type: 2}

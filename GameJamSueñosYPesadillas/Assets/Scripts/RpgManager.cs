@@ -472,6 +472,12 @@ public class RpgManager : MonoBehaviour
                 Debug.Log(enemies[activeEnemy].life);
 
                 break;
+
+            case "heal":
+                allies[activePlayer].life += 10;
+                Debug.Log(allies[activePlayer].life);
+                break;
+
             case "Shot":
                 Debug.Log("Disparo");
                 break;

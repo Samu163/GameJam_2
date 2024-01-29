@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Protagonist
   m_EditorClassIdentifier: 
   life: 10
+  attackPower: 0
+  defense: 0
   habilities:
   - {fileID: 11400000, guid: 2a925bb6e6236f84f8fe01ff13bc2177, type: 2}
   - {fileID: 11400000, guid: 95b7b58bbea7744419828e537116d8c8, type: 2}
+  - {fileID: 11400000, guid: 5e03c370687fe2d4293226589fcf5b7e, type: 2}
+  - {fileID: 11400000, guid: bd3fd76e603fedb419ae4e5e09a31ee9, type: 2}
