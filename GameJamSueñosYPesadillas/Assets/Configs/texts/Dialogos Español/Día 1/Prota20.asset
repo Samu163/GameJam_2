@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Marisa\u2026 Esto\u2026 No s\xE9 si puedo tenerlo yo. Adem\xE1s, \xBFqu\xE9
     dir\xE1 tu marido?"
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

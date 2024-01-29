@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Bien, supongo. Despu\xE9s de tanto tiempo se me hace raro estar aqu\xED fuera.
     Tan solo espero poder vivir tranquilo lo poco que me queda de vida."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using TMPro;
 
 public class NarrativeManager : MonoBehaviour
 {
     public DialogueController dialogue;
     public DecisionController decision;
+    public Image characterTalking;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
     public List<int> decisions;
@@ -22,6 +25,7 @@ public class NarrativeManager : MonoBehaviour
         dialogue.Init(TriggerEvent);
         dialogue.AsignConfig(dialogueTexts[indexText]);
         dialogue.StartDialogue();
+        characterTalking.sprite = dialogue.dialogueConfig.characterImg;
         decision.gameObject.SetActive(false);
     }
 
@@ -51,7 +55,10 @@ public class NarrativeManager : MonoBehaviour
             indexText++;
             dialogue.AsignConfig(dialogueTexts[indexText]);
             dialogue.StartDialogue();
+            characterTalking.sprite = dialogue.dialogueConfig.characterImg;
         }
+
+        
     }
 
     public void DecisionResult(int result, DialogueConfig nextDialogue, int dialoguesToSkip)

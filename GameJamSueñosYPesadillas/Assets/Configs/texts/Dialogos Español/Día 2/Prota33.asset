@@ -15,6 +15,8 @@ MonoBehaviour:
   lines:
   - "\xBFTarde? Si son solo\u2026"
   hasDecision: 1
+  nameChar: Carlos
+  characterImg: {fileID: 0}
   decision: {fileID: 11400000, guid: 73a9ea0595684a248b66b076f042b418, type: 2}
   changeScenario: 0
   endsDay: 0

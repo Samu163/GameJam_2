@@ -16,6 +16,8 @@ MonoBehaviour:
   - "No s\xE9 ni para que salgo de casa, estaba mejor aqu\xED solo."
   - Mejor me voy a dormir. Tan solo espero no tener otra pesadilla como la de anoche.
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 1
   endsDay: 1

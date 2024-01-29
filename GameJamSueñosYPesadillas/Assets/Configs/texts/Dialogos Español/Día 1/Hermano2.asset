@@ -16,6 +16,8 @@ MonoBehaviour:
   - "No seas tan pesimista anda. Venga, vamos al coche que te llevo a casa, que tendr\xE1s
     ganas de descansar."
   hasDecision: 0
+  nameChar: Mateo
+  characterImg: {fileID: 21300000, guid: a21ae8e5f9b1a0c4d93492140ef14870, type: 3}
   decision: {fileID: 0}
   changeScenario: 1
   endsDay: 0

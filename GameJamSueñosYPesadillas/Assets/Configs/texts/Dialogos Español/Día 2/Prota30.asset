@@ -18,6 +18,8 @@ MonoBehaviour:
   - Erm...
   - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

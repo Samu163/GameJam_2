@@ -16,6 +16,8 @@ MonoBehaviour:
   - No suenas muy convencido, pero tampoco me voy a meter en tu vida privada.
   - "Al fin y al cabo, estamos para apoyarnos y nada m\xE1s."
   hasDecision: 0
+  nameChar: Desconocido
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

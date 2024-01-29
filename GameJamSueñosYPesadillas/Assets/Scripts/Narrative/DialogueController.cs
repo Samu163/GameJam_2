@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+
 
 public class DialogueController: MonoBehaviour
 {
@@ -72,6 +74,9 @@ public class DialogueController: MonoBehaviour
             displayText.text = string.Empty;
             StartCoroutine(WriteLine());
 
+            
+           
+
         }
         else
         {
@@ -80,4 +85,6 @@ public class DialogueController: MonoBehaviour
             _onDialogueEnd.Invoke();
         }
     }
+
+    
 }

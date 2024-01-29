@@ -17,6 +17,8 @@ MonoBehaviour:
   - "Por fin has salido de esa pocilga que es la prisi\xF3n. Ten\xEDa ganas de hablar
     con mi hijo."
   hasDecision: 0
+  nameChar: Madre
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

@@ -17,6 +17,8 @@ MonoBehaviour:
   - "Sab\xEDa que quer\xEDas algo, si total, no te importo en absoluto. Siempre has
     sido una madre horrible."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

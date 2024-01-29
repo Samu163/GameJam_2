@@ -18,6 +18,8 @@ MonoBehaviour:
     ahogar las penas."
   - "Qu\xE9 mejor sitio que un bar como este?"
   hasDecision: 0
+  nameChar: Desconocido
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

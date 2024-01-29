@@ -18,6 +18,8 @@ MonoBehaviour:
   - "Me he sentido muy sola POR TU CULPA. Adem\xE1s, necesito tu ayuda."
   - "Voy corta de dinero, la pensi\xF3n no me da para vivir estos meses."
   hasDecision: 0
+  nameChar: Madre
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

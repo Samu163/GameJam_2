@@ -17,6 +17,8 @@ MonoBehaviour:
   - "Ten en cuenta que te estaremos vigilando, si cometes cualquier estupidez volver\xE1s
     a estar entre rejas."
   hasDecision: 0
+  nameChar: Representante Legal
+  characterImg: {fileID: 21300000, guid: 7d1c360a71d5bc14283b7e8cd3f3fb4d, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

@@ -19,6 +19,8 @@ MonoBehaviour:
   - "Soy un asesino que ha perdido la mitad de su vida. \xBFMerezco siquiera rehacer
     mi vida?"
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 1
   endsDay: 0

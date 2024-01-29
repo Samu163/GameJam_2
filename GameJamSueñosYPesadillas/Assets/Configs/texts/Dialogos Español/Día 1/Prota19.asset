@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Este colgante\u2026 No es el que te regal\xE9 por tu cumplea\xF1os 2 semanas
     antes de entrar en prisi\xF3n?"
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

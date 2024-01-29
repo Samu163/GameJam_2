@@ -17,6 +17,8 @@ MonoBehaviour:
   - "Yo apret\xE9 el gatillo, lo hice 2 veces y acab\xE9 con sus vidas."
   - "Soy el \xFAnico responsable y me merezco lo peor."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

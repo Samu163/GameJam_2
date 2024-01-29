@@ -18,6 +18,8 @@ MonoBehaviour:
     pase."
   - "Recu\xE9rdalo."
   hasDecision: 1
+  nameChar: Madre
+  characterImg: {fileID: 0}
   decision: {fileID: 11400000, guid: e381406f7831cef479e8e8a0d2544af4, type: 2}
   changeScenario: 0
   endsDay: 0

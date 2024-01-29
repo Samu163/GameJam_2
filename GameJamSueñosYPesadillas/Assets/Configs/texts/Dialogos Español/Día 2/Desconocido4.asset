@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Cu\xE9ntame, puedes decirme lo que sea."
   - "No contar\xE9 nada. Puedes desahogarte, para eso estamos amigo."
   hasDecision: 0
+  nameChar: Desconocido
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

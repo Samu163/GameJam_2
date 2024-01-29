@@ -15,6 +15,8 @@ MonoBehaviour:
   lines:
   - "Lo siento mucho, le doy el p\xE9same."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

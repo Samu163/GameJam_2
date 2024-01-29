@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Mateo, hace m\xE1s de 30 a\xF1os que no hablamos. Probablemente ya habr\xE1
     rehecho su vida. Quiz\xE1s me tenga que devolver algo o alguna cosa por el estilo."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

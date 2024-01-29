@@ -20,6 +20,8 @@ MonoBehaviour:
     a\xF1os."
   - Siento no haber dicho nada hasta ahora.
   hasDecision: 1
+  nameChar: Marisa
+  characterImg: {fileID: 21300000, guid: b585e204669c20e409bc99db1000b304, type: 3}
   decision: {fileID: 11400000, guid: 4053df6adea17dc40ac2bf51dfa3c3b0, type: 2}
   changeScenario: 0
   endsDay: 0

@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Vale vale, de acuerdo. Cr\xE9eme que no voy a hacer ninguna locura. Solo quiero
     vivir tranquilo."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

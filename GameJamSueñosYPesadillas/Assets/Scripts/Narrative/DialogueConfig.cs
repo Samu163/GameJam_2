@@ -7,6 +7,8 @@ public class DialogueConfig : ScriptableObject
 {
     public string[] lines;
     public bool hasDecision;
+    public string nameChar;
+    public Sprite characterImg;
     public DecisionConfig decision;
     public bool changeScenario;
     public bool endsDay;

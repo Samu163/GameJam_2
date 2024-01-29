@@ -17,6 +17,8 @@ MonoBehaviour:
   - "Dentro de 2 d\xEDas vamos a cenar en casa, me gustar\xEDa que vinieras para
     que puedas conocer a Mart\xEDn."
   hasDecision: 0
+  nameChar: Marisa
+  characterImg: {fileID: 21300000, guid: b585e204669c20e409bc99db1000b304, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

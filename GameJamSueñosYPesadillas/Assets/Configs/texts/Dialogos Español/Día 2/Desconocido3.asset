@@ -17,6 +17,8 @@ MonoBehaviour:
   - 'He aprendido a convivir con ello, gracias a mi mejor amigo: el alcohol.'
   - "\xBFY qu\xE9 haces por aqu\xED?"
   hasDecision: 0
+  nameChar: Desconocido
+  characterImg: {fileID: 0}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

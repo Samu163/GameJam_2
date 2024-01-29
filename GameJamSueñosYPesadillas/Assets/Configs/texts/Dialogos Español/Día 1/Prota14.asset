@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Marisa, de qu\xE9 est\xE1s hablando? Deja de farfullar, \xBFqu\xE9 es lo que
     me tienes que decir?"
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

@@ -19,6 +19,8 @@ MonoBehaviour:
   - "Dijo que estaba muy ocupada y no s\xE9 qu\xE9 m\xE1s. Pensaba que ya se hab\xEDa
     olvidado de m\xED."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0
