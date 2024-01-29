@@ -17,9 +17,9 @@ public class EnemyController : MonoBehaviour
         enemyIcon.sprite = config.enemyIcon;
     }
 
-    public void ShowSelectedIcon()
+    public void ShowSelectedIcon(bool condition)
     {
-        selectedIcon.gameObject.SetActive(false);
+        selectedIcon.gameObject.SetActive(condition);
     }
 
 
