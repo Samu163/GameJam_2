@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Legal2
+  m_EditorClassIdentifier: 
+  lines:
+  - "That\u2019s how I like it, as your legal representative I will keep an eye on
+    you."
+  - Good luck.
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 0
+  endsDay: 0

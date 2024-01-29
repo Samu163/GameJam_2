@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Marisa3
+  m_EditorClassIdentifier: 
+  lines:
+  - "Okay, let\u2019s go."
+  - "Almost 35 years ago, some months later you have been imprisoned because of the\u2026
+    incident, I had a child."
+  - That child is yours, Carlos.
+  - We have a child, and I have been raising him during all these years.
+  - "I\u2019m sorry for not telling you anything until now."
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 8bfd1380c15ed68478be0ff4b4b34f45, type: 2}
+  changeScenario: 0
+  endsDay: 0

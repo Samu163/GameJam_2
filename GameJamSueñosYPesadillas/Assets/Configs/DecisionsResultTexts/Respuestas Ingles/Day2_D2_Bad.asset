@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Day2_D2_Bad
+  m_EditorClassIdentifier: 
+  lines:
+  - Sorry? Do you demand my respect?
+  - You are a criminal, your kind of people should not be free.
+  - I heard that they were going to let go of the man that killed those 2 unfortunate
+    boys a long time ago.
+  - What bad luck encountering that scum.
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 384fb7ae7bf98a045a939ba5df5c543b, type: 2}
+  changeScenario: 0
+  endsDay: 0

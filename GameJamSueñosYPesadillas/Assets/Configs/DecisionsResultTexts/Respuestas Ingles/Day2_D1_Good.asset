@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Day2_D1_Good
+  m_EditorClassIdentifier: 
+  lines:
+  - All of our life you abused us, me and my brother.
+  - You never have taken care of us and we finished in very bad situations by your
+    fault.
+  - I killed these two people, but you could have avoided it if you bothered to be
+    a mother.
+  - We will not talk ever more. See you never, Mom.
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 0
+  endsDay: 0

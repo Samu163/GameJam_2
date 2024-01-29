@@ -15,6 +15,7 @@ MonoBehaviour:
   lines:
   - "Tampoco quiero molestar\u2026 "
   - "Solo\u2026"
+  - Erm...
   - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
   hasDecision: 0
   decision: {fileID: 0}

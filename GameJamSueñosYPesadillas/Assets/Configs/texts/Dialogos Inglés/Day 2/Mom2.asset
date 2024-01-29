@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Mom2
+  m_EditorClassIdentifier: 
+  lines:
+  - Come on, you know that aging is difficult.
+  - Do you think that I was having fun all these years? I suffered a lot and I felt
+    very alone BECAUSE OF YOU.
+  - "Also, I need your help. I\u2019m short of money, my pension doesn't arrive to
+    live all these months."
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 0
+  endsDay: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Carlos6
+  m_EditorClassIdentifier: 
+  lines:
+  - I killed 2 people, Mateo!! Two of them!
+  - "Don\u2019t thank me for anything, I didn\u2019t do anything heroic or something
+    similar."
+  - I have been torturing myself all my life for what I did, I still have nightmares
+    about what happened that day.
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 1
+  endsDay: 0
