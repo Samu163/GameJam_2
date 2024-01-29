@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public SpriteRenderer playerImage;
+    //public SpriteRenderer playerImage;
     public PlayerConfig config;
     public int life;
     public int attackPower;
