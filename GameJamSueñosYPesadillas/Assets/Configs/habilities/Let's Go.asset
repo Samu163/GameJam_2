@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea1b1f9045f181547b91ddaead3c01db, type: 3}
-  m_Name: AtaqueMalo
+  m_Script: {fileID: 11500000, guid: 4e1a860af28351d45b8aa6c8e07f351c, type: 3}
+  m_Name: Let's Go
   m_EditorClassIdentifier: 
-  habilityName: Malo
+  name: Let's Go
+  icon: {fileID: 21300000, guid: 2972f301b2bf3dd46989677197b9a34d, type: 3}
+  hasTarget: 0
+  hasTargetEnemy: 0

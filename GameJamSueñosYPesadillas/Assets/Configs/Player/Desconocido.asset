@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
-  m_Name: Protagonist
+  m_Name: Desconocido
   m_EditorClassIdentifier: 
-  life: 10
-  attackPower: 0
-  defense: 0
+  life: 40
+  attackPower: 15
+  defense: 5
   habilities:
-  - {fileID: 11400000, guid: 2a925bb6e6236f84f8fe01ff13bc2177, type: 2}
-  - {fileID: 11400000, guid: 95b7b58bbea7744419828e537116d8c8, type: 2}
-  - {fileID: 11400000, guid: 5e03c370687fe2d4293226589fcf5b7e, type: 2}
-  - {fileID: 11400000, guid: bd3fd76e603fedb419ae4e5e09a31ee9, type: 2}
+  - {fileID: 11400000, guid: 0b75c32a9a5a51846b52d9029f2e6984, type: 2}
+  - {fileID: 11400000, guid: bea2dcabc0acc0e4095d9125d2abba20, type: 2}

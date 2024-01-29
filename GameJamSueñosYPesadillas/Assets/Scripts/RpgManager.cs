@@ -453,14 +453,34 @@ public class RpgManager : MonoBehaviour
         var j = GetRandomIndex(allies.Count);
         switch (habilityName)
         {
-            case "Fuerte":
+            case "Puñetazo Chungo":
                 //Añadir animacion de ataque
                 Debug.Log("vaya reventada, tenia " + allies[j].life);
-                allies[j].life -= 10;
+                allies[j].life -= enemies[activeEnemy].attack * 2 - allies[j].defense;
                 Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" +allies[j].life);
                 break;
-            case "Malo":
-                Debug.Log("No hace nada");
+            case "Intimidar":
+                allies[j].attackPower -= 5;
+                Debug.Log(allies[j].attackPower);
+                break;
+            case "Criticas de Madre":
+                for(int i = 0; i < allies.Count; i++)
+                {
+                    allies[i].life -= 5;
+                    Debug.Log(allies[i].life);
+                }
+                break;
+            case "Blow Bottle":
+                allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
+                Debug.Log(allies[j].life);
+                Debug.Log("Botellazo");
+                break;
+            case "Drink":
+                enemies[activeEnemy].attack += 10;
+                enemies[activeEnemy].life -= 10;
+                Debug.Log(enemies[activeEnemy].attack);
+                Debug.Log(enemies[activeEnemy].life);
+                Debug.Log("Drink");
                 break;
             default:
                 break;
@@ -501,24 +521,28 @@ public class RpgManager : MonoBehaviour
             case "Punch":
                 //Añadir animacion de ataque
                 Debug.Log("Puñetazo");
-                enemies[activeEnemy].life -= 5;
-               
+                enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
-
                 break;
-
-            case "Heal":
-                allies[activePlayer].life += 10;
-                Debug.Log(allies[activePlayer].life);
-                break;
-
             case "Shot":
+                for(int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
+                    Debug.Log(enemies[i].life);
+                }
                 Debug.Log("Disparo");
                 break;
             case "Help":
-                Debug.Log("Curación a Aliado");
+                allies[activePlayer].defense += 5;
+                Debug.Log(allies[activePlayer].defense);
+                Debug.Log("Sube defensa a aliado");
                 break;
             case "Shout":
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].defense -= 5;
+                    Debug.Log(enemies[i].defense);
+                }
                 Debug.Log("Baja defensas enemigos");
                 break;
             case "Hide Emotions":
@@ -526,19 +550,28 @@ public class RpgManager : MonoBehaviour
                 Debug.Log(allies[activePlayer].defense);
                 break;
             case "Let's Go":
+                for (int i = 0; i < allies.Count; i++)
+                {
+                    allies[i].attackPower += 5;
+                    Debug.Log(allies[i].attackPower);
+                }
                 Debug.Log("Suma ataque a Aliado");
                 break;
             case "Run":
-                allies[activePlayer].attackPower += 20;
+                allies[activePlayer].attackPower += 10;
                 allies[activePlayer].defense -= 10;
                 Debug.Log("Suma Ataque y baja defensa");
                 break;
             case "Blow Bottle":
+                enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
+                Debug.Log(enemies[activeEnemy].life);
                 Debug.Log("Botellazo");
                 break;
             case "Drink":
                 allies[activePlayer].attackPower += 10;
+                allies[activePlayer].life -= 10;
                 Debug.Log(allies[activePlayer].attackPower);
+                Debug.Log(allies[activePlayer].life);
                 break;
             default:
                 break;

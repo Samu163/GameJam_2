@@ -8,6 +8,7 @@ public class EnemyConfig : ScriptableObject
 {
     public int life;
     public int attack;
+    public int defense;
     public Sprite enemyIcon;
     public List<EnemyHabilityConfig> habilities;
 

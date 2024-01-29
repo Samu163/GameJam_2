@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e1a860af28351d45b8aa6c8e07f351c, type: 3}
-  m_Name: hielo
+  m_Name: Disparo
   m_EditorClassIdentifier: 
-  name: hielo
-  icon: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
+  name: Shot
+  icon: {fileID: 21300000, guid: 2ad84ec7182471b4d8c44de568e22df4, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
