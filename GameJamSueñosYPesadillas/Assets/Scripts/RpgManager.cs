@@ -52,7 +52,7 @@ public class RpgManager : MonoBehaviour
 
             var ally = Instantiate(playerPrefabRef, transform);
             ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
-            ally.Init(alliesInCombatConfig[i], CheckHabilityResult);
+            ally.Init(alliesInCombatConfig[i], CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
             allies.Add(ally);
@@ -303,7 +303,7 @@ public class RpgManager : MonoBehaviour
                         allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
                         allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
                         //Esto es provisional, en principio tendria que seleccionar al enemigo o al jugador 
-                        allies[activePlayer].hasAttacked = true;
+                       
                     }
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
@@ -367,9 +367,16 @@ public class RpgManager : MonoBehaviour
 
     public void RemoveEnemy(int index)
     {
-        var enemy = enemies[activeEnemy];
+        var enemy = enemies[index];
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
+    }
+    
+    public void RemoveAlly(int index)
+    {
+        var ally = allies[index];
+        allies.Remove(ally);
+        Destroy(ally.gameObject);
     }
 
     public void PlayerEndingTurn()
@@ -406,34 +413,68 @@ public class RpgManager : MonoBehaviour
     }
 
 
+    public void EnemyTurn()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            var j = enemies[i].data.habilities.Count;
+            CheckEnemyHabilityResult(enemies[i].data.habilities[GetRandomIndex(j)].habilityName);
+        }
+        SetPlayerTurn();
+    }
+
+    public void SetPlayerTurn()
+    {
+        for (int i = 0; i < allies.Count; i++)
+        {
+            allies[i].hasAttacked = false;
+        }
+        activePlayer = 0;
+        activeHability = 0;
+        currentStep = state.SELECT_CHARACTER;
+
+    }
+
     // Botón para usar Items
     public void itemButton()
     {
         var inventory = Instantiate(itemInventoryPrefabRef, transform);
         inventory.transform.position = new Vector3(100, 100, 0);
-
     }
 
-    public void GetRandomIndex(int maxValue)
+    public int GetRandomIndex(int maxValue)
     {
+       return Random.Range(0, maxValue);
 
     }
 
     public void CheckEnemyHabilityResult(string habilityName)
     {
+        Debug.Log(habilityName);
+        var j = GetRandomIndex(allies.Count);
         switch (habilityName)
         {
-            case "fuego":
+            case "Fuerte":
                 //Añadir animacion de ataque
+                Debug.Log("vaya reventada, tenia " + allies[j].life);
+                allies[j].life -= 10;
+                Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" +allies[j].life);
                 break;
-            case "hielo":
+            case "Malo":
+                Debug.Log("No hace nada");
                 break;
             default:
                 break;
         }
+        if (allies[j].life <= 0)
+        {
+            //destruir enemigo 
+            RemoveAlly(activePlayer);
+        }
+        CheckBattleResults();
     }
     //Si afecta a todos los enemigos/aliados no hace falta poner traget 
-    public void CheckHabilityResult(string habilityName, bool targetEnemy, bool targetPlayer)
+    public void CheckHabilityTarget(string habilityName, bool targetEnemy, bool targetPlayer)
     {
         this.habilityName = habilityName;
         if (targetEnemy)
@@ -455,25 +496,19 @@ public class RpgManager : MonoBehaviour
     public void CheckHability(string habilityName)
     {
 
-        //active enemy es el enemigo a atacar y active player es el player al que se le aplica la accion (puede ser asi mismo) 
+        //active enemy es el enemigo a atacar y active player es el player al que se le aplica la accion (puede ser a si mismo) 
         switch (habilityName)
         {
             case "Punch":
                 //Añadir animacion de ataque
                 Debug.Log("Puñetazo");
                 enemies[activeEnemy].life -= 5;
-                if (enemies[activeEnemy].life <= 0)
-                {
-                    //destruir enemigo 
-                    var enemy = enemies[activeEnemy];
-                    enemies.Remove(enemy);
-                    Destroy(enemy.gameObject);
-                }
+               
                 Debug.Log(enemies[activeEnemy].life);
 
                 break;
 
-            case "heal":
+            case "Heal":
                 allies[activePlayer].life += 10;
                 Debug.Log(allies[activePlayer].life);
                 break;
@@ -509,13 +544,23 @@ public class RpgManager : MonoBehaviour
             default:
                 break;
         }
+        //Checkear si se tiene que destruir algo 
+        if (enemies[activeEnemy].life <= 0)
+        {
+            //destruir enemigo 
+            RemoveEnemy(activeEnemy);
+        }
+        if (allies[activePlayer].life <= 0)
+        {
+            //destruir enemigo 
+            RemoveAlly(activePlayer);
+        }
         allies[activePlayer].hasAttacked = true;
         CheckBattleResults();
         if (CheckAllPlayersHadAttacked())
         {
             allies[activePlayer].ShowPlayerSelectedIcon(false);
-
-            currentStep = state.NONE;
+            EnemyTurn();
         }
         else
         {

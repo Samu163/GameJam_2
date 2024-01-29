@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1a860af28351d45b8aa6c8e07f351c, type: 3}
   m_Name: Curacion
   m_EditorClassIdentifier: 
-  name: heal
+  name: Heal
   icon: {fileID: 21300000, guid: ee5df01235032491c8b180741ea820fe, type: 3}
   hasTarget: 1
   hasTargetEnemy: 0
