@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1a860af28351d45b8aa6c8e07f351c, type: 3}
-  m_Name: "Pu\xF1etazo"
+  m_Script: {fileID: 11500000, guid: ea1b1f9045f181547b91ddaead3c01db, type: 3}
+  m_Name: "Pu\xF1etazo Chungo"
   m_EditorClassIdentifier: 
-  name: Punch
-  icon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
-  hasTarget: 0
-  hasTargetEnemy: 1
+  habilityName: "Pu\xF1etazo Chungo"

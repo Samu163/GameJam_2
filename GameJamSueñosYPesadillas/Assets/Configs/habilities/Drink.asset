@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e1a860af28351d45b8aa6c8e07f351c, type: 3}
-  m_Name: "Pu\xF1etazo"
+  m_Name: Drink
   m_EditorClassIdentifier: 
-  name: Punch
-  icon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  name: Drink
+  icon: {fileID: 21300000, guid: 59bc7a7ca0683ac439e255a533670885, type: 3}
   hasTarget: 0
-  hasTargetEnemy: 1
+  hasTargetEnemy: 0
