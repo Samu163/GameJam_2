@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RpgManager : MonoBehaviour
 {
@@ -8,36 +9,225 @@ public class RpgManager : MonoBehaviour
     public PlayerController playerPrefabRef;
     public EnemyController enemyPrefabsRef;
     public List<EnemyController> listOfEnemies;
+    // public List<EnemyController> listOfEnemies;
     public List<EnemyConfig> enemyConfigs;
     public List<HabilityConfig> allHabilities;
     public List<PlayerConfig> alliesInCombatConfig;
     public List<PlayerController> allies;
+    public List<ActionButton> actionButtons;
     public ItemManager itemInventoryPrefabRef;
+    public state currentStep;
+    public int activePlayer = 0;
+    public int activeAction = 0;
+    public int activeHability = 0;
     public int indexOfAlly = 0;
     public bool hasInitHabilities = false;
+    public bool isPlayerTurn = true;
+    public bool selectCharacter = false;
+    public bool selectAction = false;
+
+    public enum state
+    {
+        SELECT_CHARACTER,
+        SELECT_ACTION,
+        SELECT_HABILITY,
+        SELECT_ITEM,
+        SELECT_ENEMY
+    };
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        currentStep = state.SELECT_CHARACTER;
         //Aqui es cuando pasamos de escena 
         for (int i = 0; i < alliesInCombatConfig.Count; i++)
         {
+
             var ally = Instantiate(playerPrefabRef, transform);
             ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
-            ally.Init(alliesInCombatConfig[i],CheckHabilityResult);
+            ally.Init(alliesInCombatConfig[i], CheckHabilityResult);
             ally.InitHabilities();
             ally.ShowHabilities(false);
             allies.Add(ally);
+        }
+
+        for (int i = 0; i < actionButtons.Count; i++)
+        {
+            actionButtons[i].ShowSelectedIcon(false);
+        }
+    }
+    //true es arriba false es abajo
+    public void FindNextPlayer(bool direction)
+    {
+        for (int i = 0; i < allies.Count; i++)
+        {
+            if (direction)
+            {
+                if (activePlayer <= 0)
+                {
+                    activePlayer = allies.Count-1;
+                }
+                else
+                {
+                    activePlayer--;
+                }
+            }
+            else
+            {
+                if (activePlayer >= allies.Count-1)
+                {
+                    activePlayer = 0;
+                }
+                else
+                {
+                    activePlayer++;
+                }
+            }
+
+            if (!allies[activePlayer].hasAttacked)
+            {
+                break;
+            }
+        }
+    }
+    public void FindNextAction(bool direction)
+    {
+        if (direction)
+        {
+            if (activeAction <= 0)
+            {
+                activeAction = actionButtons.Count - 1;
+            }
+            else
+            {
+                activeAction--;
+            }
+        }
+        else
+        {
+            if (activeAction >= actionButtons.Count - 1)
+            {
+                activeAction = 0;
+            }
+            else
+            {
+                activeAction++;
+            }
+        }
+    }
+     public void FindNextHability(bool direction)
+    {
+        if (direction)
+        {
+            if (activeHability <= 0)
+            {
+                activeHability = allies[activePlayer].buttonHabilities.Count - 1;
+            }
+            else
+            {
+                activeHability--;
+            }
+        }
+        else
+        {
+            if (activeHability >= allies[activePlayer].buttonHabilities.Count - 1)
+            {
+                activeHability = 0;
+            }
+            else
+            {
+                activeHability++;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+            allies[activePlayer].ShowPlayerSelectedIcon(true);
+            switch (currentStep)
+            {
+                //Selecciona el personaje 
+                case state.SELECT_CHARACTER:
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+                        FindNextPlayer(true);
+                    }
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+
+                        FindNextPlayer(false);
+                    }
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        currentStep = state.SELECT_ACTION;
+                    }
+                    break;
+                //Selecciona la accion
+                case state.SELECT_ACTION:
+                    actionButtons[activeAction].ShowSelectedIcon(true);
+
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        actionButtons[activeAction].ShowSelectedIcon(false);
+                        FindNextAction(true);
+                    }
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        actionButtons[activeAction].ShowSelectedIcon(false);
+                        FindNextAction(false);
+                    }
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                    actionButtons[activeAction].ShowSelectedIcon(false);
+
+                    actionButtons[activeAction].ActiveOnClick();
+                    }
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        currentStep = state.SELECT_CHARACTER;
+                    }
+                    break;
+                case state.SELECT_HABILITY:
+                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(true);
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                        FindNextHability(true);
+                    }
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                        FindNextHability(false);
+                    }
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                        allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
+                        //Esto es provisional, en principio tendria que seleccionar al enemigo o al jugador 
+                        allies[activePlayer].hasAttacked = true;
+                    }
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        currentStep = state.SELECT_ACTION;
+                    }
+                    break;
+                case state.SELECT_ITEM:
+
+                    break;
+                case state.SELECT_ENEMY:
+                    break;
+                default:
+                    break;
+            }
+       
+        //Selecciona el objetivo 
     }
+   
 
     // Botón para usar Items
     public void itemButton()
@@ -82,17 +272,15 @@ public class RpgManager : MonoBehaviour
             default:
                 break;
         }
-        indexOfAlly++;
+        playerAffected.hasAttacked = true;
+
     }
 
     public void FightButton()
     {
-        if (allies.Count <= indexOfAlly)
-        {
-            indexOfAlly = 0;
-        }
 
-        allies[indexOfAlly].ShowHabilities(true);
+        allies[activePlayer].ShowHabilities(true);
+        currentStep = state.SELECT_HABILITY;
     }
 
 
