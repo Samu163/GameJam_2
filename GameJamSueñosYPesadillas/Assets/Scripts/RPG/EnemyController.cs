@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     public EnemyConfig data;
-    public Image enemyIcon;
+    public SpriteRenderer enemyIcon;
     public int life;
-    public Image selectedIcon;
+    public SpriteRenderer selectedIcon;
     public void Init(EnemyConfig config)
     {
         data = config;

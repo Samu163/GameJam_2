@@ -181,14 +181,13 @@ public class RpgManager : MonoBehaviour
             }
         }
     }
-
     public void FindNextEnemy(bool direction)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
             if (direction)
             {
-                if (activePlayer <= 0)
+                if (activeEnemy <= 0)
                 {
                     activeEnemy = enemies.Count - 1;
                 }
@@ -444,7 +443,7 @@ public class RpgManager : MonoBehaviour
 
     public int GetRandomIndex(int maxValue)
     {
-       return Random.Range(0, maxValue);
+        return Random.Range(0, maxValue);
 
     }
 
@@ -469,7 +468,7 @@ public class RpgManager : MonoBehaviour
         if (allies[j].life <= 0)
         {
             //destruir enemigo 
-            RemoveAlly(activePlayer);
+            RemoveAlly(j);
         }
         CheckBattleResults();
     }
