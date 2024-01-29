@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e22132782e4334a9530837fd6db9b7, type: 3}
+  m_Name: "D\xEDa1_Decision1"
+  m_EditorClassIdentifier: 
+  headDisplay: Siento no haber dicho nada hasta ahora.
+  decisions:
+  - "\xBFQU\xC9? \xBFTENGO UN HIJO Y NO ME HAS DICHO NADA HASTA AHORA? \xBFEST\xC1S
+    LOCA? \xBFC\xF3mo se te ocurre ocultarme algo tan importante como esto?"
+  - "Q-Qu\xE9? \xBFTengo un hijo? No s\xE9 c\xF3mo reaccionar, no me esperaba encontrarme
+    con esto nada m\xE1s salir en libertad."
+  nextDecisionsDialogues:
+  - {fileID: 11400000, guid: 9be0521cc5969a4439dbbcab931aa37f, type: 2}
+  - {fileID: 11400000, guid: 048db92fa3c1f924f955dd4779d530c0, type: 2}

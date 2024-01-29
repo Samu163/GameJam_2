@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Prota12
+  m_EditorClassIdentifier: 
+  lines:
+  - "Hogar dulce hogar, supongo. Marisa eh\u2026"
+  - "Me pregunto qu\xE9 querr\xE1 decirme con tanta urgencia."
+  - "Y yo que hago con mi vida a mis 64 a\xF1os?"
+  - "Soy un asesino que ha perdido la mitad de su vida. \xBFMerezco siquiera rehacer
+    mi vida?"
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 1
+  endsDay: 0
