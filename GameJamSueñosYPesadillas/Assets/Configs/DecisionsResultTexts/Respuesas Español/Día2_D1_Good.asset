@@ -19,6 +19,9 @@ MonoBehaviour:
     te hubieras dignado a ser una madre."
   - "No volveremos a hablar nunca m\xE1s, hasta nunca Mam\xE1."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
+  backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

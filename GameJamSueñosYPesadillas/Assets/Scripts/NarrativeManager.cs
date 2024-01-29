@@ -76,5 +76,8 @@ public class NarrativeManager : MonoBehaviour
         dialogue.gameObject.SetActive(true);
         dialogue.AsignConfig(nextDialogue);
         dialogue.StartDialogue();
+        characterTalking.sprite = dialogue.dialogueConfig.characterImg;
+        background.sprite = dialogue.dialogueConfig.backgroundScene;
+        nameChar.text = dialogue.dialogueConfig.nameChar;
     }
 }

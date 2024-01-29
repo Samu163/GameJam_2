@@ -16,7 +16,8 @@ MonoBehaviour:
   - "He venido a despejar un poco la mente, he tenido un d\xEDa muy duro."
   hasDecision: 0
   nameChar: Carlos
-  characterImg: {fileID: 0}
+  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
+  backgroundScene: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0

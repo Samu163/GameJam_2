@@ -20,6 +20,7 @@ MonoBehaviour:
   hasDecision: 0
   nameChar: Madre
   characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
   decision: {fileID: 0}
   changeScenario: 0
   endsDay: 0
