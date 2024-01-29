@@ -52,6 +52,13 @@ public class RpgManager : MonoBehaviour
             ally.ShowHabilities(false);
             allies.Add(ally);
         }
+        for (int i = 0; i < listOfEnemies.Count; i++)
+        {
+            var enemy = Instantiate(enemyPrefabsRef, transform);
+            enemy.transform.position = new Vector3(enemy.transform.position.x + 100, enemy.transform.position.y - 100 * i, enemy.transform.position.z);
+            enemy.Init(enemyConfigs[i]);
+            listOfEnemies.Add(enemy);
+        }
 
         for (int i = 0; i < actionButtons.Count; i++)
         {
@@ -216,10 +223,10 @@ public class RpgManager : MonoBehaviour
                         currentStep = state.SELECT_ACTION;
                     }
                     break;
-                case state.SELECT_ITEM:
-
+                case state.SELECT_ITEM:                   
                     break;
                 case state.SELECT_ENEMY:
+                    
                     break;
                 default:
                     break;
@@ -273,6 +280,12 @@ public class RpgManager : MonoBehaviour
                 break;
         }
         playerAffected.hasAttacked = true;
+
+    }
+
+
+    public void CheckHability()
+    {
 
     }
 
