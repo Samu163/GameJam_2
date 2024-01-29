@@ -11,6 +11,7 @@ public class HabilityController : MonoBehaviour
     public Button button;
     public Image image;
     public Image selectedImage;
+    public bool hasTargetEnemy;
     public bool hasTarget;
     UnityAction<string> _onHabilityClick;
 
@@ -22,7 +23,6 @@ public class HabilityController : MonoBehaviour
         _onHabilityClick = onHabilityClick;
         ShowSelectedImage(false);
     }
-
 
     public void ShowSelectedImage(bool condition)
     {
