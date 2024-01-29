@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Desconocido3
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - "No hombre no te preocupes, eso pas\xF3 hace mucho tiempo ya."
+  - 'He aprendido a convivir con ello, gracias a mi mejor amigo: el alcohol.'
+  - "\xBFY qu\xE9 haces por aqu\xED?"
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

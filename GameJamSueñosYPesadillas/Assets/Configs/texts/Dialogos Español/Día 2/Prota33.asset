@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Prota33
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
-  hasDecision: 0
-  decision: {fileID: 0}
+  - "\xBFTarde? Si son solo\u2026"
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 73a9ea0595684a248b66b076f042b418, type: 2}
   changeScenario: 0
   endsDay: 0

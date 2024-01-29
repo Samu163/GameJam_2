@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Prota22
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - "Un hijo\u2026 Todav\xEDa necesito asimilarlo. \xBFQu\xE9 pensar\xE1 de m\xED?
+    Necesito dormir para pensar en ello."
   hasDecision: 0
   decision: {fileID: 0}
-  changeScenario: 0
+  changeScenario: 1
   endsDay: 0

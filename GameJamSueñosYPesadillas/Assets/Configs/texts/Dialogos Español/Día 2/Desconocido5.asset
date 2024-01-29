@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Desconocido5
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - No suenas muy convencido, pero tampoco me voy a meter en tu vida privada.
+  - "Al fin y al cabo, estamos para apoyarnos y nada m\xE1s."
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

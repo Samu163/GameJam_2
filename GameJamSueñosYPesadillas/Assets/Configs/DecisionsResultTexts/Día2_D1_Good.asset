@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: "D\xEDa2_D1_Good"
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - "Toda nuestra vida nos maltrataste a m\xED y a mi hermano."
+  - "Jam\xE1s nos cuidaste y acabamos en malas situaciones por tu culpa."
+  - "Yo mat\xE9 a aquellas dos personas, pero t\xFA podr\xEDas haberlo evitado si
+    te hubieras dignado a ser una madre."
+  - "No volveremos a hablar nunca m\xE1s, hasta nunca Mam\xE1."
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

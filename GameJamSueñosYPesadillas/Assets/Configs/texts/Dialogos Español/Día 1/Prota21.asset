@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Prota21
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - "Oh\u2026 entiendo. Pens\xE9 que despu\xE9s de tanto tiempo\u2026"
+  - Bueno, da igual. Muchas gracias por el colgante, de verdad lo agradezco.
+  - Te apetece dar una vuelta de noche?
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

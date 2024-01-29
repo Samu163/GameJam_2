@@ -19,5 +19,5 @@ MonoBehaviour:
   - "Seguro que te vendr\xE1 bien, adem\xE1s, puedo contarte m\xE1s cosas de Mart\xEDn."
   hasDecision: 1
   decision: {fileID: 11400000, guid: 2aadf2262ba17d5489f29baf9c63156d, type: 2}
-  changeScenario: 0
+  changeScenario: 1
   endsDay: 0

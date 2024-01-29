@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Madre3
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
-  hasDecision: 0
-  decision: {fileID: 0}
+  - Carlos, ni se te ocurra hablarme con ese tono.
+  - "Ser\xE1s mi hijo, pero sigues siendo un monstruo asesino por mucho tiempo que
+    pase."
+  - "Recu\xE9rdalo."
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: e381406f7831cef479e8e8a0d2544af4, type: 2}
   changeScenario: 0
   endsDay: 0

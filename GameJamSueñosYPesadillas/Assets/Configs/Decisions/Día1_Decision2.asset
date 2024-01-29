@@ -15,8 +15,8 @@ MonoBehaviour:
   headDisplay: "\xBFQuieres quedar ahora un rato ahora para vernos en persona?"
   decisions:
   - Mmmmm, de acuerdo. Nos vemos en 10 min en la puerta de mi piso. Hasta luego.
-  - "No, lo siento. No estoy con ganas de eso ahora, necesito estar solo por ahora.
-    Nos vemos en 2 d\xEDas, espero."
+  - No, lo siento. No estoy con ganas de eso ahora, necesito estar solo por ahora.
   nextDecisionsDialogues:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 38da92e40e6d34645935c9b9d3c3d337, type: 2}
   - {fileID: 11400000, guid: 47470e5183d54e34f92dbc5bb404642b, type: 2}
+  skipDialogues: 0000000009000000

@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: Desconocido2
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
+  - "Entendible, yo soy un cliente recurrente por aqu\xED."
+  - "Ya sabes, despu\xE9s de la muerte de su mujer, un hombre necesita un sitio donde
+    ahogar las penas."
+  - "Qu\xE9 mejor sitio que un bar como este?"
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

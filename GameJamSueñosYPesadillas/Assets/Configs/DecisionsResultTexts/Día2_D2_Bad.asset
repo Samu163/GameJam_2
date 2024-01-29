@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa1_D2_Bad"
+  m_Name: "D\xEDa2_D2_Bad"
   m_EditorClassIdentifier: 
   lines:
-  - " Nos vemos en 2 d\xEDas, espero."
-  hasDecision: 0
-  decision: {fileID: 0}
+  - "Perdona?? \xBFMe est\xE1s exigiendo respeto?"
+  - "Eres un criminal, la gente de tu cala\xF1a no deber\xEDa andar suelta."
+  - "O\xED que iban a soltar al hombre que mat\xF3 a 2 pobres chavales hace ya tanto
+    tiempo."
+  - Que mala suerte encontrarme con esa escoria.
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 3917699a81a5081459e53885d848c004, type: 2}
   changeScenario: 0
   endsDay: 0
