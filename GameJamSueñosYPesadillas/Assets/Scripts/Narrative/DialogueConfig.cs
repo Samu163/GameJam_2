@@ -12,6 +12,7 @@ public class DialogueConfig : ScriptableObject
     public string nameChar;
     public Sprite characterImg;
     public Sprite backgroundScene;
+    public AudioClip soundEffect;
     public DecisionConfig decision;
     public bool fadeInOut;
     public bool changeScenario;
