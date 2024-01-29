@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Carlos33
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
-  hasDecision: 0
-  decision: {fileID: 0}
+  - "Late? But it\u2019s only\u2026"
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 2daa2f4a3ad644f4c9825fd62d57bbcd, type: 2}
   changeScenario: 0
   endsDay: 0

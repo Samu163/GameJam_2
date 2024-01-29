@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Day2_D2_Bad
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
-  hasDecision: 0
-  decision: {fileID: 0}
+  - Sorry? Do you demand my respect?
+  - You are a criminal, your kind of people should not be free.
+  - I heard that they were going to let go of the man that killed those 2 unfortunate
+    boys a long time ago.
+  - What bad luck encountering that scum.
+  hasDecision: 1
+  decision: {fileID: 11400000, guid: 384fb7ae7bf98a045a939ba5df5c543b, type: 2}
   changeScenario: 0
   endsDay: 0
