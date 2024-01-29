@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class HabilityController : MonoBehaviour
 {
     public TextMeshProUGUI habilityName;
+    public Button button;
     public Image image;
+    public Image selectedImage;
     public bool hasTarget;
     UnityAction<string> _onHabilityClick;
 
@@ -18,8 +20,14 @@ public class HabilityController : MonoBehaviour
         image.sprite = hability.icon;
         hasTarget = hability.hasTarget;
         _onHabilityClick = onHabilityClick;
+        ShowSelectedImage(false);
     }
 
+
+    public void ShowSelectedImage(bool condition)
+    {
+        selectedImage.gameObject.SetActive(condition);
+    }
 
     public void OnButtonClick()
     {

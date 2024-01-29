@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -9,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public Image playerImage;
     public PlayerConfig config;
     public int life;
-    public GameObject DispararButton;
+    public bool hasAttacked;
+    public Image playerSelected;
     public HabilityController habilityPrefabRef;
     public List<HabilityController> buttonHabilities;
     UnityAction<string, PlayerController> _applyHability;
@@ -22,14 +24,8 @@ public class PlayerController : MonoBehaviour
         this.config = config;
         _applyHability = applyHability;
         life = config.life;
+        ShowPlayerSelectedIcon(false);
 
-    }
-
-    public void ShowFightMenu()
-    {
-        isFighting = !isFighting;
-
-        DispararButton.gameObject.SetActive(isFighting);
     }
 
     public void InitHabilities()
@@ -43,6 +39,12 @@ public class PlayerController : MonoBehaviour
             buttonHabilities.Add(hability);
         }
     }
+
+    public void ShowPlayerSelectedIcon(bool condition) 
+    {
+        playerSelected.gameObject.SetActive(condition);
+    }
+
 
     public void DestroyHabilities()
     {
