@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e22132782e4334a9530837fd6db9b7, type: 3}
+  m_Name: Day2_D1
+  m_EditorClassIdentifier: 
+  headDisplay: Remember it.
+  decisions:
+  - "I am the monster?? \xA1All of this is your fault!"
+  - "I-I\u2019m sorry, you are right. I\u2019m a despicable being. I will help you
+    with the money."
+  - "Stop. I will be an assassin, but you are an abuser. I don\u2019t want to know
+    anything about you."
+  nextDecisionsDialogues:
+  - {fileID: 11400000, guid: 2c2de0dea47ea7a49bb8665dedfd960c, type: 2}
+  - {fileID: 11400000, guid: 38240869784115f4e930e65a2a4cd98b, type: 2}
+  - {fileID: 11400000, guid: 893400dacd7e6cb47828dca148e84661, type: 2}
+  skipDialogues: 000000000000000000000000

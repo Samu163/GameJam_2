@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Legal2
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
+  - "That\u2019s how I like it, as your legal representative I will keep an eye on
+    you."
+  - Good luck.
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

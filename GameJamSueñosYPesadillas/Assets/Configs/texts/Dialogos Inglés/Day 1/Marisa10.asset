@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Marisa10
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
+  - "Husband? HAHAHA don\u2019t say silly things, I have been alone since it happened
+    all that a long time ago."
+  - "Mart\xEDn and I have been living alone all this time."
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Brother2
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
+  - "Don\u2019t be that pessimistic, come on."
+  - "Let\u2019s go to the car and I'm going to bring you home, surely you want to
+    rest."
   hasDecision: 0
   decision: {fileID: 0}
-  changeScenario: 0
+  changeScenario: 1
   endsDay: 0

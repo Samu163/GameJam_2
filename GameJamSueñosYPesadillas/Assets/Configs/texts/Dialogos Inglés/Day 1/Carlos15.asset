@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Carlos15
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
+  - "That isn\u2019t important now, I need to see him. I need to see my son."
+  - When will I be able to see him? What 's his name? Marisa please.
   hasDecision: 0
   decision: {fileID: 0}
   changeScenario: 0

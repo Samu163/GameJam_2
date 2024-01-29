@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
+  m_Name: Carlos3
+  m_EditorClassIdentifier: 
+  lines:
+  - "Finally free, I can\u2019t believe that I have managed to go out of here after
+    all this time."
+  - I really thought that I was going to rot inside this prison.
+  - I wonder what will be of me from now on?
+  - How is one supposed to resume his life after all this?
+  - Anyway, I only want to go to my apartment and relax a little bit.
+  - "When will my always carefree brother? He was supposed to have arrived by now\u2026"
+  hasDecision: 0
+  decision: {fileID: 0}
+  changeScenario: 1
+  endsDay: 0

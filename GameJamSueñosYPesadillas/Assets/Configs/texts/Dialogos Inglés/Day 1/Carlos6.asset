@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Prota30
+  m_Name: Carlos6
   m_EditorClassIdentifier: 
   lines:
-  - "Tampoco quiero molestar\u2026 "
-  - "Solo\u2026"
-  - Erm...
-  - "Discut\xED con mi mujer, s\xED, eso fue lo que pas\xF3."
+  - I killed 2 people, Mateo!! Two of them!
+  - "Don\u2019t thank me for anything, I didn\u2019t do anything heroic or something
+    similar."
+  - I have been torturing myself all my life for what I did, I still have nightmares
+    about what happened that day.
   hasDecision: 0
   decision: {fileID: 0}
-  changeScenario: 0
+  changeScenario: 1
   endsDay: 0
