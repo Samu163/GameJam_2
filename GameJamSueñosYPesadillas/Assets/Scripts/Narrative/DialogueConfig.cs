@@ -11,6 +11,7 @@ public class DialogueConfig : ScriptableObject
     public bool hasDecision;
     public string nameChar;
     public Sprite characterImg;
+    public Sprite backgroundScene;
     public DecisionConfig decision;
     public bool changeScenario;
     public bool endsDay;

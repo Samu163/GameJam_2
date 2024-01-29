@@ -11,6 +11,7 @@ public class NarrativeManager : MonoBehaviour
     public DecisionController decision;
     public Image characterTalking;
     public Text nameChar;
+    public Image background;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
     public List<int> decisions;
@@ -27,6 +28,7 @@ public class NarrativeManager : MonoBehaviour
         dialogue.AsignConfig(dialogueTexts[indexText]);
         dialogue.StartDialogue();
         characterTalking.sprite = dialogue.dialogueConfig.characterImg;
+        background.sprite = dialogue.dialogueConfig.backgroundScene;
         nameChar.text = dialogue.dialogueConfig.nameChar;
         decision.gameObject.SetActive(false);
     }
@@ -59,8 +61,10 @@ public class NarrativeManager : MonoBehaviour
             dialogue.StartDialogue();
             characterTalking.sprite = dialogue.dialogueConfig.characterImg;
             nameChar.text = dialogue.dialogueConfig.nameChar;
+            background.sprite = dialogue.dialogueConfig.backgroundScene;
         }
 
+       
         
     }
 
