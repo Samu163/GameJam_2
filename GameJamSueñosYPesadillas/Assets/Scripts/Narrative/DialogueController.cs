@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class DialogueController: MonoBehaviour
 {
     public TextMeshProUGUI displayText;
+    public Animator transitionAnimator;
     public int index;
     public float textSpeed = 0.1f;
     public DialogueConfig dialogueConfig;
@@ -25,6 +26,10 @@ public class DialogueController: MonoBehaviour
         dialogueConfig = dialogue;
     }
 
+    public void AsignAnimator(Animator animator)
+    {
+        transitionAnimator = animator;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +42,22 @@ public class DialogueController: MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(displayText.text == dialogueConfig.lines[index])
+            
+
+            if (displayText.text == dialogueConfig.lines[index])
             {
-                NextLine();
+                
+                if (dialogueConfig.fadeInOut && index >= dialogueConfig.lines.Length - 1)
+                {
+                    FadeInOut();
+                    Invoke("NextLine", 3);
+                }
+                else
+                {
+                    transitionAnimator.Play("Idle");
+                    NextLine();
+                }
+                
             }
             else
             {
@@ -86,5 +104,10 @@ public class DialogueController: MonoBehaviour
         }
     }
 
-    
+    public void FadeInOut()
+    {
+        transitionAnimator.Play("FadeInOut");
+    }
+
+
 }

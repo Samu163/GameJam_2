@@ -13,6 +13,7 @@ public class DialogueConfig : ScriptableObject
     public Sprite characterImg;
     public Sprite backgroundScene;
     public DecisionConfig decision;
+    public bool fadeInOut;
     public bool changeScenario;
     public bool endsDay;
 
