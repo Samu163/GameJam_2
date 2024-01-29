@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Image playerImage;
+    public SpriteRenderer playerImage;
     public PlayerConfig config;
     public int life;
     public int attackPower;
     public int defense;
     public bool hasAttacked;
-    public Image playerSelected;
+    public SpriteRenderer playerSelected;
     public HabilityController habilityPrefabRef;
     public List<HabilityController> buttonHabilities;
     UnityAction<string, bool, bool> _applyHability;
@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         {
             var hability = Instantiate(habilityPrefabRef, transform);
             hability.transform.position = new Vector3(hability.transform.position.x + 100 + 100 * i, hability.transform.position.y, hability.transform.position.z);
-
             hability.Init(config.habilities[i], UseHability);
             buttonHabilities.Add(hability);
         }

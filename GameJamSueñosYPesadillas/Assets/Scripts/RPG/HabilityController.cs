@@ -8,16 +8,15 @@ using UnityEngine.UI;
 public class HabilityController : MonoBehaviour
 {
     public TextMeshProUGUI habilityName;
-    public Button button;
-    public Image image;
-    public Image selectedImage;
+    public SpriteRenderer image;
+    public SpriteRenderer selectedImage;
     public bool hasTargetEnemy;
     public bool hasTargetPlayer;
     UnityAction<string, bool,bool> _onHabilityClick;
 
     public void Init(HabilityConfig hability, UnityAction<string, bool,bool> onHabilityClick)
     {
-        habilityName.text = hability.name;
+        //habilityName.text = hability.name;
         image.sprite = hability.icon;
         hasTargetPlayer = hability.hasTarget;
         hasTargetEnemy = hability.hasTargetEnemy;

@@ -444,7 +444,7 @@ public class RpgManager : MonoBehaviour
 
     public int GetRandomIndex(int maxValue)
     {
-       return Random.Range(0, maxValue);
+        return Random.Range(0, maxValue);
 
     }
 
