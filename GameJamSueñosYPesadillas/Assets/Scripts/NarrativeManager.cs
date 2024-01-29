@@ -12,11 +12,13 @@ public class NarrativeManager : MonoBehaviour
     public Image characterTalking;
     public Text nameChar;
     public Image background;
+    public Animator transitionAnimator;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
     public List<int> decisions;
     public int indexText = 0;
     public int indexDecisions = 0;
+    
 
 
     //Notas: no pongais en la lista de dialogos los dialogos de la recompensa de decisiones
@@ -41,6 +43,7 @@ public class NarrativeManager : MonoBehaviour
 
     public void TriggerEvent()
     {
+        
         if (dialogue.dialogueConfig.hasDecision)
         {
             //Carga la decision y cuando la decision se ejecute carga el siguiente dialogo (pero eso en otra parte)
@@ -58,10 +61,19 @@ public class NarrativeManager : MonoBehaviour
         {
             indexText++;
             dialogue.AsignConfig(dialogueTexts[indexText]);
+            dialogue.transitionAnimator = transitionAnimator;
             dialogue.StartDialogue();
             characterTalking.sprite = dialogue.dialogueConfig.characterImg;
             nameChar.text = dialogue.dialogueConfig.nameChar;
             background.sprite = dialogue.dialogueConfig.backgroundScene;
+            //if (dialogue.dialogueConfig.fadeInOut)
+            //{
+            //    FadeInOut();
+            //}
+            //else
+            //{
+            //    transitionAnimator.Play("Idle");
+            //}
         }
 
        
