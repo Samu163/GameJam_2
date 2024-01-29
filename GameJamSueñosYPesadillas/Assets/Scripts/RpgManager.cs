@@ -267,14 +267,37 @@ public class RpgManager : MonoBehaviour
     {
         switch (habilityName)
         {
-            case "fuego":
+            case "Punch":
                 //Añadir animacion de ataque
-                playerAffected.life += 10;
-                Debug.Log(playerAffected.life);
+                Debug.Log("Puñetazo");
                 break;
-            case "hielo":
-                playerAffected.life -= 10;
-                Debug.Log(playerAffected.life);
+            case "Shot":
+                Debug.Log("Disparo");
+                break;
+            case "Help":
+                Debug.Log("Curación a Aliado");
+                break;
+            case "Shout":
+                Debug.Log("Baja defensas enemigos");
+                break;
+            case "Hide Emotions":
+                playerAffected.defense += 10;
+                Debug.Log(playerAffected.defense);
+                break;
+            case "Let's Go":
+                Debug.Log("Suma ataque a Aliado");
+                break;
+            case "Run":
+                playerAffected.attackPower += 20;
+                playerAffected.defense -= 10;
+                Debug.Log("Suma Ataque y baja defensa");
+                break;
+            case "Blow Bottle":
+                Debug.Log("Botellazo");
+                break;
+            case "Drink":
+                playerAffected.attackPower += 10;
+                Debug.Log(playerAffected.attackPower);
                 break;
             default:
                 break;

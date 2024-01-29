@@ -6,5 +6,7 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 {
     public int life;
+    public int attackPower;
+    public int defense;
     public List<HabilityConfig> habilities;
 }

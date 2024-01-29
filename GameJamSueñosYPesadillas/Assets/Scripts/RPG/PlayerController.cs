@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Image playerImage;
     public PlayerConfig config;
     public int life;
+    public int attackPower;
+    public int defense;
     public bool hasAttacked;
     public Image playerSelected;
     public HabilityController habilityPrefabRef;
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
         this.config = config;
         _applyHability = applyHability;
         life = config.life;
+        attackPower = config.attackPower;
+        defense = config.defense;
         ShowPlayerSelectedIcon(false);
 
     }
