@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: hielo
   m_EditorClassIdentifier: 
   name: hielo
-  icon: {fileID: 21300000, guid: 9ea72647c24be493ba6f15a9cd2a24ae, type: 3}
+  icon: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
   hasTarget: 0
+  hasTargetEnemy: 0
