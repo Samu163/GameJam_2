@@ -12,14 +12,15 @@ public class HabilityController : MonoBehaviour
     public Image image;
     public Image selectedImage;
     public bool hasTargetEnemy;
-    public bool hasTarget;
-    UnityAction<string> _onHabilityClick;
+    public bool hasTargetPlayer;
+    UnityAction<string, bool,bool> _onHabilityClick;
 
-    public void Init(HabilityConfig hability, UnityAction<string> onHabilityClick)
+    public void Init(HabilityConfig hability, UnityAction<string, bool,bool> onHabilityClick)
     {
         habilityName.text = hability.name;
         image.sprite = hability.icon;
-        hasTarget = hability.hasTarget;
+        hasTargetPlayer = hability.hasTarget;
+        hasTargetEnemy = hability.hasTargetEnemy;
         _onHabilityClick = onHabilityClick;
         ShowSelectedImage(false);
     }
@@ -31,7 +32,7 @@ public class HabilityController : MonoBehaviour
 
     public void OnButtonClick()
     {
-        _onHabilityClick.Invoke(habilityName.text);
+        _onHabilityClick.Invoke(habilityName.text, hasTargetEnemy, hasTargetPlayer);
     }
 
 

@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour
     public Image playerSelected;
     public HabilityController habilityPrefabRef;
     public List<HabilityController> buttonHabilities;
-    UnityAction<string, PlayerController> _applyHability;
+    UnityAction<string, bool, bool> _applyHability;
 
 
     public bool isFighting = false;
 
-    public void Init(PlayerConfig config, UnityAction<string, PlayerController> applyHability)
+    public void Init(PlayerConfig config, UnityAction<string, bool,bool> applyHability)
     {
         this.config = config;
         _applyHability = applyHability;
@@ -66,10 +66,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void UseHability(string habilityName)
+    public void UseHability(string habilityName, bool hasTargetEnemy, bool hasTragetPlayer)
     {
         ShowHabilities(false);
-        _applyHability.Invoke(habilityName, this);
+        _applyHability.Invoke(habilityName, hasTargetEnemy, hasTragetPlayer);
         
     }
 }

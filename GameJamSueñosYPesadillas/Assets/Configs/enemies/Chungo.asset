@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d7e58f26680fc4a88aeaec6a2cec4d, type: 3}
-  m_Name: NewEnemyConfig
+  m_Name: Chungo
   m_EditorClassIdentifier: 
-  life: 10
-  attack: 2
-  enemyIcon: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
+  life: 50
+  attack: 0
+  enemyIcon: {fileID: 21300000, guid: 554a30a45860f494ca38586c54b7e5d9, type: 3}
   habilities:
   - {fileID: 11400000, guid: c30ccab703e1a9d42819daf11d6396a4, type: 2}
   - {fileID: 11400000, guid: d0d5818687206134e915cd706b023029, type: 2}
