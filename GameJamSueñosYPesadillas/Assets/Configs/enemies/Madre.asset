@@ -15,6 +15,7 @@ MonoBehaviour:
   life: 80
   attack: 5
   defense: 20
+  idEnemy: 2
   enemyIcon: {fileID: 21300000, guid: a21ae8e5f9b1a0c4d93492140ef14870, type: 3}
   habilities:
   - {fileID: 11400000, guid: d9328705f5cb2e74bbc22344697edf82, type: 2}

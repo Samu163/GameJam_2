@@ -9,14 +9,17 @@ public class RpgManager : MonoBehaviour
     public UiController uiController;
     public BoardController board;
     public PlayerController playerPrefabRef;
-    public EnemyController enemyPrefabsRef;
     public List<EnemyController> enemies;
-    // public List<EnemyController> listOfEnemies;
-    public List<EnemyConfig> enemyConfigs;
+    public List<EnemyController> enemiesDay1;
+    public List<EnemyController> enemiesDay2;
+    public List<EnemyController> enemyPrefabs;
+    public List<ItemConfig> allItemConfigsDay1;
+    public List<ItemConfig> allItemConfigsDay2;
     public List<ItemConfig> allItemConfigs;
     public List<ItemController> inventory;
-    public List<HabilityConfig> allHabilities;
-    public List<PlayerController> alliesInCombat;
+    public List<PlayerController> alliesInCombatDay1;
+    public List<PlayerController> alliesInCombatDay2;
+    public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
     public ItemController itemPrefabRef;
@@ -50,9 +53,29 @@ public class RpgManager : MonoBehaviour
         NONE
     };
 
+    public void Awake()
+    {
+        if (GameManager.instance.day == 1)
+        {
+            alliesInCombatPrefabs = alliesInCombatDay1;
+            enemyPrefabs = enemiesDay1;
+            allItemConfigs = allItemConfigsDay1;
+        }
+        else if (GameManager.instance.day == 2)
+        {
+            alliesInCombatPrefabs = alliesInCombatDay2;
+            enemyPrefabs = enemiesDay2;
+            allItemConfigs = allItemConfigsDay2;
+        }
+        InitDecisionsFromNarrative();
+
+    }
+
+
+
     public void InitDecisionsFromNarrative()
     {
-
+        // if()
     }
 
 
@@ -62,31 +85,31 @@ public class RpgManager : MonoBehaviour
     {
         itemButton.gameObject.SetActive(true);
         uiController.Init();
+        //esto es para inciar el combate directamente, si hay un dialogo primero poner el dialogo
         currentStep = state.SELECT_CHARACTER;
         //Aqui es cuando pasamos de escena 
-        for (int i = 0; i < alliesInCombat.Count; i++)
+        for (int i = 0; i < alliesInCombatPrefabs.Count; i++)
         {
 
-            var ally = Instantiate(alliesInCombat[i], transform);
+            var ally = Instantiate(alliesInCombatPrefabs[i], transform);
             ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
             allies.Add(ally);
         }
-        for (int i = 0; i < enemyConfigs.Count; i++)
+        for (int i = 0; i < enemyPrefabs.Count; i++)
         {
-            var enemy = Instantiate(enemyPrefabsRef, transform);
+            var enemy = Instantiate(enemyPrefabs[i], transform);
             enemy.transform.position = new Vector3(enemy.transform.position.x + 100, enemy.transform.position.y - 100 * i, enemy.transform.position.z);
-            enemy.Init(enemyConfigs[i]);
-            enemy.ShowSelectedIcon(false);
+            enemy.Init();
             enemies.Add(enemy);
         }
 
         for (int i = 0; i < allItemConfigs.Count; i++)
         {
             var item = Instantiate(itemPrefabRef, uiController.itemsBg.transform);
-            item.transform.position = new Vector3(item.transform.position.x + 100*i +50, item.transform.position.y+50, item.transform.position.z);
+            item.transform.position = new Vector3(item.transform.position.x + 100 * i + 50, item.transform.position.y + 50, item.transform.position.z);
             item.Init(allItemConfigs[i]);
             inventory.Add(item);
         }
@@ -106,7 +129,7 @@ public class RpgManager : MonoBehaviour
             {
                 if (activePlayer <= 0)
                 {
-                    activePlayer = allies.Count-1;
+                    activePlayer = allies.Count - 1;
                 }
                 else
                 {
@@ -115,7 +138,7 @@ public class RpgManager : MonoBehaviour
             }
             else
             {
-                if (activePlayer >= allies.Count-1)
+                if (activePlayer >= allies.Count - 1)
                 {
                     activePlayer = 0;
                 }
@@ -268,103 +291,102 @@ public class RpgManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            allies[activePlayer].ShowPlayerSelectedIcon(true);
-            switch (currentStep)
-            {
-                //Selecciona el personaje 
-                case state.SELECT_CHARACTER:
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
-                        FindNextPlayer(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+        allies[activePlayer].ShowPlayerSelectedIcon(true);
+        switch (currentStep)
+        {
+            //Selecciona el personaje 
+            case state.SELECT_CHARACTER:
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
+                    FindNextPlayer(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
 
-                        FindNextPlayer(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        currentStep = state.SELECT_ACTION;
-                    }
-                    break; 
-                case state.SELECT_CHARACTER_FOR_CURE:
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
-                        FindNextPlayerForCure(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+                    FindNextPlayer(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    currentStep = state.SELECT_ACTION;
+                }
+                break;
+            case state.SELECT_CHARACTER_FOR_CURE:
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
+                    FindNextPlayerForCure(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
 
                     FindNextPlayerForCure(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        CheckHability(habilityName);
-                        allies[activePlayer].hasAttacked = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        activeHability = 0;
-                        currentStep = state.SELECT_HABILITY;
-                    }
-                break; 
-                case state.SELECT_CHARACTER_ITEM:
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
-                        FindNextPlayerForCure(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
-                    {
-                        allies[activePlayer].ShowPlayerSelectedIcon(false);
-
-                        FindNextPlayerForCure(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        activeItem = 0;
-
-                        CheckItem();
-                    }
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        activeItem = 0;
-                        currentStep = state.SELECT_ITEM;
-                    }
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    CheckHability(habilityName);
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    activeHability = 0;
+                    currentStep = state.SELECT_HABILITY;
+                }
                 break;
-                //Selecciona la accion
-                case state.SELECT_ACTION:
-                    actionButtons[activeAction].ShowSelectedIcon(true);
+            case state.SELECT_CHARACTER_ITEM:
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
+                    FindNextPlayerForCure(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    allies[activePlayer].ShowPlayerSelectedIcon(false);
 
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        actionButtons[activeAction].ShowSelectedIcon(false);
-                        FindNextAction(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
-                    {
-                        actionButtons[activeAction].ShowSelectedIcon(false);
-                        FindNextAction(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        actionButtons[activeAction].ShowSelectedIcon(false);
-                        activeHability = 0;
-                        actionButtons[activeAction].ActiveOnClick();
-                    }
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        activeHability = 0;
+                    FindNextPlayerForCure(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    activeItem = 0;
 
-                        actionButtons[activeAction].ShowSelectedIcon(false);
+                    CheckItem();
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    activeItem = 0;
+                    currentStep = state.SELECT_ITEM;
+                }
+                break;
+            //Selecciona la accion
+            case state.SELECT_ACTION:
+                actionButtons[activeAction].ShowSelectedIcon(true);
 
-                        currentStep = state.SELECT_CHARACTER;
-                    }
-                    break;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    actionButtons[activeAction].ShowSelectedIcon(false);
+                    FindNextAction(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    actionButtons[activeAction].ShowSelectedIcon(false);
+                    FindNextAction(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    actionButtons[activeAction].ShowSelectedIcon(false);
+                    activeHability = 0;
+                    actionButtons[activeAction].ActiveOnClick();
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    activeHability = 0;
+
+                    actionButtons[activeAction].ShowSelectedIcon(false);
+
+                    currentStep = state.SELECT_CHARACTER;
+                }
+                break;
             case state.SELECT_ITEM:
                 inventory[activeItem].ShowSelectedItem(true);
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -393,131 +415,153 @@ public class RpgManager : MonoBehaviour
                 }
                 break;
             case state.SELECT_HABILITY:
-                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(true);
-                    if (Input.GetKeyDown(KeyCode.LeftArrow))
-                    {
-                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
-                        FindNextHability(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.RightArrow))
-                    {
-                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
-                        FindNextHability(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
+                allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(true);
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                    FindNextHability(true);
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                    FindNextHability(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
 
-                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
-                        allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
-                        //Esto es provisional, en principio tendria que seleccionar al enemigo o al jugador 
-                       
-                    }
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
-                        allies[activePlayer].ShowHabilities(false);
-                        activeHability = 0;
+                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                    allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
+                    //Esto es provisional, en principio tendria que seleccionar al enemigo o al jugador 
 
-                        currentStep = state.SELECT_ACTION;
-                    }
-                    break;
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                    allies[activePlayer].ShowHabilities(false);
+                    activeHability = 0;
 
-                case state.SELECT_ENEMY:
-                    enemies[activeEnemy].ShowSelectedIcon(true);
+                    currentStep = state.SELECT_ACTION;
+                }
+                break;
 
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        enemies[activeEnemy].ShowSelectedIcon(false);
-                        FindNextEnemy(true);
-                    }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
-                    {
-                        enemies[activeEnemy].ShowSelectedIcon(false);
+            case state.SELECT_ENEMY:
+                enemies[activeEnemy].ShowSelectedIcon(true);
 
-                        FindNextEnemy(false);
-                    }
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        enemies[activeEnemy].ShowSelectedIcon(false);
-                        
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    enemies[activeEnemy].ShowSelectedIcon(false);
+                    FindNextEnemy(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    enemies[activeEnemy].ShowSelectedIcon(false);
 
-                        CheckHability(habilityName);
-                    }
+                    FindNextEnemy(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    enemies[activeEnemy].ShowSelectedIcon(false);
 
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        activeHability = 0;
-                        currentStep = state.SELECT_HABILITY;
-                    }
+
+                    CheckHability(habilityName);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    activeHability = 0;
+                    currentStep = state.SELECT_HABILITY;
+                }
 
                 break;
-                default:
-                    break;
-            }
-       
+            default:
+                break;
+        }
+
         //Selecciona el objetivo 
     }
-    public void AdjustItemsPositions() 
+    public void AdjustItemsPositions()
     {
         for (int i = 0; i < inventory.Count; i++)
         {
             var newPositions = uiController.itemsBg.transform;
-            inventory[i].transform.position = new Vector3(newPositions.position.x + 100 * i -160, newPositions.position.y, newPositions.position.z);
+            inventory[i].transform.position = new Vector3(newPositions.position.x + 100 * i - 160, newPositions.position.y, newPositions.position.z);
 
         }
 
     }
-
-
 
 
 
     public void CheckItem()
     {
-        switch (inventory[activeItem].idObject)
+        switch (inventory[activeItem].nameObject.text)
         {
-            case 1:
-                Debug.Log("este es el primer item");
-                allies[activePlayer].life += 10;
+            case "Potion":
+                Debug.Log("Heal Potion");
+                allies[activePlayer].life += 15;
+                break;
+            case "Molotov":
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].life -= 10;
+                }
+                break;
+            case "Colgante":
+                Debug.Log("Sube el ataque de todos y baja el ataque de los enemigos");
+                for(int i = 0; i < allies.Count; i++)
+                {
+                    allies[i].attackPower += 5;
+                }
+                for(int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].attack -= 5;
+                }
+                break;
+            case "Card":
+                // Cuando se use, el Desconocido se cambia al bando enemigo
+
+                if (enemies[activeEnemy].idEnemy == 2)
+                {
+                    enemies[activeEnemy].life -= 40;
+                    Debug.Log("Ataque a Madre");
+                }
+                else
+                {
+                    enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
+                    Debug.Log("Ataque normal");
+                }
                 break;
             default:
                 break;
         }
-        if (enemies[activeEnemy].life <= 0)
+        CheckState();
+        if (CheckBattleResults())
         {
-            //destruir enemigo 
-            RemoveEnemy(activeEnemy);
-        }
-        if (allies[activePlayer].life <= 0)
-        {
-            //destruir enemigo 
-            RemoveAlly(activePlayer);
+            allies[activePlayer].hasAttacked = true;
+            RemoveItem(activeItem);
+            activeItem = 0;
+            AdjustItemsPositions();
+            uiController.ShowItemsBg(false);
+
+            if (inventory.Count <= 0)
+            {
+                itemButton.gameObject.SetActive(false);
+            }
+
+            if (CheckAllPlayersHadAttacked())
+            {
+                allies[activePlayer].ShowPlayerSelectedIcon(false);
+                EnemyTurn();
+            }
+            else
+            {
+                allies[activePlayer].ShowPlayerSelectedIcon(false);
+                FindNextPlayer(true);
+                currentStep = state.SELECT_CHARACTER;
+
+            }
         }
 
-        allies[activePlayer].hasAttacked = true;
-        RemoveItem(activeItem);
-        activeItem = 0;
-        AdjustItemsPositions();
-
-        uiController.ShowItemsBg(false);
-
-        if (inventory.Count <= 0)
-        {
-            itemButton.gameObject.SetActive(false);
-        }
-
-        if (CheckAllPlayersHadAttacked())
-        {
-            allies[activePlayer].ShowPlayerSelectedIcon(false);
-            EnemyTurn();
-        }
-        else
-        {
-            allies[activePlayer].ShowPlayerSelectedIcon(false);
-            FindNextPlayer(true);
-            currentStep = state.SELECT_CHARACTER;
-
-        }
 
     }
 
@@ -536,7 +580,7 @@ public class RpgManager : MonoBehaviour
             CheckItem();
         }
     }
-   
+
 
     public bool CheckAllPlayersHadAttacked()
     {
@@ -554,7 +598,7 @@ public class RpgManager : MonoBehaviour
     {
         for (int i = 0; i < allies.Count; i++)
         {
-            if(allies[i].life <= 0)
+            if (allies[i].life <= 0)
             {
                 RemoveAlly(i);
             }
@@ -575,7 +619,7 @@ public class RpgManager : MonoBehaviour
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
     }
-    
+
     public void RemoveAlly(int index)
     {
         var ally = allies[index];
@@ -595,30 +639,31 @@ public class RpgManager : MonoBehaviour
 
     }
 
-    public void CheckBattleResults()
+    public bool CheckBattleResults()
     {
         if (enemies.Count <= 0)
         {
             //Derrota enemigos 
             SceneManager.LoadScene("Narrative");
-            return;
+            return false;
         }
 
         if (allies.Count <= 0)
         {
             //Derrota aliados 
-            return;
+            SceneManager.LoadScene("Narrative");
+            return false;
         }
-        
-        
+        return true;
+
     }
 
     public void EnemyTurn()
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            var j = enemies[i].data.habilities.Count;
-            CheckEnemyHabilityResult(enemies[i].data.habilities[GetRandomIndex(j)].habilityName);
+            var j = enemies[i].config.habilities.Count;
+            CheckEnemyHabilityResult(enemies[i].config.habilities[GetRandomIndex(j)].habilityName);
         }
         SetPlayerTurn();
     }
@@ -658,14 +703,14 @@ public class RpgManager : MonoBehaviour
                 //Añadir animacion de ataque
                 Debug.Log("vaya reventada, tenia " + allies[j].life);
                 allies[j].life -= enemies[activeEnemy].attack * 2 - allies[j].defense;
-                Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" +allies[j].life);
+                Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" + allies[j].life);
                 break;
             case "Intimidar":
                 allies[j].attackPower -= 5;
                 Debug.Log(allies[j].attackPower);
                 break;
             case "Criticas de Madre":
-                for(int i = 0; i < allies.Count; i++)
+                for (int i = 0; i < allies.Count; i++)
                 {
                     allies[i].life -= 5;
                     Debug.Log(allies[i].life);
@@ -722,7 +767,7 @@ public class RpgManager : MonoBehaviour
                 Debug.Log(enemies[activeEnemy].life);
                 break;
             case "Shot":
-                for(int i = 0; i < enemies.Count; i++)
+                for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
                     Debug.Log(enemies[i].life);
@@ -776,18 +821,21 @@ public class RpgManager : MonoBehaviour
         //Checkear si se tiene que destruir algo 
         allies[activePlayer].hasAttacked = true;
         CheckState();
-        CheckBattleResults();
-        if (CheckAllPlayersHadAttacked())
-        {
-            allies[activePlayer].ShowPlayerSelectedIcon(false);
-            EnemyTurn();
-        }
-        else
-        {
-            allies[activePlayer].ShowPlayerSelectedIcon(false);
-            FindNextPlayer(true);
-            currentStep = state.SELECT_CHARACTER;
 
+        if (CheckBattleResults())
+        {
+            if (CheckAllPlayersHadAttacked())
+            {
+                allies[activePlayer].ShowPlayerSelectedIcon(false);
+                EnemyTurn();
+            }
+            else
+            {
+                allies[activePlayer].ShowPlayerSelectedIcon(false);
+                FindNextPlayer(true);
+                currentStep = state.SELECT_CHARACTER;
+
+            }
         }
     }
 
@@ -805,3 +853,4 @@ public class RpgManager : MonoBehaviour
         //allies[indexOfAlly].DestroyHabilities();
     }
 }
+

@@ -1240,21 +1240,36 @@ MonoBehaviour:
   uiController: {fileID: 1700562917}
   board: {fileID: 0}
   playerPrefabRef: {fileID: 6610108679820664164, guid: 376f17889ccb84e46a7024b11d455e57, type: 3}
-  enemyPrefabsRef: {fileID: 2463570785643450850, guid: ccf0fa641e86cd44baa834fc74d794ed, type: 3}
   enemies: []
-  enemyConfigs:
-  - {fileID: 11400000, guid: 1e1c674c5eec2064da0f4206d17304c2, type: 2}
-  - {fileID: 11400000, guid: fa4aa47a2b9cc3b40a230a66b861f0a8, type: 2}
+  enemiesDay1:
+  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  enemiesDay2:
+  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  enemyPrefabs: []
+  allItemConfigsDay1:
+  - {fileID: 11400000, guid: 3b8a577a04de4144389ab515931eeff3, type: 2}
+  - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
+  - {fileID: 11400000, guid: e9401fda8b30f1e47a11caf28ba58ab1, type: 2}
+  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
+  allItemConfigsDay2:
+  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
+  - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
+  - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
   allItemConfigs:
   - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
-  - {fileID: 11400000, guid: b37af41831eaf2942907043670d9af8d, type: 2}
+  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
   - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
   - {fileID: 11400000, guid: 3b8a577a04de4144389ab515931eeff3, type: 2}
   inventory: []
-  allHabilities: []
-  alliesInCombat:
+  alliesInCombatDay1:
+  - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
   - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}
-  - {fileID: 6160336759382403918, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
+  alliesInCombatDay2:
+  - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
+  - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}
+  - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
+  alliesInCombatPrefabs: []
   allies: []
   actionButtons:
   - {fileID: 2031149043}
