@@ -28,3 +28,7 @@ MonoBehaviour:
   isOnlyRight: 0
   isPunch: 1
   isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  isDay2: 0
