@@ -1401,15 +1401,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
   - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
   - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
-  allItemConfigs:
-  - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
-  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
-  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
-  - {fileID: 11400000, guid: 3b8a577a04de4144389ab515931eeff3, type: 2}
+  allItemConfigs: []
   inventory: []
   alliesInCombatDay1:
   - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
   - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}
+  - {fileID: 8178804060848627942, guid: 5b146cdb47202e74889d2b8e0b49db5f, type: 3}
   alliesInCombatDay2:
   - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
   - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}

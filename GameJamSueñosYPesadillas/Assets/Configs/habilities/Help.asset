@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Help
   m_EditorClassIdentifier: 
   name: Help
-  icon: {fileID: 21300000, guid: 59bc7a7ca0683ac439e255a533670885, type: 3}
+  icon: {fileID: 21300000, guid: e469b1afcc1a02e4598f3b3f887dca69, type: 3}
   hasTarget: 1
   hasTargetEnemy: 0

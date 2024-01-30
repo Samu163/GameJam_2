@@ -40,6 +40,8 @@ public class RpgManager : MonoBehaviour
     public int turns;
     public string habilityName;
 
+    bool hasChangeSide;
+
     public GameObject itemButton;
     public GameObject fleeButton;
 
@@ -532,6 +534,19 @@ public class RpgManager : MonoBehaviour
             case "Card":
                 // Cuando se use, el Desconocido se cambia al bando enemigo
 
+                if (turns < 4 && !hasChangeSide)
+                {
+                    var player = allies.Find(p => p.config.name == "unknown");
+                    if (player != null)
+                    {
+                        allies.Remove(player);
+                        var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                        enemies.Add(sombreritoMalo);
+                    }
+                    hasChangeSide = true;
+                }
+
                 if (enemies[activeEnemy].idEnemy == 2)
                 {
                     enemies[activeEnemy].life -= 40;
@@ -656,6 +671,8 @@ public class RpgManager : MonoBehaviour
         if (enemies.Count <= 0)
         {
             //Derrota enemigos 
+            
+            GameManager.instance.SaveRPGResult(1);
             SceneManager.LoadScene("Narrative");
             return false;
         }
@@ -663,6 +680,7 @@ public class RpgManager : MonoBehaviour
         if (allies.Count <= 0)
         {
             //Derrota aliados 
+            GameManager.instance.SaveRPGResult(0);
             SceneManager.LoadScene("Narrative");
             return false;
         }
@@ -678,7 +696,7 @@ public class RpgManager : MonoBehaviour
             CheckEnemyHabilityResult(enemies[i].config.habilities[GetRandomIndex(j)].habilityName);
         }
         //El desconocido se tiene que llamar unknown
-        if (GameManager.instance.day == 2)
+        if (GameManager.instance.day == 2 && !hasChangeSide)
         {
             if(GameManager.instance.decisions[3] == 0 && turns ==0)
             {
@@ -690,6 +708,7 @@ public class RpgManager : MonoBehaviour
                     sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
                     enemies.Add(sombreritoMalo);
                 }
+                hasChangeSide = true;
             }
             else if(turns == 4 && GameManager.instance.decisions[3] == 1)
             {
@@ -701,8 +720,10 @@ public class RpgManager : MonoBehaviour
                     sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
                     enemies.Add(sombreritoMalo);
                 }
+                hasChangeSide = true;
+
             }
-           
+
         }
        
         SetPlayerTurn();

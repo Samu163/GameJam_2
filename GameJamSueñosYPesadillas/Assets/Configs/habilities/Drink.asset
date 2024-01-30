@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Drink
   m_EditorClassIdentifier: 
   name: Drink
-  icon: {fileID: 21300000, guid: 59bc7a7ca0683ac439e255a533670885, type: 3}
+  icon: {fileID: 21300000, guid: 69c48c9992718684b978bd82615aba67, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
