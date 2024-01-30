@@ -12,15 +12,15 @@ public class DialogueController: MonoBehaviour
     public Animator transitionAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
-    public Animator sceneAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
-    public bool isInFlashback;
     public int index;
     public bool canClick;
     public float textSpeed = 0.1f;
     public DialogueConfig dialogueConfig;
     UnityAction _onDialogueEnd;
+
+    private bool hasAnimated = false;
 
     public void Init(UnityAction onDialogueEnd)
     {
@@ -43,17 +43,13 @@ public class DialogueController: MonoBehaviour
     {
         displayText.text = string.Empty;
         canClick = true;
-        isInFlashback = false;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-       
-
-        if (dialogueConfig.isOnlyRight)
+        if(dialogueConfig.isOnlyRight)
         {
             characterAnimator2.gameObject.SetActive(false);
         }
@@ -62,13 +58,20 @@ public class DialogueController: MonoBehaviour
             characterAnimator2.gameObject.SetActive(true);
         }
 
-        if(dialogueConfig.isLeft)
+        if (!hasAnimated)
         {
-            characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
-        }
-        else
-        {
-            characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+            hasAnimated = true;
+
+            if (dialogueConfig.isLeft)
+            {
+               
+                    characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
+                
+            }
+            else
+            {
+                 characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+            }
         }
         
         if (Input.GetMouseButtonDown(0) && canClick)
@@ -82,21 +85,7 @@ public class DialogueController: MonoBehaviour
                 if (dialogueConfig.fadeInOut && index >= dialogueConfig.lines.Length - 1)
                 {
                     panelTransition.SetActive(true);
-                    sceneAnimator.gameObject.SetActive(true);
-
-                    if (dialogueConfig.isFlashback)
-                    {
-                        //panelTransition.SetActive(false);
-                        FadeIn();
-                        Flashback();
-                        
-                    }
-                    else
-                    {
-                        sceneAnimator.gameObject.SetActive(false);
-                        FadeInOut();
-                        
-                    }
+                    FadeInOut();
                     canClick = false;
                     soundEffectPlayer.clip = dialogueConfig.soundEffect;
                     soundEffectPlayer.Play();
@@ -106,10 +95,10 @@ public class DialogueController: MonoBehaviour
                 }
                 else
                 {
-                    transitionAnimator.Play("Idle");
-                    sceneAnimator.Play("Idle");
+                
+                        transitionAnimator.Play("Idle"); 
+                    
                     panelTransition.SetActive(false);
-                    sceneAnimator.gameObject.SetActive(false);
                     NextLine();
                 }
                 
@@ -141,12 +130,13 @@ public class DialogueController: MonoBehaviour
 
     public void NextLine()
     {
-        if(index < dialogueConfig.lines.Length-1)
+        hasAnimated = false;
+        if (index < dialogueConfig.lines.Length-1)
         {
             index++;
             displayText.text = string.Empty;
             StartCoroutine(WriteLine());
-
+            
         
 
         }
@@ -164,48 +154,10 @@ public class DialogueController: MonoBehaviour
         
     }
 
-    public void FadeIn()
-    {
-        transitionAnimator.Play("FadeIn");
-
-    }
-
-    public void FadeOut()
-    {
-        transitionAnimator.Play("FadeOut");
-
-    }
-
-    public void Flashback()
-    {
-        sceneAnimator.Play("FlashbackAnim");
-
-    }
-
-    public void Punch()
-    {
-        sceneAnimator.Play("PunchAnim");
-
-    }
-
     public void SetCanClick()
     {
         canClick = true;
         panelTransition.SetActive(false);
-        sceneAnimator.gameObject.SetActive(false);
     }
 
-    public void DeactivateFlashback()
-    {
-        FadeInOut();
-        isInFlashback = false;
-        sceneAnimator.gameObject.SetActive(false);
-    }
-
-    public void DeactivatePunch()
-    {
-        sceneAnimator.gameObject.SetActive(false);
-        dialogueConfig.isPunch = false;
-        FadeInOut();
-    }
 }
