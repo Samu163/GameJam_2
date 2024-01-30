@@ -46,7 +46,7 @@ public class titleButton : MonoBehaviour
     {
         if(languageIndex == 0) { 
             languageIndex++;
-            myLanguage.text = "Spanish";
+            myLanguage.text = "Español";
           
         
         

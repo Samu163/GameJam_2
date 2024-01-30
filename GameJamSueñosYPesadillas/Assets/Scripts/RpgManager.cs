@@ -115,12 +115,16 @@ public class RpgManager : MonoBehaviour
             enemy.Init();
             enemies.Add(enemy);
         }
-        if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
+        if (GameManager.instance.day == 2)
         {
-            enemies[0].life *= 2;
-            enemies[0].attack *= 2;
-            enemies[0].defense *= 2;
+            if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
+            {
+                enemies[0].life *= 2;
+                enemies[0].attack *= 2;
+                enemies[0].defense *= 2;
+            }
         }
+            
 
         for (int i = 0; i < allItemConfigs.Count; i++)
         {
