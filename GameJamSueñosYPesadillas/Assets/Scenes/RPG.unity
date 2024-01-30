@@ -1408,6 +1408,7 @@ MonoBehaviour:
   uiController: {fileID: 1700562917}
   board: {fileID: 0}
   playerPrefabRef: {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
+  sombreritoPrefabRef: {fileID: 6275091184610342106}
   enemies: []
   enemiesDay1:
   - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
@@ -1435,8 +1436,7 @@ MonoBehaviour:
   - {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
   alliesInCombatDay2:
   - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
-  - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}
-  - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
+  - {fileID: 3355858164453167607}
   alliesInCombatPrefabs: []
   allies: []
   actionButtons:
@@ -1456,6 +1456,7 @@ MonoBehaviour:
   selectCharacter: 0
   selectAction: 0
   maxItemsInARow: 4
+  turns: 0
   habilityName: 
   itemButton: {fileID: 1973255396}
   fleeButton: {fileID: 1273814219}
@@ -2218,6 +2219,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33fd7c4d63504a74e96e0a3cdb546a8b, type: 3}
+--- !u!114 &3355858164453167607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2610448974110097746, guid: 33fd7c4d63504a74e96e0a3cdb546a8b, type: 3}
+  m_PrefabInstance: {fileID: 3355858164453167606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710b8be694fc046459ac17e62bd75c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5133474499136009041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2397,6 +2409,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+--- !u!114 &6275091184610342106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  m_PrefabInstance: {fileID: 6275091184610342105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606630233a0a984993a9e3c0d67b55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6845961506782967188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5995404586448289285, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}

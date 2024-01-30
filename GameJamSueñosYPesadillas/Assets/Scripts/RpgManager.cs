@@ -83,10 +83,11 @@ public class RpgManager : MonoBehaviour
                 enemyPrefabs[0].config.attack *= 2;
                 enemyPrefabs[0].config.defense *= 2;
             }
+
             //no te da la tarjeta (ultimo item)
             if (GameManager.instance.decisions[4] == 0)
             {
-                allItemConfigs.RemoveAt(allItemConfigs.Count - 1);
+                Destroy(actionButtons[2].gameObject);
             }
 
         }
@@ -646,7 +647,6 @@ public class RpgManager : MonoBehaviour
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
     }
-
     public void RemoveAlly(int index)
     {
         var ally = allies[index];
