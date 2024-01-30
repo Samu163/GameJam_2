@@ -20,6 +20,8 @@ public class DialogueController: MonoBehaviour
     public DialogueConfig dialogueConfig;
     UnityAction _onDialogueEnd;
 
+    private bool hasAnimated = false;
+
     public void Init(UnityAction onDialogueEnd)
     {
         _onDialogueEnd = onDialogueEnd;
@@ -56,13 +58,20 @@ public class DialogueController: MonoBehaviour
             characterAnimator2.gameObject.SetActive(true);
         }
 
-        if(dialogueConfig.isLeft)
+        if (!hasAnimated)
         {
-            characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
-        }
-        else
-        {
-            characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+            hasAnimated = true;
+
+            if (dialogueConfig.isLeft)
+            {
+               
+                    characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
+                
+            }
+            else
+            {
+                 characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+            }
         }
         
         if (Input.GetMouseButtonDown(0) && canClick)
@@ -86,7 +95,9 @@ public class DialogueController: MonoBehaviour
                 }
                 else
                 {
-                    transitionAnimator.Play("Idle");
+                
+                        transitionAnimator.Play("Idle"); 
+                    
                     panelTransition.SetActive(false);
                     NextLine();
                 }
@@ -119,12 +130,13 @@ public class DialogueController: MonoBehaviour
 
     public void NextLine()
     {
-        if(index < dialogueConfig.lines.Length-1)
+        hasAnimated = false;
+        if (index < dialogueConfig.lines.Length-1)
         {
             index++;
             displayText.text = string.Empty;
             StartCoroutine(WriteLine());
-
+            
         
 
         }
