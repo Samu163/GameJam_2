@@ -25,6 +25,10 @@ public class DialogueConfig : ScriptableObject
     public bool startFlashback;
     public bool endFlashback;
     public bool endDecision;
+    public bool policeSound;
     public bool isDay2;
+    public bool isColgante;
+    public bool isGun;
+    public bool isIdCard;
 
 }

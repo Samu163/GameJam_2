@@ -17,6 +17,7 @@ public class NarrativeManager : MonoBehaviour
     public Animator sceneAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
+    public Animator itemAnimator;
     public AudioSource musicPlayer;
     public AudioClip ambientSound;
     public AudioClip ambientSound2;
@@ -49,6 +50,7 @@ public class NarrativeManager : MonoBehaviour
         dialogue.characterAnimator = characterAnimator;
         dialogue.characterAnimator2 = characterAnimator2;
         dialogue.sceneAnimator = sceneAnimator;
+        dialogue.itemAnimator = itemAnimator;
         characterAnimator2.SetInteger("IdAnim", 13);
         characterAnimator.SetInteger("IdAnim", 0);
         background.sprite = dialogue.dialogueConfig.backgroundScene;

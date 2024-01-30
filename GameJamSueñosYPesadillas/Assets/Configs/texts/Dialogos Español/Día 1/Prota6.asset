@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - "Mat\xE9 a 2 personas, Mateo!! \xA1\xA1A dos!!"
+  - "Eusebio y Enrique, jam\xE1s olvidar\xE9 sus nombres..."
   - No me agradezcas nada, no hice nada heroico ni nada por el estilo.
   - "Llevo toda la vida tortur\xE1ndome por lo que hice, todav\xEDa tengo pesadillas
     con lo que pas\xF3 ese d\xEDa."
@@ -29,3 +30,9 @@ MonoBehaviour:
   idAnim: 2
   isLeft: 0
   isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  isDay2: 0
