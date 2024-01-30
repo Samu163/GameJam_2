@@ -42,6 +42,7 @@ public class NarrativeManager : MonoBehaviour
         dialogue.transitionAnimator = transitionAnimator;
         dialogue.characterAnimator = characterAnimator;
         dialogue.characterAnimator2 = characterAnimator2;
+        dialogue.sceneAnimator = sceneAnimator;
         characterAnimator2.SetInteger("IdAnim", 13);
         characterAnimator.SetInteger("IdAnim", 0);
         background.sprite = dialogue.dialogueConfig.backgroundScene;

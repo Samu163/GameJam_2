@@ -692,10 +692,9 @@ MonoBehaviour:
   transitionAnimator: {fileID: 1137131283}
   characterAnimator: {fileID: 0}
   characterAnimator2: {fileID: 0}
-  sceneAnimator: {fileID: 1185255479}
+  sceneAnimator: {fileID: 0}
   panelTransition: {fileID: 1137131281}
   soundEffectPlayer: {fileID: 976050781}
-  isInFlashback: 0
   index: 0
   canClick: 0
   textSpeed: 0.1
