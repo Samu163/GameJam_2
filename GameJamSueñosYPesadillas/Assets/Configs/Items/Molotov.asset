@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cec14dc5f51ef2d4b8ffad7e2e2127b5, type: 3}
-  m_Name: ItemExample3
+  m_Name: Molotov
   m_EditorClassIdentifier: 
-  imageObject: {fileID: 21300000, guid: f3a895c5958da9a48bdd2691e6822e7e, type: 3}
-  nameObject: Item3
-  idObject: 3
+  imageObject: {fileID: 21300000, guid: a20f7223e2252fc4d813fc92d0f3a614, type: 3}
+  nameObject: Molotov
+  idObject: 4
+  targetAllies: 0
+  targetEnemies: 0

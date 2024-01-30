@@ -474,11 +474,42 @@ public class RpgManager : MonoBehaviour
 
     public void CheckItem()
     {
-        switch (inventory[activeItem].idObject)
+        switch (inventory[activeItem].nameObject.text)
         {
-            case 1:
-                Debug.Log("este es el primer item");
-                allies[activePlayer].life += 10;
+            case "Potion":
+                Debug.Log("Heal Potion");
+                allies[activePlayer].life += 15;
+                break;
+            case "Molotov":
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].life -= 10;
+                }
+                break;
+            case "Colgante":
+                Debug.Log("Sube el ataque de todos y baja el ataque de los enemigos");
+                for(int i = 0; i < allies.Count; i++)
+                {
+                    allies[i].attackPower += 5;
+                }
+                for(int i = 0; i < enemies.Count; i++)
+                {
+                    enemies[i].attack -= 5;
+                }
+                break;
+            case "Card":
+                // Cuando se use, el Desconocido se cambia al bando enemigo
+
+                if (enemies[activeEnemy].idEnemy == 2)
+                {
+                    enemies[activeEnemy].life -= 40;
+                    Debug.Log("Ataque a Madre");
+                }
+                else
+                {
+                    enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
+                    Debug.Log("Ataque normal");
+                }
                 break;
             default:
                 break;
@@ -667,7 +698,7 @@ public class RpgManager : MonoBehaviour
             case "Criticas de Madre":
                 for(int i = 0; i < allies.Count; i++)
                 {
-                    allies[i].life -= 5;
+                    allies[i].life -= enemies[activeEnemy].attack;
                     Debug.Log(allies[i].life);
                 }
                 break;
@@ -724,7 +755,7 @@ public class RpgManager : MonoBehaviour
             case "Shot":
                 for(int i = 0; i < enemies.Count; i++)
                 {
-                    enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
+                    enemies[i].life -= ((allies[activePlayer].attackPower - 5) * 2) - enemies[activeEnemy].defense;
                     Debug.Log(enemies[i].life);
                 }
                 Debug.Log("Disparo");

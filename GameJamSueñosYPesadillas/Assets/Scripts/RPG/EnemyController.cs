@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public int life;
     public int attack;
     public int defense;
+    public int idEnemy;
     public SpriteRenderer selectedIcon;
     public void Init(EnemyConfig config)
     {
@@ -18,6 +19,7 @@ public class EnemyController : MonoBehaviour
         life = config.life;
         attack = config.attack;
         defense = config.defense;
+        idEnemy = config.idEnemy;
         enemyIcon.sprite = config.enemyIcon;
     }
 
