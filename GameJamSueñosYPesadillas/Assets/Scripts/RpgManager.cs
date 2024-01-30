@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RpgManager : MonoBehaviour
@@ -560,7 +561,7 @@ public class RpgManager : MonoBehaviour
         }
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i])
+            if (enemies[i] <= 0)
             {
                 RemoveEnemy(i);
             }
@@ -599,6 +600,7 @@ public class RpgManager : MonoBehaviour
         if (enemies.Count <= 0)
         {
             //Derrota enemigos 
+            SceneManager.LoadScene("Narrative");
             return;
         }
 
