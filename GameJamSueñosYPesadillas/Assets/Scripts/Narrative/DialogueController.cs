@@ -10,6 +10,8 @@ public class DialogueController: MonoBehaviour
 {
     public TextMeshProUGUI displayText;
     public Animator transitionAnimator;
+    public Animator characterAnimator;
+    public Animator characterAnimator2;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
     public int index;
@@ -39,13 +41,33 @@ public class DialogueController: MonoBehaviour
     {
         displayText.text = string.Empty;
         canClick = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(dialogueConfig.isOnlyRight)
+        {
+            characterAnimator2.gameObject.SetActive(false);
+        }
+        else
+        {
+            characterAnimator2.gameObject.SetActive(true);
+        }
+
+        if(dialogueConfig.isLeft)
+        {
+            characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
+        }
+        else
+        {
+            characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+        }
+        
         if (Input.GetMouseButtonDown(0) && canClick)
         {
+            
             
 
             if (displayText.text == dialogueConfig.lines[index])

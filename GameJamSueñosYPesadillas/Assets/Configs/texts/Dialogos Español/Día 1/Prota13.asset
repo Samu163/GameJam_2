@@ -20,6 +20,11 @@ MonoBehaviour:
   nameChar: Carlos
   characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 0
   changeScenario: 0
   endsDay: 0
+  idAnim: 3
+  isLeft: 0
+  isOnlyRight: 0
