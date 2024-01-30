@@ -66,14 +66,7 @@ public class NarrativeManager : MonoBehaviour
             characterTalking.sprite = dialogue.dialogueConfig.characterImg;
             nameChar.text = dialogue.dialogueConfig.nameChar;
             background.sprite = dialogue.dialogueConfig.backgroundScene;
-            //if (dialogue.dialogueConfig.fadeInOut)
-            //{
-            //    FadeInOut();
-            //}
-            //else
-            //{
-            //    transitionAnimator.Play("Idle");
-            //}
+            
         }
 
        

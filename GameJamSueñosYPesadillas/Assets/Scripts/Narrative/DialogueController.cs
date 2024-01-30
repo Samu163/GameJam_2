@@ -10,7 +10,10 @@ public class DialogueController: MonoBehaviour
 {
     public TextMeshProUGUI displayText;
     public Animator transitionAnimator;
+    public GameObject panelTransition;
+    public AudioSource soundEffectPlayer;
     public int index;
+    public bool canClick;
     public float textSpeed = 0.1f;
     public DialogueConfig dialogueConfig;
     UnityAction _onDialogueEnd;
@@ -35,12 +38,13 @@ public class DialogueController: MonoBehaviour
     void Start()
     {
         displayText.text = string.Empty;
+        canClick = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClick)
         {
             
 
@@ -49,12 +53,19 @@ public class DialogueController: MonoBehaviour
                 
                 if (dialogueConfig.fadeInOut && index >= dialogueConfig.lines.Length - 1)
                 {
+                    panelTransition.SetActive(true);
                     FadeInOut();
+                    canClick = false;
+                    soundEffectPlayer.clip = dialogueConfig.soundEffect;
+                    soundEffectPlayer.Play();
                     Invoke("NextLine", 3);
+                    Invoke("SetCanClick", 4);
+                    
                 }
                 else
                 {
                     transitionAnimator.Play("Idle");
+                    panelTransition.SetActive(false);
                     NextLine();
                 }
                 
@@ -92,8 +103,7 @@ public class DialogueController: MonoBehaviour
             displayText.text = string.Empty;
             StartCoroutine(WriteLine());
 
-            
-           
+        
 
         }
         else
@@ -107,7 +117,13 @@ public class DialogueController: MonoBehaviour
     public void FadeInOut()
     {
         transitionAnimator.Play("FadeInOut");
+        
     }
 
+    public void SetCanClick()
+    {
+        canClick = true;
+        panelTransition.SetActive(false);
+    }
 
 }
