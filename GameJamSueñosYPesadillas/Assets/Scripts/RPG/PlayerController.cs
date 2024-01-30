@@ -21,9 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isFighting = false;
 
-    public void Init(PlayerConfig config, UnityAction<string, bool,bool> applyHability)
+    public void Init(UnityAction<string, bool,bool> applyHability)
     {
-        this.config = config;
         _applyHability = applyHability;
         life = config.life;
         attackPower = config.attackPower;

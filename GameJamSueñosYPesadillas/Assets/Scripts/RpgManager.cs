@@ -5,29 +5,36 @@ using UnityEngine.UI;
 
 public class RpgManager : MonoBehaviour
 {
+    public UiController uiController;
     public BoardController board;
     public PlayerController playerPrefabRef;
     public EnemyController enemyPrefabsRef;
     public List<EnemyController> enemies;
     // public List<EnemyController> listOfEnemies;
     public List<EnemyConfig> enemyConfigs;
+    public List<ItemConfig> allItemConfigs;
+    public List<ItemController> inventory;
     public List<HabilityConfig> allHabilities;
-    public List<PlayerConfig> alliesInCombatConfig;
+    public List<PlayerController> alliesInCombat;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
-    public ItemManager itemInventoryPrefabRef;
+    public ItemController itemPrefabRef;
     public state currentStep;
     public int activePlayer = 0;
     public int activeAction = 0;
     public int activeHability = 0;
     public int activeEnemy = 0;
+    public int activeItem = 0;
     public int indexOfAlly = 0;
     public bool hasInitHabilities = false;
     public bool isPlayerTurn = true;
     public bool selectCharacter = false;
     public bool selectAction = false;
+    public int maxItemsInARow = 4;
     public string habilityName;
-    bool isOnPlayerTarget;
+
+    public GameObject itemButton;
+    public GameObject fleeButton;
 
     public enum state
     {
@@ -36,23 +43,32 @@ public class RpgManager : MonoBehaviour
         SELECT_ACTION,
         SELECT_HABILITY,
         SELECT_ITEM,
+        SELECT_CHARACTER_ITEM,
+        SELECT_ENEMY_ITEM,
         SELECT_ENEMY,
         NONE
     };
+
+    public void InitDecisionsFromNarrative()
+    {
+
+    }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        itemButton.gameObject.SetActive(true);
+        uiController.Init();
         currentStep = state.SELECT_CHARACTER;
         //Aqui es cuando pasamos de escena 
-        for (int i = 0; i < alliesInCombatConfig.Count; i++)
+        for (int i = 0; i < alliesInCombat.Count; i++)
         {
 
-            var ally = Instantiate(playerPrefabRef, transform);
+            var ally = Instantiate(alliesInCombat[i], transform);
             ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
-            ally.Init(alliesInCombatConfig[i], CheckHabilityTarget);
+            ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
             allies.Add(ally);
@@ -66,10 +82,19 @@ public class RpgManager : MonoBehaviour
             enemies.Add(enemy);
         }
 
+        for (int i = 0; i < allItemConfigs.Count; i++)
+        {
+            var item = Instantiate(itemPrefabRef, uiController.itemsBg.transform);
+            item.transform.position = new Vector3(item.transform.position.x + 100*i +50, item.transform.position.y+50, item.transform.position.z);
+            item.Init(allItemConfigs[i]);
+            inventory.Add(item);
+        }
+
         for (int i = 0; i < actionButtons.Count; i++)
         {
             actionButtons[i].ShowSelectedIcon(false);
         }
+
     }
     //true es arriba false es abajo
     public void FindNextPlayer(bool direction)
@@ -105,7 +130,6 @@ public class RpgManager : MonoBehaviour
             }
         }
     }
-
     public void FindNextPlayerForCure(bool direction)
     {
         if (direction)
@@ -178,6 +202,31 @@ public class RpgManager : MonoBehaviour
             else
             {
                 activeHability++;
+            }
+        }
+    }
+    public void FindNextItem(bool direction)
+    {
+        if (direction)
+        {
+            if (activeItem <= 0)
+            {
+                activeItem = inventory.Count - 1;
+            }
+            else
+            {
+                activeItem--;
+            }
+        }
+        else
+        {
+            if (activeItem >= inventory.Count - 1)
+            {
+                activeItem = 0;
+            }
+            else
+            {
+                activeItem++;
             }
         }
     }
@@ -256,7 +305,36 @@ public class RpgManager : MonoBehaviour
                         CheckHability(habilityName);
                         allies[activePlayer].hasAttacked = true;
                     }
-                    break;
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        activeHability = 0;
+                        currentStep = state.SELECT_HABILITY;
+                    }
+                break; 
+                case state.SELECT_CHARACTER_ITEM:
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+                        FindNextPlayerForCure(true);
+                    }
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        allies[activePlayer].ShowPlayerSelectedIcon(false);
+
+                        FindNextPlayerForCure(false);
+                    }
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        activeItem = 0;
+
+                        CheckItem();
+                    }
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        activeItem = 0;
+                        currentStep = state.SELECT_ITEM;
+                    }
+                break;
                 //Selecciona la accion
                 case state.SELECT_ACTION:
                     actionButtons[activeAction].ShowSelectedIcon(true);
@@ -279,19 +357,48 @@ public class RpgManager : MonoBehaviour
                     }
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
+                        activeHability = 0;
+
                         actionButtons[activeAction].ShowSelectedIcon(false);
 
                         currentStep = state.SELECT_CHARACTER;
                     }
                     break;
-                case state.SELECT_HABILITY:
+            case state.SELECT_ITEM:
+                inventory[activeItem].ShowSelectedItem(true);
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    inventory[activeItem].ShowSelectedItem(false);
+
+                    FindNextItem(true);
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    inventory[activeItem].ShowSelectedItem(false);
+
+                    FindNextItem(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    inventory[activeItem].ShowSelectedItem(false);
+                    CheckItemTarget();
+
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    uiController.ShowItemsBg(false);
+                    activeItem = 0;
+                    currentStep = state.SELECT_ACTION;
+                }
+                break;
+            case state.SELECT_HABILITY:
                     allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(true);
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    if (Input.GetKeyDown(KeyCode.LeftArrow))
                     {
                         allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
                         FindNextHability(true);
                     }
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
                         FindNextHability(false);
@@ -306,15 +413,14 @@ public class RpgManager : MonoBehaviour
                     }
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
-                    allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
-                    allies[activePlayer].ShowHabilities(false);
-                    activeHability = 0;
+                        allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
+                        allies[activePlayer].ShowHabilities(false);
+                        activeHability = 0;
 
-                    currentStep = state.SELECT_ACTION;
+                        currentStep = state.SELECT_ACTION;
                     }
                     break;
-                case state.SELECT_ITEM:                   
-                    break;
+
                 case state.SELECT_ENEMY:
                     enemies[activeEnemy].ShowSelectedIcon(true);
 
@@ -339,7 +445,7 @@ public class RpgManager : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
-
+                        activeHability = 0;
                         currentStep = state.SELECT_HABILITY;
                     }
 
@@ -349,6 +455,85 @@ public class RpgManager : MonoBehaviour
             }
        
         //Selecciona el objetivo 
+    }
+    public void AdjustItemsPositions() 
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            var newPositions = uiController.itemsBg.transform;
+            inventory[i].transform.position = new Vector3(newPositions.position.x + 100 * i -160, newPositions.position.y, newPositions.position.z);
+
+        }
+
+    }
+
+
+
+
+
+    public void CheckItem()
+    {
+        switch (inventory[activeItem].idObject)
+        {
+            case 1:
+                Debug.Log("este es el primer item");
+                allies[activePlayer].life += 10;
+                break;
+            default:
+                break;
+        }
+        if (enemies[activeEnemy].life <= 0)
+        {
+            //destruir enemigo 
+            RemoveEnemy(activeEnemy);
+        }
+        if (allies[activePlayer].life <= 0)
+        {
+            //destruir enemigo 
+            RemoveAlly(activePlayer);
+        }
+
+        allies[activePlayer].hasAttacked = true;
+        RemoveItem(activeItem);
+        activeItem = 0;
+        AdjustItemsPositions();
+
+        uiController.ShowItemsBg(false);
+
+        if (inventory.Count <= 0)
+        {
+            itemButton.gameObject.SetActive(false);
+        }
+
+        if (CheckAllPlayersHadAttacked())
+        {
+            allies[activePlayer].ShowPlayerSelectedIcon(false);
+            EnemyTurn();
+        }
+        else
+        {
+            allies[activePlayer].ShowPlayerSelectedIcon(false);
+            FindNextPlayer(true);
+            currentStep = state.SELECT_CHARACTER;
+
+        }
+
+    }
+
+    public void CheckItemTarget()
+    {
+        if (inventory[activeItem].allyTarget)
+        {
+            currentStep = state.SELECT_CHARACTER_ITEM;
+        }
+        else if (inventory[activeItem].enemyTarget)
+        {
+            currentStep = state.SELECT_ENEMY_ITEM;
+        }
+        else
+        {
+            CheckItem();
+        }
     }
    
 
@@ -364,6 +549,25 @@ public class RpgManager : MonoBehaviour
         return true;
     }
 
+    public void CheckState()
+    {
+        for (int i = 0; i < allies.Count; i++)
+        {
+            if(allies[i].life <= 0)
+            {
+                RemoveAlly(i);
+            }
+        }
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i])
+            {
+                RemoveEnemy(i);
+            }
+        }
+    }
+
+    //Remove functions
     public void RemoveEnemy(int index)
     {
         var enemy = enemies[index];
@@ -378,6 +582,13 @@ public class RpgManager : MonoBehaviour
         Destroy(ally.gameObject);
     }
 
+    public void RemoveItem(int index)
+    {
+        var item = inventory[index];
+        inventory.Remove(item);
+        Destroy(item.gameObject);
+    }
+
     public void PlayerEndingTurn()
     {
 
@@ -385,32 +596,20 @@ public class RpgManager : MonoBehaviour
 
     public void CheckBattleResults()
     {
-        for (int i = 0; i < allies.Count; i++)
+        if (enemies.Count <= 0)
         {
-            if (allies[i].life > 0)
-            {
-                break;
-            }
-            else if(i+1 == allies.Count)
-            {
-                //Derrota de los aliados 
-            }
+            //Derrota enemigos 
+            return;
         }
 
-        for (int i = 0; i < enemies.Count; i++)
+        if (allies.Count <= 0)
         {
-            if (enemies[i].life > 0)
-            {
-                break;
-            }
-            else if (i + 1 == enemies.Count)
-            {
-                //Derrota de los enemigos
-            }
+            //Derrota aliados 
+            return;
         }
-
+        
+        
     }
-
 
     public void EnemyTurn()
     {
@@ -435,10 +634,10 @@ public class RpgManager : MonoBehaviour
     }
 
     // Botón para usar Items
-    public void itemButton()
+    public void ItemButton()
     {
-        var inventory = Instantiate(itemInventoryPrefabRef, transform);
-        inventory.transform.position = new Vector3(100, 100, 0);
+        currentStep = state.SELECT_ITEM;
+        uiController.ShowItemsBg(true);
     }
 
     public int GetRandomIndex(int maxValue)
@@ -485,11 +684,7 @@ public class RpgManager : MonoBehaviour
             default:
                 break;
         }
-        if (allies[j].life <= 0)
-        {
-            //destruir enemigo 
-            RemoveAlly(j);
-        }
+        CheckState();
         CheckBattleResults();
     }
     //Si afecta a todos los enemigos/aliados no hace falta poner traget 
@@ -577,17 +772,8 @@ public class RpgManager : MonoBehaviour
                 break;
         }
         //Checkear si se tiene que destruir algo 
-        if (enemies[activeEnemy].life <= 0)
-        {
-            //destruir enemigo 
-            RemoveEnemy(activeEnemy);
-        }
-        if (allies[activePlayer].life <= 0)
-        {
-            //destruir enemigo 
-            RemoveAlly(activePlayer);
-        }
         allies[activePlayer].hasAttacked = true;
+        CheckState();
         CheckBattleResults();
         if (CheckAllPlayersHadAttacked())
         {
@@ -597,7 +783,6 @@ public class RpgManager : MonoBehaviour
         else
         {
             allies[activePlayer].ShowPlayerSelectedIcon(false);
-
             FindNextPlayer(true);
             currentStep = state.SELECT_CHARACTER;
 
@@ -613,62 +798,8 @@ public class RpgManager : MonoBehaviour
 
 
     // Botón para Huir del combate
-    public void fleeButton()
+    public void FleeButton()
     {
         //allies[indexOfAlly].DestroyHabilities();
-    }
-
-    // Acción cuando pulsamos botón de Punch
-    public void punchButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Shot
-    public void shotButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Help
-    public void helpButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Shout
-    public void shoutButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Hide Emotions
-    public void hideEmotionsButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Run
-    public void runButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Let's Go
-    public void letsGoButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Drink
-    public void drinkButton()
-    {
-
-    }
-
-    // Acción cuando pulsamos botón de Blow Bottle
-    public void blowBottleButton()
-    {
-
     }
 }

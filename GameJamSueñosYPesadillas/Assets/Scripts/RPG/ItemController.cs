@@ -7,14 +7,31 @@ using TMPro;
 public class ItemController : MonoBehaviour
 {
 
-    [SerializeField] Image imageObject;
-    [SerializeField] TextMeshProUGUI nameObject;
+    public Image imageObject;
+    public Image selectedItemFrame;
+    public TextMeshProUGUI nameObject;
     public int idObject;
+    public bool allyTarget;
+    public bool enemyTarget;
 
-    public void CreateItem(ItemConfig itemConfig)
+    public void Init(ItemConfig itemConfig)
     {
         imageObject.sprite = itemConfig.imageObject;
         nameObject.text = itemConfig.nameObject;
         idObject = itemConfig.idObject;
+        allyTarget = itemConfig.targetAllies;
+        enemyTarget = itemConfig.targetEnemies;
+        ShowSelectedItem(false);
+    }
+
+    public void ShowSelectedItem(bool condition)
+    {
+        selectedItemFrame.gameObject.SetActive(condition);
+    }
+
+
+    public void OnItemClick()
+    {
+
     }
 }

@@ -10,5 +10,7 @@ public class ItemConfig : ScriptableObject
     public Sprite imageObject;
     public string nameObject;
     public int idObject;
+    public bool targetAllies;
+    public bool targetEnemies;
     
 }

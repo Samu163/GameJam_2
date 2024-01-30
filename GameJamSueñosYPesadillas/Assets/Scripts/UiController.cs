@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
 
-    public GameObject playerActionsRef;
+    public Image itemsBg;
 
-    public void SetPlayerActions(bool isActive)
+
+
+    public void Init()
     {
-        playerActionsRef.SetActive(isActive);
+        ShowItemsBg(false);
+    }
+
+    public void ShowItemsBg(bool isActive)
+    {
+        itemsBg.gameObject.SetActive(isActive);
     }
 }

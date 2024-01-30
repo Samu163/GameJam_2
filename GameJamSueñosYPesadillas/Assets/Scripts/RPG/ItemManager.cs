@@ -14,9 +14,9 @@ public class ItemManager : MonoBehaviour
     {
         for(int i = 0; i < maxNumItems; i++)
         {
-            GameObject inventory = GameObject.Instantiate(itemPrefab, Vector2.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("ItemMenu").transform);
+            GameObject inventory = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("ItemMenu").transform);
             item = inventory.GetComponent<ItemController>();
-            item.CreateItem(menuItems[i]);
+            item.Init(menuItems[i]);
         }
     }
 }
