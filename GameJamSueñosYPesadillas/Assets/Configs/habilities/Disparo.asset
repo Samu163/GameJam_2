@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Disparo
   m_EditorClassIdentifier: 
   name: Shot
-  icon: {fileID: 21300000, guid: 2ad84ec7182471b4d8c44de568e22df4, type: 3}
+  icon: {fileID: 21300000, guid: 3da46ea7ca8f96749ae574ae46b028a8, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
