@@ -59,21 +59,17 @@ public class DialogueController: MonoBehaviour
             characterAnimator2.gameObject.SetActive(true);
         }
 
-        if (!hasAnimated)
+        if (dialogueConfig.isLeft)
         {
-            hasAnimated = true;
-
-            if (dialogueConfig.isLeft)
-            {
-               
-                    characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
-                
-            }
-            else
-            {
-                 characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
-            }
+           
+             characterAnimator2.SetInteger("IdAnim", dialogueConfig.idAnim);
+            
         }
+        else
+        {
+             characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
+        }
+       
         
         if (Input.GetMouseButtonDown(0) && canClick)
         {
@@ -93,6 +89,7 @@ public class DialogueController: MonoBehaviour
                         Flashback();
                         Invoke("NextLine", 5);
                         Invoke("SetCanClick", 6);
+
                     }
                     else if (dialogueConfig.isPunch)
                     {
@@ -106,12 +103,13 @@ public class DialogueController: MonoBehaviour
                         sceneAnimator.gameObject.SetActive(false);
                         FadeInOut();
                         Invoke("NextLine", 3);
-                        Invoke("SetCanClick", 4);
+                        Invoke("SetCanClick", 6);
                     }
                     
                     canClick = false;
                     soundEffectPlayer.clip = dialogueConfig.soundEffect;
                     soundEffectPlayer.Play();
+
                     
                     
                 }
