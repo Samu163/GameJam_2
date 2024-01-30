@@ -25,4 +25,4 @@ MonoBehaviour:
   endsDay: 0
   idAnim: 3
   isLeft: 0
-  isOnlyRight: 0
+  isOnlyRight: 1
