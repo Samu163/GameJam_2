@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public List<int> decisions;
+    public int lastTextIndex;
+    public int lastDecisionIndex;
+    public int finalIndex; //si es menor de X es malo y si es mayor que Y es bueno, si no neutral
+    public int RPGResult;
+    public int day;
 
     // Start is called before the first frame update
 
@@ -18,6 +23,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -34,5 +40,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SaveNarrative(List<int> decisions, int lastIndexText, int indexDecisions)
+    {
+        day++;
+        this.decisions = decisions;
+        lastTextIndex = lastIndexText+1;
+        lastDecisionIndex = indexDecisions;
+    }
+    //Si es 0 es derrota, si es 1 es victoria 
+    public void SaveRPGResult(int result)
+    {
+        RPGResult = result;
     }
 }
