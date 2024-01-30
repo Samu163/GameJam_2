@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decisions: 
-  lastTextIndex: 0
+  lastTextIndex: 58
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0
