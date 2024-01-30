@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583849236438253736, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
   m_PrefabInstance: {fileID: 2093807835}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1273814219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 075eecd3a09215646a49efd7d33fd885, type: 3}
@@ -392,7 +392,7 @@ RectTransform:
   - {fileID: 1229712399}
   - {fileID: 2093807836}
   m_Father: {fileID: 1700562916}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -654,6 +654,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1173430483}
   - {fileID: 1700562916}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -688,11 +689,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173430482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1700562916}
+  m_Father: {fileID: 993472914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -844,18 +845,18 @@ PrefabInstance:
     - target: {fileID: 3604682377179528049, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1700562917}
+      objectReference: {fileID: 2106209815}
     - target: {fileID: 3604682377179528049, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604682377179528049, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: itemButton
+      value: ItemButton
       objectReference: {fileID: 0}
     - target: {fileID: 3604682377179528049, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIController, Assembly-CSharp
+      value: RpgManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3604682377179528049, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -871,6 +872,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2619243242789239514, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
   m_PrefabInstance: {fileID: 1229712398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1273814219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2325417024074937150, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+  m_PrefabInstance: {fileID: 2093807835}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700562915
 GameObject:
@@ -900,11 +906,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1173430483}
   - {fileID: 515668942}
   - {fileID: 1811305027}
   m_Father: {fileID: 993472914}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -920,18 +925,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700562915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165181db0b469564da09d5551c20fd39, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bb8729e837a23c48b5cbd34a68016cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInventoryPrefabRef: {fileID: 6804491666287084627, guid: 90e185a73cb1ec54ab8e0571c336cddd, type: 3}
-  isMenuActive: 0
-  isMenuCreated: 0
+  itemsBg: {fileID: 1811305028}
 --- !u!114 &1758213425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8532503309902910152, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
   m_PrefabInstance: {fileID: 1229712398}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1973255396}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 075eecd3a09215646a49efd7d33fd885, type: 3}
@@ -967,7 +970,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1700562916}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1012,6 +1015,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811305026}
   m_CullTransparentMesh: 1
+--- !u!1 &1973255396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8505698168390102868, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}
+  m_PrefabInstance: {fileID: 1229712398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1999962297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1229,7 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d6ce8e34d0fa842b45dee445972fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 0}
+  uiController: {fileID: 1700562917}
   board: {fileID: 0}
   playerPrefabRef: {fileID: 6610108679820664164, guid: 376f17889ccb84e46a7024b11d455e57, type: 3}
   enemyPrefabsRef: {fileID: 2463570785643450850, guid: ccf0fa641e86cd44baa834fc74d794ed, type: 3}
@@ -1237,16 +1245,22 @@ MonoBehaviour:
   enemyConfigs:
   - {fileID: 11400000, guid: 1e1c674c5eec2064da0f4206d17304c2, type: 2}
   - {fileID: 11400000, guid: fa4aa47a2b9cc3b40a230a66b861f0a8, type: 2}
-  allItemConfigs: []
+  allItemConfigs:
+  - {fileID: 11400000, guid: 3d52da504435f254f8b7c09d359ed38e, type: 2}
+  - {fileID: 11400000, guid: b37af41831eaf2942907043670d9af8d, type: 2}
+  - {fileID: 11400000, guid: 0d796ad6c6d58454d899e143492e141f, type: 2}
+  - {fileID: 11400000, guid: 3b8a577a04de4144389ab515931eeff3, type: 2}
   inventory: []
   allHabilities: []
-  alliesInCombat: []
+  alliesInCombat:
+  - {fileID: 5251381612274545929, guid: 477e7ee236216344fb1fb6ddc0426dc9, type: 3}
+  - {fileID: 6160336759382403918, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
   allies: []
   actionButtons:
   - {fileID: 2031149043}
   - {fileID: 1758213425}
   - {fileID: 144074015}
-  itemPrefabRef: {fileID: 0}
+  itemPrefabRef: {fileID: 6803394126929050126, guid: 9cfe9addea30c39409b3e54287492ec2, type: 3}
   currentStep: 0
   activePlayer: 0
   activeAction: 0
@@ -1260,6 +1274,8 @@ MonoBehaviour:
   selectAction: 0
   maxItemsInARow: 4
   habilityName: 
+  itemButton: {fileID: 1973255396}
+  fleeButton: {fileID: 1273814219}
 --- !u!1001 &878845196907088785
 PrefabInstance:
   m_ObjectHideFlags: 0
