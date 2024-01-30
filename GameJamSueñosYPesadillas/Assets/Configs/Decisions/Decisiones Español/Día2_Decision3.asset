@@ -18,5 +18,5 @@ MonoBehaviour:
   - Bah! Ya he tenido suficiente!
   nextDecisionsDialogues:
   - {fileID: 11400000, guid: 1c2a73285b73c7d4789f5d00683e81bc, type: 2}
-  - {fileID: 11400000, guid: 1c2a73285b73c7d4789f5d00683e81bc, type: 2}
+  - {fileID: 11400000, guid: 7bceef2bdf3936d45821602be99f9d79, type: 2}
   skipDialogues: 0000000000000000

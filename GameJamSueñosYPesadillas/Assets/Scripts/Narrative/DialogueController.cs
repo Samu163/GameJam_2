@@ -12,8 +12,10 @@ public class DialogueController: MonoBehaviour
     public Animator transitionAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
+    public Animator sceneAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
+    public bool isInFlashback;
     public int index;
     public bool canClick;
     public float textSpeed = 0.1f;
@@ -41,13 +43,17 @@ public class DialogueController: MonoBehaviour
     {
         displayText.text = string.Empty;
         canClick = true;
-        
+        isInFlashback = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dialogueConfig.isOnlyRight)
+
+       
+
+        if (dialogueConfig.isOnlyRight)
         {
             characterAnimator2.gameObject.SetActive(false);
         }
@@ -76,7 +82,21 @@ public class DialogueController: MonoBehaviour
                 if (dialogueConfig.fadeInOut && index >= dialogueConfig.lines.Length - 1)
                 {
                     panelTransition.SetActive(true);
-                    FadeInOut();
+                    sceneAnimator.gameObject.SetActive(true);
+
+                    if (dialogueConfig.isFlashback)
+                    {
+                        //panelTransition.SetActive(false);
+                        FadeIn();
+                        Flashback();
+                        
+                    }
+                    else
+                    {
+                        sceneAnimator.gameObject.SetActive(false);
+                        FadeInOut();
+                        
+                    }
                     canClick = false;
                     soundEffectPlayer.clip = dialogueConfig.soundEffect;
                     soundEffectPlayer.Play();
@@ -87,7 +107,9 @@ public class DialogueController: MonoBehaviour
                 else
                 {
                     transitionAnimator.Play("Idle");
+                    sceneAnimator.Play("Idle");
                     panelTransition.SetActive(false);
+                    sceneAnimator.gameObject.SetActive(false);
                     NextLine();
                 }
                 
@@ -142,10 +164,48 @@ public class DialogueController: MonoBehaviour
         
     }
 
+    public void FadeIn()
+    {
+        transitionAnimator.Play("FadeIn");
+
+    }
+
+    public void FadeOut()
+    {
+        transitionAnimator.Play("FadeOut");
+
+    }
+
+    public void Flashback()
+    {
+        sceneAnimator.Play("FlashbackAnim");
+
+    }
+
+    public void Punch()
+    {
+        sceneAnimator.Play("PunchAnim");
+
+    }
+
     public void SetCanClick()
     {
         canClick = true;
         panelTransition.SetActive(false);
+        sceneAnimator.gameObject.SetActive(false);
     }
 
+    public void DeactivateFlashback()
+    {
+        FadeInOut();
+        isInFlashback = false;
+        sceneAnimator.gameObject.SetActive(false);
+    }
+
+    public void DeactivatePunch()
+    {
+        sceneAnimator.gameObject.SetActive(false);
+        dialogueConfig.isPunch = false;
+        FadeInOut();
+    }
 }

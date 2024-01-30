@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: "D\xEDa2_D3"
+  m_Name: ProtaAfterFlashback
   m_EditorClassIdentifier: 
   lines:
-  - Esto te lo mereces!
+  - "Todav\xEDa tengo escalofr\xEDos"
   hasDecision: 0
   nameChar: Carlos
-  characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
-  backgroundScene: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: c028adf2c9d459f49904c3c1637ad643, type: 3}
   soundEffect: {fileID: 0}
   decision: {fileID: 0}
-  fadeInOut: 1
-  changeScenario: 1
+  fadeInOut: 0
+  changeScenario: 0
   endsDay: 0
-  idAnim: 2
+  idAnim: 0
   isLeft: 0
-  isOnlyRight: 0
-  isPunch: 0
-  isFlashback: 0
+  isOnlyRight: 1
