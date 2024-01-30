@@ -561,7 +561,7 @@ public class RpgManager : MonoBehaviour
         }
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i] <= 0)
+            if (enemies[i].life <= 0)
             {
                 RemoveEnemy(i);
             }
