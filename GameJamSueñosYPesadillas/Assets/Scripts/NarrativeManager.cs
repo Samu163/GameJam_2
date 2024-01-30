@@ -13,6 +13,8 @@ public class NarrativeManager : MonoBehaviour
     public Text nameChar;
     public Image background;
     public Animator transitionAnimator;
+    public Animator characterAnimator;
+    public Animator characterAnimator2;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
     public List<int> decisions;
@@ -29,7 +31,12 @@ public class NarrativeManager : MonoBehaviour
         dialogue.Init(TriggerEvent);
         dialogue.AsignConfig(dialogueTexts[indexText]);
         dialogue.StartDialogue();
-        characterTalking.sprite = dialogue.dialogueConfig.characterImg;
+        //characterTalking.sprite = dialogue.dialogueConfig.characterImg;
+        dialogue.transitionAnimator = transitionAnimator;
+        dialogue.characterAnimator = characterAnimator;
+        dialogue.characterAnimator2 = characterAnimator2;
+        characterAnimator2.SetInteger("IdAnim", 13);
+        characterAnimator.SetInteger("IdAnim", 0);
         background.sprite = dialogue.dialogueConfig.backgroundScene;
         nameChar.text = dialogue.dialogueConfig.nameChar;
         decision.gameObject.SetActive(false);
@@ -61,9 +68,7 @@ public class NarrativeManager : MonoBehaviour
         {
             indexText++;
             dialogue.AsignConfig(dialogueTexts[indexText]);
-            dialogue.transitionAnimator = transitionAnimator;
             dialogue.StartDialogue();
-            characterTalking.sprite = dialogue.dialogueConfig.characterImg;
             nameChar.text = dialogue.dialogueConfig.nameChar;
             background.sprite = dialogue.dialogueConfig.backgroundScene;
             

@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 2354062d023029a4f85ed3fc121120c0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8093689537676724059
+    second: Carlos angry_0
+  - first:
+      213: 2063997598229847934
+    second: Carlos angry_1
+  - first:
+      213: 1637163875593286435
+    second: Carlos angry_2
+  - first:
+      213: 2094356155127522154
+    second: Carlos angry_3
+  - first:
+      213: -7079722686612432282
+    second: Carlos angry_4
+  - first:
+      213: -2234638149605628928
+    second: Carlos angry_5
+  - first:
+      213: -1897601327864508850
+    second: Carlos angry_6
+  - first:
+      213: -3401784115114759705
+    second: Carlos angry_7
+  - first:
+      213: -3820532572352602445
+    second: Carlos angry_8
+  - first:
+      213: -6718076016788571607
+    second: Carlos angry_9
+  - first:
+      213: 4030813924185377491
+    second: Carlos angry_10
+  - first:
+      213: -4849368926039666839
+    second: Carlos angry_11
+  - first:
+      213: 2825498005339210322
+    second: Carlos angry_12
+  - first:
+      213: -933423149063018290
+    second: Carlos angry_13
+  - first:
+      213: -2021949969550059715
+    second: Carlos angry_14
+  - first:
+      213: -348314120805819472
+    second: Carlos angry_15
+  - first:
+      213: 3649321555915032418
+    second: Carlos angry_16
+  - first:
+      213: -6486889286271746075
+    second: Carlos angry_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +86,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +95,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,7 +122,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +143,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Carlos angry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57448790cf825070800000000000000
+      internalID: 8093689537676724059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carlos angry_1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fdfbb41eac4ac10800000000000000
+      internalID: 2063997598229847934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carlos angry_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323f6dbeedf58b610800000000000000
+      internalID: 1637163875593286435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carlos angry_3
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a636783a3d5a01d10800000000000000
+      internalID: 2094356155127522154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -17,5 +17,8 @@ public class DialogueConfig : ScriptableObject
     public bool fadeInOut;
     public bool changeScenario;
     public bool endsDay;
+    public int idAnim;
+    public bool isLeft;
+    public bool isOnlyRight;
 
 }

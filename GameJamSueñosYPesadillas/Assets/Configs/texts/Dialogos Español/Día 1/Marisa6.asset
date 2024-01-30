@@ -26,3 +26,6 @@ MonoBehaviour:
   fadeInOut: 0
   changeScenario: 1
   endsDay: 0
+  idAnim: 5
+  isLeft: 1
+  isOnlyRight: 0
