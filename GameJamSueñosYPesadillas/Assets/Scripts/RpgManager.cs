@@ -9,6 +9,7 @@ public class RpgManager : MonoBehaviour
     public UiController uiController;
     public BoardController board;
     public PlayerController playerPrefabRef;
+    public EnemyController sombreritoPrefabRef;
     public List<EnemyController> enemies;
     public List<EnemyController> enemiesDay1;
     public List<EnemyController> enemiesDay2;
@@ -22,6 +23,7 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
+
     public ItemController itemPrefabRef;
     public state currentStep;
     public int activePlayer = 0;
@@ -35,6 +37,7 @@ public class RpgManager : MonoBehaviour
     public bool selectCharacter = false;
     public bool selectAction = false;
     public int maxItemsInARow = 4;
+    public int turns;
     public string habilityName;
 
     public GameObject itemButton;
@@ -60,23 +63,34 @@ public class RpgManager : MonoBehaviour
             alliesInCombatPrefabs = alliesInCombatDay1;
             enemyPrefabs = enemiesDay1;
             allItemConfigs = allItemConfigsDay1;
+            if(GameManager.instance.decisions[1] == 1)
+            {
+                //La ex mujer y el collar tienen que estar los ultimos en la lista
+                alliesInCombatPrefabs.RemoveAt(2);
+                allItemConfigs.RemoveAt(allItemConfigs.Count-1);
+            }
         }
         else if (GameManager.instance.day == 2)
         {
             alliesInCombatPrefabs = alliesInCombatDay2;
             enemyPrefabs = enemiesDay2;
             allItemConfigs = allItemConfigsDay2;
+            if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
+            {
+                enemyPrefabs[0].config.life *= 2;
+                enemyPrefabs[0].config.attack *= 2;
+                enemyPrefabs[0].config.defense *= 2;
+            }
+            //no te da la tarjeta (ultimo item)
+            if (GameManager.instance.decisions[4] == 0)
+            {
+                allItemConfigs.RemoveAt(allItemConfigs.Count - 1);
+            }
+
         }
-        InitDecisionsFromNarrative();
 
     }
 
-
-
-    public void InitDecisionsFromNarrative()
-    {
-        // if()
-    }
 
 
 
@@ -92,7 +106,7 @@ public class RpgManager : MonoBehaviour
         {
 
             var ally = Instantiate(alliesInCombatPrefabs[i], transform);
-            ally.transform.position = new Vector3(ally.transform.position.x - 100, ally.transform.position.y - 100 * i, ally.transform.position.z);
+            ally.transform.position = new Vector3(ally.transform.position.x + 200 *(i%2) -400, ally.transform.position.y - 200 * i +150, ally.transform.position.z);
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
@@ -101,7 +115,7 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < enemyPrefabs.Count; i++)
         {
             var enemy = Instantiate(enemyPrefabs[i], transform);
-            enemy.transform.position = new Vector3(enemy.transform.position.x + 100, enemy.transform.position.y - 100 * i, enemy.transform.position.z);
+            enemy.transform.position = new Vector3(enemy.transform.position.x  - 200 * (i % 2) +400, enemy.transform.position.y - 200 * i +150, enemy.transform.position.z);
             enemy.Init();
             enemies.Add(enemy);
         }
@@ -485,9 +499,7 @@ public class RpgManager : MonoBehaviour
         {
             var newPositions = uiController.itemsBg.transform;
             inventory[i].transform.position = new Vector3(newPositions.position.x + 100 * i - 160, newPositions.position.y, newPositions.position.z);
-
         }
-
     }
 
 
@@ -665,11 +677,40 @@ public class RpgManager : MonoBehaviour
             var j = enemies[i].config.habilities.Count;
             CheckEnemyHabilityResult(enemies[i].config.habilities[GetRandomIndex(j)].habilityName);
         }
+        //El desconocido se tiene que llamar unknown
+        if (GameManager.instance.day == 2)
+        {
+            if(GameManager.instance.decisions[3] == 0 && turns ==0)
+            {
+                var player = allies.Find(p => p.config.name == "unknown");
+                if (player != null)
+                {
+                    allies.Remove(player);
+                    var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    enemies.Add(sombreritoMalo);
+                }
+            }
+            else if(turns == 4 && GameManager.instance.decisions[3] == 1)
+            {
+                var player = allies.Find(p => p.config.name == "unknown");
+                if (player != null)
+                {
+                    allies.Remove(player);
+                    var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    enemies.Add(sombreritoMalo);
+                }
+            }
+           
+        }
+       
         SetPlayerTurn();
     }
 
     public void SetPlayerTurn()
     {
+        turns++;
         for (int i = 0; i < allies.Count; i++)
         {
             allies[i].hasAttacked = false;
