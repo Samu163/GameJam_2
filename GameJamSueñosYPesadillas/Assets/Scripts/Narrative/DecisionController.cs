@@ -6,9 +6,11 @@ using UnityEngine.Events;
 
 
 
+
 public class DecisionController : MonoBehaviour
 {
     public TextMeshProUGUI displayText;
+    public TMP_FontAsset fontDecision;
     public int resultIndex;
     public int indexForHead;
     public float textSpeed = 0.1f;
@@ -19,23 +21,29 @@ public class DecisionController : MonoBehaviour
 
     bool isHeadTextDisplayed = false;
 
+    
+
     public void Init(DecisionConfig decisionConfig, UnityAction<int, DialogueConfig, int> onButtonClick)
     {
         this.decisionConfig = decisionConfig;
         _onButtonClick = onButtonClick;
         StartDialogue();
         isHeadTextDisplayed = false;
+        
     }
 
     public void InitOptions()
     {
         buttonDecisions = new List<ButtonDecisionController>();
+        
         for (int i = 0; i < decisionConfig.decisions.Length; i++)
         {
             var button = Instantiate(buttonDecisionPrefabRef, transform);
+            button.decisionText.font = fontDecision;
             button.transform.position = new Vector3(button.transform.position.x-300, button.transform.position.y-50*i, button.transform.position.z);
             button.Init(i, OnButtonClick, decisionConfig.decisions[i]);
             buttonDecisions.Add(button);
+            
         }
     }
     void Update()

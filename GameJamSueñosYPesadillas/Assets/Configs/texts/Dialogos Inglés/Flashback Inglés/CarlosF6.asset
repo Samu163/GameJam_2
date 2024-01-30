@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: CarlosJoven2
+  m_Name: CarlosF6
   m_EditorClassIdentifier: 
   lines:
-  - Mateo?
-  - "Est\xE1s ah\xED??"
-  - Contesta por favor!
+  - I-I can't... I can't move Mateo...
+  - Mateo, run. Go out of here, save your life.
   hasDecision: 0
-  nameChar: Carlos Joven
+  nameChar: Young Carlos
   characterImg: {fileID: 0}
   backgroundScene: {fileID: 21300000, guid: ff834f52a267a2443afede4a0469d6ca, type: 3}
   soundEffect: {fileID: 0}
@@ -27,7 +26,7 @@ MonoBehaviour:
   endsDay: 0
   idAnim: 10
   isLeft: 0
-  isOnlyRight: 1
+  isOnlyRight: 0
   isPunch: 0
   isFlashback: 0
   startFlashback: 0

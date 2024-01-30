@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: CarlosJoven2
+  m_Name: MateoF4
   m_EditorClassIdentifier: 
   lines:
-  - Mateo?
-  - "Est\xE1s ah\xED??"
-  - Contesta por favor!
+  - I can't leave you here after saving me!
   hasDecision: 0
-  nameChar: Carlos Joven
+  nameChar: Young Mateo
   characterImg: {fileID: 0}
   backgroundScene: {fileID: 21300000, guid: ff834f52a267a2443afede4a0469d6ca, type: 3}
   soundEffect: {fileID: 0}
@@ -25,9 +23,9 @@ MonoBehaviour:
   fadeInOut: 0
   changeScenario: 0
   endsDay: 0
-  idAnim: 10
-  isLeft: 0
-  isOnlyRight: 1
+  idAnim: 11
+  isLeft: 1
+  isOnlyRight: 0
   isPunch: 0
   isFlashback: 0
   startFlashback: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   - "EN QU\xC9 ESTABAS PENSANDO?"
   - "Te dije que dejar\xE1s el tema de las bandas callejeras, joder Mateo."
   - Dios santo Mateo, he matado a dos personas.
-  - He... matado? Ay dios...
+  - He... matado? Ay dios... No me lo puedo creer.
   hasDecision: 0
   nameChar: Carlos Joven
   characterImg: {fileID: 0}
@@ -36,3 +36,6 @@ MonoBehaviour:
   endDecision: 0
   policeSound: 0
   isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0
