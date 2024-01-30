@@ -15,6 +15,7 @@ public class DialogueController: MonoBehaviour
     public Animator sceneAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
+    
     public int index;
     public bool canClick;
     public float textSpeed = 0.1f;
@@ -45,11 +46,14 @@ public class DialogueController: MonoBehaviour
         displayText.text = string.Empty;
         canClick = true;
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if(dialogueConfig.isOnlyRight)
         {
             characterAnimator2.gameObject.SetActive(false);

@@ -17,11 +17,17 @@ public class NarrativeManager : MonoBehaviour
     public Animator sceneAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
+    public AudioSource musicPlayer;
+    public AudioClip ambientSound;
+    public AudioClip ambientSound2;
+    public AudioClip decisionSound;
+    public AudioClip flashbackSound;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
     public List<int> decisions;
     public int indexText = 0;
     public int indexDecisions = 0;
+    
 
 
     //Cargar datos del game manager
@@ -48,6 +54,8 @@ public class NarrativeManager : MonoBehaviour
         background.sprite = dialogue.dialogueConfig.backgroundScene;
         nameChar.text = dialogue.dialogueConfig.nameChar;
         decision.gameObject.SetActive(false);
+        musicPlayer.clip = ambientSound;
+        musicPlayer.Play();
     }
 
     // Update is called once per frame
@@ -62,6 +70,8 @@ public class NarrativeManager : MonoBehaviour
         if (dialogue.dialogueConfig.hasDecision)
         {
             //Carga la decision y cuando la decision se ejecute carga el siguiente dialogo (pero eso en otra parte)
+            musicPlayer.clip = decisionSound;
+            musicPlayer.Play();
             dialogue.gameObject.SetActive(false);
             decision.gameObject.SetActive(true);
             decision.Init(decisionsTexts[indexDecisions], DecisionResult);
@@ -82,10 +92,35 @@ public class NarrativeManager : MonoBehaviour
             nameChar.text = dialogue.dialogueConfig.nameChar;
             background.sprite = dialogue.dialogueConfig.backgroundScene;
             
+            
         }
 
-       
-        
+        if(dialogue.dialogueConfig.endDecision)
+        {
+            musicPlayer.clip = ambientSound;
+            musicPlayer.Play();
+        } 
+        else if (dialogue.dialogueConfig.endDecision && dialogue.dialogueConfig.isDay2)
+        {
+            musicPlayer.clip = ambientSound2;
+            musicPlayer.Play();
+        }
+        if (dialogue.dialogueConfig.isDay2)
+        {
+            musicPlayer.clip = ambientSound2;
+            musicPlayer.Play();
+        }
+        if (dialogue.dialogueConfig.startFlashback)
+        {
+            musicPlayer.clip = flashbackSound;
+            musicPlayer.Play();
+        }
+        if (dialogue.dialogueConfig.endFlashback)
+        {
+            musicPlayer.clip = ambientSound;
+            musicPlayer.Play();
+        }
+
     }
 
     public void DecisionResult(int result, DialogueConfig nextDialogue, int dialoguesToSkip)

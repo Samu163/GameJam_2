@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public List<int> decisions;
+    public List<int> finalDecisions;
     public int lastTextIndex;
     public int lastDecisionIndex;
     public int finalIndex; //si es menor de X es malo y si es mayor que Y es bueno, si no neutral
@@ -48,7 +49,11 @@ public class GameManager : MonoBehaviour
     public void SaveNarrative(List<int> decisions, int lastIndexText, int indexDecisions)
     {
         day++;
-        this.decisions = decisions;
+        for (int i = 0; i < decisions.Count; i++)
+        {
+            this.decisions.Add(decisions[i]);
+
+        }
         lastTextIndex = lastIndexText+1;
         lastDecisionIndex = indexDecisions;
     }

@@ -22,5 +22,9 @@ public class DialogueConfig : ScriptableObject
     public bool isOnlyRight;
     public bool isPunch;
     public bool isFlashback;
+    public bool startFlashback;
+    public bool endFlashback;
+    public bool endDecision;
+    public bool isDay2;
 
 }

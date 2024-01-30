@@ -77,16 +77,10 @@ public class RpgManager : MonoBehaviour
             alliesInCombatPrefabs = alliesInCombatDay2;
             enemyPrefabs = enemiesDay2;
             allItemConfigs = allItemConfigsDay2;
-            if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
-            {
-                enemyPrefabs[0].config.life *= 2;
-                enemyPrefabs[0].config.attack *= 2;
-                enemyPrefabs[0].config.defense *= 2;
-            }
             //no te da la tarjeta (ultimo item)
             if (GameManager.instance.decisions[4] == 0)
             {
-                allItemConfigs.RemoveAt(allItemConfigs.Count - 1);
+                RemoveActionButton(2);
             }
 
         }
@@ -120,6 +114,12 @@ public class RpgManager : MonoBehaviour
             enemy.transform.position = new Vector3(enemy.transform.position.x  - 200 * (i % 2) +400, enemy.transform.position.y - 200 * i +150, enemy.transform.position.z);
             enemy.Init();
             enemies.Add(enemy);
+        }
+        if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
+        {
+            enemies[0].life *= 2;
+            enemies[0].attack *= 2;
+            enemies[0].defense *= 2;
         }
 
         for (int i = 0; i < allItemConfigs.Count; i++)
@@ -364,12 +364,11 @@ public class RpgManager : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    activeItem = 0;
-
                     CheckItem();
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    uiController.ShowItemsBg(false);
                     activeItem = 0;
                     currentStep = state.SELECT_ITEM;
                 }
@@ -408,18 +407,17 @@ public class RpgManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     inventory[activeItem].ShowSelectedItem(false);
-
                     FindNextItem(true);
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     inventory[activeItem].ShowSelectedItem(false);
-
                     FindNextItem(false);
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     inventory[activeItem].ShowSelectedItem(false);
+                    uiController.ShowItemsBg(false);
                     CheckItemTarget();
 
                 }
@@ -428,6 +426,7 @@ public class RpgManager : MonoBehaviour
                     uiController.ShowItemsBg(false);
                     activeItem = 0;
                     currentStep = state.SELECT_ACTION;
+
                 }
                 break;
             case state.SELECT_HABILITY:
@@ -489,6 +488,32 @@ public class RpgManager : MonoBehaviour
                 }
 
                 break;
+            case state.SELECT_ENEMY_ITEM:
+                enemies[activeEnemy].ShowSelectedIcon(true);
+
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    enemies[activeEnemy].ShowSelectedIcon(false);
+                    FindNextEnemy(true);
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    enemies[activeEnemy].ShowSelectedIcon(false);
+
+                    FindNextEnemy(false);
+                }
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    CheckItem();
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    uiController.ShowItemsBg(true);
+                    activeItem = 0;
+                    currentStep = state.SELECT_ITEM;
+                }
+
+                break;
             default:
                 break;
         }
@@ -503,7 +528,6 @@ public class RpgManager : MonoBehaviour
             inventory[i].transform.position = new Vector3(newPositions.position.x + 100 * i - 160, newPositions.position.y, newPositions.position.z);
         }
     }
-
 
 
     public void CheckItem()
@@ -646,7 +670,12 @@ public class RpgManager : MonoBehaviour
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
     }
-
+    public void RemoveActionButton(int index)
+    {
+        var button = actionButtons[index];
+        actionButtons.Remove(button);
+        Destroy(button.gameObject);
+    }
     public void RemoveAlly(int index)
     {
         var ally = allies[index];

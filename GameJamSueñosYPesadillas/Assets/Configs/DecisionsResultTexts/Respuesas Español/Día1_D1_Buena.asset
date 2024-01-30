@@ -27,3 +27,9 @@ MonoBehaviour:
   idAnim: 7
   isLeft: 1
   isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 1
+  isDay2: 0
