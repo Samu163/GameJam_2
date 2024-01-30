@@ -26,3 +26,5 @@ MonoBehaviour:
   idAnim: 11
   isLeft: 1
   isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0

@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public int RPGResult;
     public int day;
 
+    public string language = "Spanish";
+    public float textSpeed = 0.5f;
+
     // Start is called before the first frame update
 
 

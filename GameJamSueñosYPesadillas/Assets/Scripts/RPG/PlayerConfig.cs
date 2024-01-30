@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerConfig : ScriptableObject
 {
+    public string name;
     public int life;
     public int attackPower;
     public int defense;

@@ -14,6 +14,7 @@ public class NarrativeManager : MonoBehaviour
     public Text nameChar;
     public Image background;
     public Animator transitionAnimator;
+    public Animator sceneAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
     public List<DialogueConfig> dialogueTexts;
@@ -38,10 +39,10 @@ public class NarrativeManager : MonoBehaviour
         dialogue.Init(TriggerEvent);
         dialogue.AsignConfig(dialogueTexts[indexText]);
         dialogue.StartDialogue();
-        //characterTalking.sprite = dialogue.dialogueConfig.characterImg;
         dialogue.transitionAnimator = transitionAnimator;
         dialogue.characterAnimator = characterAnimator;
         dialogue.characterAnimator2 = characterAnimator2;
+        dialogue.sceneAnimator = sceneAnimator;
         characterAnimator2.SetInteger("IdAnim", 13);
         characterAnimator.SetInteger("IdAnim", 0);
         background.sprite = dialogue.dialogueConfig.backgroundScene;

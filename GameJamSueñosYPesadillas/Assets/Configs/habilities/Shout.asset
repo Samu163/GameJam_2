@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Shout
   m_EditorClassIdentifier: 
   name: Shout
-  icon: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
+  icon: {fileID: 21300000, guid: f2116453f3ea76a49949758ffb80bc08, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
