@@ -12,6 +12,7 @@ public class DialogueController: MonoBehaviour
     public Animator transitionAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
+    public Animator sceneAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
     public int index;
@@ -85,19 +86,41 @@ public class DialogueController: MonoBehaviour
                 if (dialogueConfig.fadeInOut && index >= dialogueConfig.lines.Length - 1)
                 {
                     panelTransition.SetActive(true);
-                    FadeInOut();
+                    sceneAnimator.gameObject.SetActive(true);
+                    if(dialogueConfig.isFlashback)
+                    {
+                        
+                        Flashback();
+                        Invoke("NextLine", 5);
+                        Invoke("SetCanClick", 6);
+                    }
+                    else if (dialogueConfig.isPunch)
+                    {
+                        
+                        Punch();
+                        Invoke("NextLine", 5);
+                        Invoke("SetCanClick", 6);
+                    }
+                    else
+                    {
+                        sceneAnimator.gameObject.SetActive(false);
+                        FadeInOut();
+                        Invoke("NextLine", 3);
+                        Invoke("SetCanClick", 4);
+                    }
+                    
                     canClick = false;
                     soundEffectPlayer.clip = dialogueConfig.soundEffect;
                     soundEffectPlayer.Play();
-                    Invoke("NextLine", 3);
-                    Invoke("SetCanClick", 4);
+                    
                     
                 }
                 else
                 {
                 
-                        transitionAnimator.Play("Idle"); 
-                    
+                    transitionAnimator.Play("Idle");
+                    sceneAnimator.Play("Idle");
+                    sceneAnimator.gameObject.SetActive(false);
                     panelTransition.SetActive(false);
                     NextLine();
                 }
@@ -152,6 +175,30 @@ public class DialogueController: MonoBehaviour
     {
         transitionAnimator.Play("FadeInOut");
         
+    }
+
+    public void FadeIn()
+    {
+        transitionAnimator.Play("FadeIn");
+
+    }
+
+    public void FadeOut()
+    {
+        transitionAnimator.Play("FadeOut");
+
+    }
+
+    public void Flashback()
+    {
+        sceneAnimator.Play("FlashbackAnim");
+
+    }
+
+    public void Punch()
+    {
+        sceneAnimator.Play("PunchAnim");
+
     }
 
     public void SetCanClick()
