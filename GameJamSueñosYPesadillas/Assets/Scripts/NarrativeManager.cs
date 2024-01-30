@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NarrativeManager : MonoBehaviour
 {
@@ -18,8 +19,14 @@ public class NarrativeManager : MonoBehaviour
     public List<int> decisions;
     public int indexText = 0;
     public int indexDecisions = 0;
-    
 
+
+    //Cargar datos del game manager
+    public void Awake()
+    {
+        indexText = GameManager.instance.lastTextIndex;
+        indexDecisions = GameManager.instance.lastDecisionIndex;
+    }
 
     //Notas: no pongais en la lista de dialogos los dialogos de la recompensa de decisiones
 
@@ -54,8 +61,10 @@ public class NarrativeManager : MonoBehaviour
         }
         else if (dialogue.dialogueConfig.endsDay)
         {
+            GameManager.instance.SaveNarrative(decisions, indexText, indexDecisions);
             //Carga la escena del rpg
-            dialogue.gameObject.SetActive(false);
+            SceneManager.LoadScene("RPG");
+            //dialogue.gameObject.SetActive(false);
         }
         else
         {

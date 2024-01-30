@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb8729e837a23c48b5cbd34a68016cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerActionsRef: {fileID: 0}
+  itemsBg: {fileID: 0}
 --- !u!4 &243347530
 Transform:
   m_ObjectHideFlags: 0
@@ -398,6 +398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0281990bf604443498181ebadeb22fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decisions: 
+  lastTextIndex: 63
+  lastDecisionIndex: 0
+  finalIndex: 0
+  RPGResult: 0
+  day: 0
 --- !u!1 &664151155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1244,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06ff2b36729969e43af5836bb43405c0, type: 2}
   - {fileID: 11400000, guid: 0b46ac1786a23bb4aafaf42281be58ac, type: 2}
   - {fileID: 11400000, guid: d3afeccea6148f242af84b7d2518461d, type: 2}
+  - {fileID: 11400000, guid: 813de2e28d87cc542864de2a6626880a, type: 2}
   decisionsTexts:
   - {fileID: 11400000, guid: 4053df6adea17dc40ac2bf51dfa3c3b0, type: 2}
   - {fileID: 11400000, guid: 2aadf2262ba17d5489f29baf9c63156d, type: 2}

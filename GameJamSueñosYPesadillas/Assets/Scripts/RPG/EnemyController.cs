@@ -6,21 +6,19 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    public EnemyConfig data;
-    public SpriteRenderer enemyIcon;
+    public EnemyConfig config;
     public int life;
     public int attack;
     public int defense;
     public int idEnemy;
     public SpriteRenderer selectedIcon;
-    public void Init(EnemyConfig config)
+    public void Init()
     {
-        data = config;
         life = config.life;
         attack = config.attack;
         defense = config.defense;
         idEnemy = config.idEnemy;
-        enemyIcon.sprite = config.enemyIcon;
+        ShowSelectedIcon(false);
     }
 
     public void ShowSelectedIcon(bool condition)

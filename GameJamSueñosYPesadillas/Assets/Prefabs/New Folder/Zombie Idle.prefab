@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529258789337203845}
   - component: {fileID: 6181152213819960552}
-  - component: {fileID: -3869223554333118637}
+  - component: {fileID: 1899085920742918796}
   m_Layer: 0
   m_Name: Zombie Idle
   m_TagString: Untagged
@@ -719,7 +719,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3869223554333118637
+--- !u!114 &1899085920742918796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -728,18 +728,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2194049514420493887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710b8be694fc046459ac17e62bd75c69, type: 3}
+  m_Script: {fileID: 11500000, guid: 5606630233a0a984993a9e3c0d67b55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
+  config: {fileID: 11400000, guid: fa4aa47a2b9cc3b40a230a66b861f0a8, type: 2}
   life: 0
-  attackPower: 0
+  attack: 0
   defense: 0
-  hasAttacked: 0
-  playerSelected: {fileID: 4457202471676213594}
-  habilityPrefabRef: {fileID: 2727088810822376837, guid: f551ad5aaa998fb43a7e49947a56f616, type: 3}
-  buttonHabilities: []
-  isFighting: 0
+  selectedIcon: {fileID: 4457202471676213594}
 --- !u!1 &2333668268913984505
 GameObject:
   m_ObjectHideFlags: 0
