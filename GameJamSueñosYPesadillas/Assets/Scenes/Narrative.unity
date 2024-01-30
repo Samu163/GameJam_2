@@ -220,6 +220,7 @@ RectTransform:
   - {fileID: 1404928532}
   - {fileID: 2101389701}
   - {fileID: 1678146292}
+  - {fileID: 1185255478}
   - {fileID: 1137131282}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -691,8 +692,10 @@ MonoBehaviour:
   transitionAnimator: {fileID: 1137131283}
   characterAnimator: {fileID: 0}
   characterAnimator2: {fileID: 0}
+  sceneAnimator: {fileID: 1185255479}
   panelTransition: {fileID: 1137131281}
   soundEffectPlayer: {fileID: 976050781}
+  isInFlashback: 0
   index: 0
   canClick: 0
   textSpeed: 0.1
@@ -928,7 +931,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 156804028}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -991,6 +994,101 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137131281}
+  m_CullTransparentMesh: 1
+--- !u!1 &1185255477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185255478}
+  - component: {fileID: 1185255481}
+  - component: {fileID: 1185255480}
+  - component: {fileID: 1185255479}
+  m_Layer: 5
+  m_Name: ScenePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1185255478
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185255477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 156804028}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1185255479
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185255477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fcc684c4e6158d49ba683a0023a01b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1185255480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185255477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1185255481
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185255477}
   m_CullTransparentMesh: 1
 --- !u!1 &1404928529
 GameObject:
@@ -1201,6 +1299,7 @@ MonoBehaviour:
   nameChar: {fileID: 1678146290}
   background: {fileID: 1925355095}
   transitionAnimator: {fileID: 1137131283}
+  sceneAnimator: {fileID: 1185255479}
   characterAnimator: {fileID: 1404928533}
   characterAnimator2: {fileID: 2101389704}
   dialogueTexts:
@@ -1218,6 +1317,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f91e143fed6202742b3d427a06232b8f, type: 2}
   - {fileID: 11400000, guid: dd05508daf14c5946a3925baa6832e1a, type: 2}
   - {fileID: 11400000, guid: 0a1635e20d8b57c4e8ebadf0919abf33, type: 2}
+  - {fileID: 11400000, guid: 4a4ff932733f3904884fdfeb0a005fd4, type: 2}
+  - {fileID: 11400000, guid: 3fc1cb08a24dc3f4393014996464537c, type: 2}
+  - {fileID: 11400000, guid: cebd36752fdab51498a0d795a5bf5ce3, type: 2}
+  - {fileID: 11400000, guid: 51b558bf1a603264ba6e7747b154101a, type: 2}
+  - {fileID: 11400000, guid: 5be11597ae588bd44910ae2a3807985b, type: 2}
+  - {fileID: 11400000, guid: 7f7ec3f1a1172d446b9ac513d03e1b97, type: 2}
+  - {fileID: 11400000, guid: decd2507f0b150f4698456a9d5f2f474, type: 2}
+  - {fileID: 11400000, guid: 14f410d733219fe41a662e2d5f425acb, type: 2}
+  - {fileID: 11400000, guid: c9a8641194ef7f443a2a0207e4921595, type: 2}
+  - {fileID: 11400000, guid: 710981c14f4000843b107e2dfa6343f2, type: 2}
+  - {fileID: 11400000, guid: d2bd454a945ff784ea2c151b8364324b, type: 2}
+  - {fileID: 11400000, guid: 34a482dc1599c1542912ed24554d7227, type: 2}
+  - {fileID: 11400000, guid: 4efc303ff507b5b4eac71859f9a421d3, type: 2}
   - {fileID: 11400000, guid: 4782ce051d59e3440a5ab8cf21557f1e, type: 2}
   - {fileID: 11400000, guid: d3117307888d7c841b9946d40346c68a, type: 2}
   - {fileID: 11400000, guid: 627e6f46a1468854a8c15f9ca2702a76, type: 2}
@@ -1266,10 +1378,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f1435591e75a22e45a7008d13cd2cc0a, type: 2}
   - {fileID: 11400000, guid: ff23387fa227b6a45a07ce38f83b745c, type: 2}
   - {fileID: 11400000, guid: 25b74c80da2983245a8bb2e3b1bbc6dd, type: 2}
-  - {fileID: 11400000, guid: 06ff2b36729969e43af5836bb43405c0, type: 2}
   - {fileID: 11400000, guid: 0b46ac1786a23bb4aafaf42281be58ac, type: 2}
   - {fileID: 11400000, guid: d3afeccea6148f242af84b7d2518461d, type: 2}
-  - {fileID: 11400000, guid: 813de2e28d87cc542864de2a6626880a, type: 2}
   decisionsTexts:
   - {fileID: 11400000, guid: 4053df6adea17dc40ac2bf51dfa3c3b0, type: 2}
   - {fileID: 11400000, guid: 2aadf2262ba17d5489f29baf9c63156d, type: 2}

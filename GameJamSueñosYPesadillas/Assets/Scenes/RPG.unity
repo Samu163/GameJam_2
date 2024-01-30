@@ -1363,7 +1363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106209813}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 463, y: 260.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   uiController: {fileID: 1700562917}
   board: {fileID: 0}
   playerPrefabRef: {fileID: 6610108679820664164, guid: 376f17889ccb84e46a7024b11d455e57, type: 3}
+  sombreritoPrefabRef: {fileID: 0}
   enemies: []
   enemiesDay1:
   - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
@@ -1432,6 +1433,7 @@ MonoBehaviour:
   selectCharacter: 0
   selectAction: 0
   maxItemsInARow: 4
+  turns: 0
   habilityName: 
   itemButton: {fileID: 1973255396}
   fleeButton: {fileID: 1273814219}

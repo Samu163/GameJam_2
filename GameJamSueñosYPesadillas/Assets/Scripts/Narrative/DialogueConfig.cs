@@ -20,5 +20,7 @@ public class DialogueConfig : ScriptableObject
     public int idAnim;
     public bool isLeft;
     public bool isOnlyRight;
+    public bool isPunch;
+    public bool isFlashback;
 
 }

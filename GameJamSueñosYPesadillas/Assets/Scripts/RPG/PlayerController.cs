@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < config.habilities.Count; i++)
         {
-            var hability = Instantiate(habilityPrefabRef, transform);
-            hability.transform.position = new Vector3(hability.transform.position.x + 100 + 100 * i, hability.transform.position.y, hability.transform.position.z);
+            var hability = Instantiate(habilityPrefabRef);
+            hability.transform.position = new Vector3(transform.position.x + 150 + 100 * i, transform.position.y+100, transform.position.z);
             hability.Init(config.habilities[i], UseHability);
             buttonHabilities.Add(hability);
         }
