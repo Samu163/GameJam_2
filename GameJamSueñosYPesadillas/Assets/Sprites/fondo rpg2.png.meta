@@ -3,6 +3,9 @@ guid: 36fe6c569f0ab7e4d988f340516dd48e
 TextureImporter:
   internalIDToNameTable:
   - first:
+      213: -6116865026233061089
+    second: fondo rpg2_0
+  - first:
       213: -1664633010641199958
     second: fondo rpg2_1
   - first:
@@ -86,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -98,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
