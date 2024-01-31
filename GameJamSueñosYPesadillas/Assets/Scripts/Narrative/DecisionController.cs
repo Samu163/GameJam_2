@@ -46,6 +46,12 @@ public class DecisionController : MonoBehaviour
             
         }
     }
+
+    private void Start()
+    {
+        textSpeed = GameManager.instance.textSpeed;
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !isHeadTextDisplayed)

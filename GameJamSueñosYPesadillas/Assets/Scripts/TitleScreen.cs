@@ -17,7 +17,7 @@ public class TitleScreen : MonoBehaviour
     public int activeOption = 0;
 
     public string language = "Español";
-    public string speed = "slow";
+    public string speed = "Slow";
 
     // Start is called before the first frame update
     void Start()
@@ -83,17 +83,17 @@ public class TitleScreen : MonoBehaviour
         
         GameManager.instance.language = language;
 
-        if (speed == "slow")
-        {
-            GameManager.instance.textSpeed = 0.1f;
-        }
-        else if (speed == "medium")
+        if (speed == "Slow")
         {
             GameManager.instance.textSpeed = 0.3f;
         }
-        else if (speed == "fast")
+        else if (speed == "Medium")
         {
-            GameManager.instance.textSpeed = 0.5f;
+            GameManager.instance.textSpeed = 0.2f;
+        }
+        else if (speed == "Fast")
+        {
+            GameManager.instance.textSpeed = 0.1f;
         }
 
         SceneManager.LoadScene("Narrative");
