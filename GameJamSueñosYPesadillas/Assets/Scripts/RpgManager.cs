@@ -722,12 +722,17 @@ public class RpgManager : MonoBehaviour
             {
                 SceneManager.LoadScene("GoodEnding");
             }
-            else
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
             {
-                SceneManager.LoadScene("Narrative");
+                SceneManager.LoadScene("BadEnding");
+            }
+            else if (GameManager.instance.finalValue <= -70)
+            {
+                SceneManager.LoadScene("VeryBadEnding");
             }
 
-            
+
+
             return false;
         }
 
@@ -739,9 +744,13 @@ public class RpgManager : MonoBehaviour
             {
                 SceneManager.LoadScene("GoodEnding");
             }
-            else
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
             {
-                SceneManager.LoadScene("Narrative");
+                SceneManager.LoadScene("BadEnding");
+            }
+            else if (GameManager.instance.finalValue <= -70)
+            {
+                SceneManager.LoadScene("VeryBadEnding");
             }
             return false;
         }

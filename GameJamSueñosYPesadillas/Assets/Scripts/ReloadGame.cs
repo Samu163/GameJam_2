@@ -13,7 +13,7 @@ public class ReloadGame : MonoBehaviour
 
         while (!finished)
         {
-            yield return new WaitForSecondsRealtime(15);
+            yield return new WaitForSecondsRealtime(12);
             finished = true;
         }
 

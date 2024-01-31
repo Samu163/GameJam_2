@@ -23,7 +23,7 @@ public class titleButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        title.language = myLanguage.text;
     }
 
     // Update is called once per frame
