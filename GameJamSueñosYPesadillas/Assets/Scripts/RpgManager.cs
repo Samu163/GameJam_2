@@ -717,7 +717,17 @@ public class RpgManager : MonoBehaviour
             //Derrota enemigos 
             
             GameManager.instance.SaveRPGResult(1);
-            SceneManager.LoadScene("Narrative");
+
+            if(GameManager.instance.finalValue >= 0)
+            {
+                SceneManager.LoadScene("GoodEnding");
+            }
+            else
+            {
+                SceneManager.LoadScene("Narrative");
+            }
+
+            
             return false;
         }
 
@@ -725,7 +735,14 @@ public class RpgManager : MonoBehaviour
         {
             //Derrota aliados 
             GameManager.instance.SaveRPGResult(0);
-            SceneManager.LoadScene("Narrative");
+            if (GameManager.instance.finalValue >= 0)
+            {
+                SceneManager.LoadScene("GoodEnding");
+            }
+            else
+            {
+                SceneManager.LoadScene("Narrative");
+            }
             return false;
         }
         return true;
