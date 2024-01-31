@@ -2423,13 +2423,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions: 
   finalDecisions: 
+<<<<<<< Updated upstream
   lastTextIndex: 77
+=======
+  lastTextIndex: 0
+>>>>>>> Stashed changes
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0
   day: 0
   language: Spanish
   textSpeed: 0
+  finalValue: 0
 --- !u!4 &2009265625
 Transform:
   m_ObjectHideFlags: 0
