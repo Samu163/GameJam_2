@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int RPGResult;
     public int day;
 
-    public string language = "Spanish";
+    public string language = "Español";
     public float textSpeed;
     public int finalValue = 0;
 
