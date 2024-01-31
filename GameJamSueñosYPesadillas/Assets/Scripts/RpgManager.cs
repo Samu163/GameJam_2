@@ -312,10 +312,13 @@ public class RpgManager : MonoBehaviour
     void Update()
     {
         allies[activePlayer].ShowPlayerSelectedIcon(true);
+        allies[activePlayer].AnimatorPlayer.SetTrigger("IdleTrigger");
+        enemies[activeEnemy].enemyAnimator.SetTrigger("EIdleTrigger");
         switch (currentStep)
         {
             //Selecciona el personaje 
             case state.SELECT_CHARACTER:
+
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     allies[activePlayer].ShowPlayerSelectedIcon(false);
@@ -368,7 +371,9 @@ public class RpgManager : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    CheckItem();
+                    allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+                    Invoke("CheckItem", 2);
+
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
@@ -508,7 +513,8 @@ public class RpgManager : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    CheckItem();
+                    allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+                    Invoke("CheckItem", 2);
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
@@ -539,6 +545,7 @@ public class RpgManager : MonoBehaviour
         switch (inventory[activeItem].nameObject.text)
         {
             case "Potion":
+
                 Debug.Log("Heal Potion");
                 allies[activePlayer].life += 15;
                 break;
@@ -608,7 +615,7 @@ public class RpgManager : MonoBehaviour
             if (CheckAllPlayersHadAttacked())
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
-                EnemyTurn();
+                Invoke("EnemyTurn", 2);
             }
             else
             {
@@ -634,7 +641,9 @@ public class RpgManager : MonoBehaviour
         }
         else
         {
-            CheckItem();
+            allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+            Invoke("CheckItem", 2);
+         
         }
     }
 
@@ -725,6 +734,16 @@ public class RpgManager : MonoBehaviour
 
     public void EnemyTurn()
     {
+        if (allies[activePlayer] != null)
+        {
+            allies[activePlayer].ShowPlayerSelectedIcon(false);
+
+        }
+        if (enemies[activeEnemy] != null)
+        {
+            enemies[activeEnemy].ShowSelectedIcon(false);
+
+        }
         for (int i = 0; i < enemies.Count; i++)
         {
             var j = enemies[i].config.habilities.Count;
@@ -774,6 +793,7 @@ public class RpgManager : MonoBehaviour
         {
             allies[i].hasAttacked = false;
         }
+        
         activePlayer = 0;
         activeHability = 0;
         currentStep = state.SELECT_CHARACTER;
@@ -797,31 +817,38 @@ public class RpgManager : MonoBehaviour
     {
         Debug.Log(habilityName);
         var j = GetRandomIndex(allies.Count);
+  
         switch (habilityName)
         {
             case "Puñetazo Chungo":
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
+
                 //Añadir animacion de ataque
                 Debug.Log("vaya reventada, tenia " + allies[j].life);
                 allies[j].life -= enemies[activeEnemy].attack * 2 - allies[j].defense;
                 Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" + allies[j].life);
                 break;
             case "Intimidar":
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EintimidarTrigger");
                 allies[j].attackPower -= 5;
                 Debug.Log(allies[j].attackPower);
                 break;
             case "Criticas de Madre":
                 for (int i = 0; i < allies.Count; i++)
                 {
+                    enemies[activeEnemy].enemyAnimator.SetTrigger("ECriticaTrigger");
                     allies[i].life -= 5;
                     Debug.Log(allies[i].life);
                 }
                 break;
             case "Blow Bottle":
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
                 Debug.Log(allies[j].life);
                 Debug.Log("Botellazo");
                 break;
             case "Drink":
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
                 enemies[activeEnemy].attack += 10;
                 enemies[activeEnemy].life -= 10;
                 Debug.Log(enemies[activeEnemy].attack);
@@ -849,6 +876,7 @@ public class RpgManager : MonoBehaviour
         else
         {
             CheckHability(habilityName);
+
         }
 
     }
@@ -856,17 +884,21 @@ public class RpgManager : MonoBehaviour
 
     public void CheckHability(string habilityName)
     {
-
+     
         //active enemy es el enemigo a atacar y active player es el player al que se le aplica la accion (puede ser a si mismo) 
         switch (habilityName)
         {
             case "Punch":
                 //Añadir animacion de ataque
-                Debug.Log("Puñetazo");
+                allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
+              
+             Debug.Log("Puñetazo");
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 break;
             case "Shot":
+                allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTrigerDisp");
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
@@ -875,6 +907,8 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Disparo");
                 break;
             case "Help":
+                allies[activePlayer].AnimatorPlayer.SetTrigger("HurtTrigger");
+
                 allies[activePlayer].defense += 5;
                 Debug.Log(allies[activePlayer].defense);
                 Debug.Log("Sube defensa a aliado");
@@ -910,6 +944,7 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Botellazo");
                 break;
             case "Drink":
+
                 allies[activePlayer].attackPower += 10;
                 allies[activePlayer].life -= 10;
                 Debug.Log(allies[activePlayer].attackPower);
@@ -927,7 +962,8 @@ public class RpgManager : MonoBehaviour
             if (CheckAllPlayersHadAttacked())
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
-                EnemyTurn();
+
+                Invoke("EnemyTurn",2);
             }
             else
             {

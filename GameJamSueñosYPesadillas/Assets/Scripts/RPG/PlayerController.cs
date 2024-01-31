@@ -17,12 +17,14 @@ public class PlayerController : MonoBehaviour
     public HabilityController habilityPrefabRef;
     public List<HabilityController> buttonHabilities;
     UnityAction<string, bool, bool> _applyHability;
-
+    public Animator AnimatorPlayer;
+  
 
     public bool isFighting = false;
 
     public void Init(UnityAction<string, bool,bool> applyHability)
     {
+       AnimatorPlayer = GetComponent<Animator>();
         _applyHability = applyHability;
         life = config.life;
         attackPower = config.attackPower;

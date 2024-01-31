@@ -12,8 +12,10 @@ public class EnemyController : MonoBehaviour
     public int defense;
     public int idEnemy;
     public SpriteRenderer selectedIcon;
+    public Animator enemyAnimator;
     public void Init()
     {
+        enemyAnimator = GetComponent<Animator>();
         life = config.life;
         attack = config.attack;
         defense = config.defense;

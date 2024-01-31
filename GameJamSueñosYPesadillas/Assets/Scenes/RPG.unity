@@ -489,7 +489,7 @@ Transform:
   m_LocalScale: {x: 0.9473, y: 0.9473, z: 0.9473}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &515668941
 GameObject:
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1700562917}
   board: {fileID: 0}
-  playerPrefabRef: {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
+  playerPrefabRef: {fileID: 6191159342548961082, guid: 3c113685ef3a84d4dafcc404859709e7, type: 3}
   sombreritoPrefabRef: {fileID: 6275091184610342106}
   enemies: []
   enemiesDay1:
