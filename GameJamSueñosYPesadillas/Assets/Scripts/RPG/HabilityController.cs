@@ -27,12 +27,10 @@ public class HabilityController : MonoBehaviour
             if (GameManager.instance.language == "Español")
             {
                 description = hability.descriptionEspañol;
-
             }
             else
             {
                 description = hability.descriptionIngles;
-
             }
         }
         else
@@ -41,6 +39,7 @@ public class HabilityController : MonoBehaviour
         }
 
         ShowSelectedImage(false);
+
     }
 
     public void ShowSelectedImage(bool condition)

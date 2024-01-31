@@ -39,6 +39,7 @@ public class RpgManager : MonoBehaviour
     public int maxItemsInARow = 4;
     public int turns;
     public string habilityNameRPGManager;
+    string enemyHabilityName;
 
     bool hasChangeSide;
 
@@ -353,6 +354,7 @@ public class RpgManager : MonoBehaviour
                     uiController.ShowTextDisplay(true);
                     uiController.textDisplay.Init(hability.description);
                     uiController.textDisplay.SetFalse();
+                    currentStep = state.NONE;
                     Invoke("CheckHability", 4);
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -376,6 +378,7 @@ public class RpgManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+                    currentStep = state.NONE;
                     Invoke("CheckItem", 2);
 
                 }
@@ -459,7 +462,6 @@ public class RpgManager : MonoBehaviour
 
                     allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
                     allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
-                    //Esto es provisional, en principio tendria que seleccionar al enemigo o al jugador 
 
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -494,6 +496,7 @@ public class RpgManager : MonoBehaviour
                     uiController.ShowTextDisplay(true);
                     uiController.textDisplay.Init(hability.description);
                     uiController.textDisplay.SetFalse();
+                    currentStep = state.NONE;
                     Invoke("CheckHability", 4);
                 }
 
@@ -521,6 +524,7 @@ public class RpgManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+                    currentStep = state.NONE;
                     Invoke("CheckItem", 2);
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -622,6 +626,7 @@ public class RpgManager : MonoBehaviour
             if (CheckAllPlayersHadAttacked())
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
+                currentStep = state.NONE;
                 Invoke("EnemyTurn", 2);
             }
             else
@@ -649,11 +654,10 @@ public class RpgManager : MonoBehaviour
         else
         {
             allies[activePlayer].AnimatorPlayer.SetTrigger("ItemTrigger");
+            currentStep = state.NONE;
             Invoke("CheckItem", 2);
-         
         }
     }
-
 
     public bool CheckAllPlayersHadAttacked()
     {
@@ -794,7 +798,19 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < enemies.Count; i++)
         {
             var j = enemies[i].config.habilities.Count;
-            CheckEnemyHabilityResult(enemies[i].config.habilities[GetRandomIndex(j)].habilityName);
+            enemyHabilityName = enemies[i].config.habilities[GetRandomIndex(j)].habilityName;            
+            uiController.ShowTextDisplay(true);
+            if(GameManager.instance.language == "Español")
+            {
+                uiController.textDisplay.Init(enemies[i].config.habilities[GetRandomIndex(j)].descriptionEspañol);
+            }
+            else
+            {
+                uiController.textDisplay.Init(enemies[i].config.habilities[GetRandomIndex(j)].descriptionIngles);
+            }
+            uiController.textDisplay.SetFalse();
+            currentStep = state.NONE;
+            Invoke("CheckEnemyHabilityResult", 4);
         }
         //El desconocido se tiene que llamar unknown
         if (GameManager.instance.day == 2 && !hasChangeSide)
@@ -829,8 +845,8 @@ public class RpgManager : MonoBehaviour
             }
 
         }
-       
-       Invoke(  "SetPlayerTurn", 2);
+        currentStep = state.NONE;
+        Invoke("SetPlayerTurn", 4);
     }
 
     public void SetPlayerTurn()
@@ -860,12 +876,13 @@ public class RpgManager : MonoBehaviour
 
     }
 
-    public void CheckEnemyHabilityResult(string habilityName)
+    public void CheckEnemyHabilityResult()
     {
-        Debug.Log(habilityName);
+        uiController.ShowTextDisplay(false);
+        Debug.Log(enemyHabilityName);
         var j = GetRandomIndex(allies.Count);
   
-        switch (habilityName)
+        switch (enemyHabilityName)
         {
             case "Puñetazo Chungo":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
@@ -926,6 +943,7 @@ public class RpgManager : MonoBehaviour
             uiController.ShowTextDisplay(true);
             uiController.textDisplay.Init(hability.description);
             uiController.textDisplay.SetFalse();
+            currentStep = state.NONE;
             Invoke("CheckHability" , 4);
         }
 
@@ -1026,7 +1044,7 @@ public class RpgManager : MonoBehaviour
             if (CheckAllPlayersHadAttacked())
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
-
+                currentStep = state.NONE;
                 Invoke("EnemyTurn",2);
             }
             else
