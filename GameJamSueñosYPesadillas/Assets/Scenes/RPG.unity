@@ -1222,6 +1222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsBg: {fileID: 1811305028}
   textDisplay: {fileID: 369279413}
+  lifebar: {fileID: 4449126980042011059, guid: 285d5f1d3b31830409c745a33c297ef1, type: 3}
+  barraVida: {fileID: 1635906353515163729, guid: 285d5f1d3b31830409c745a33c297ef1, type: 3}
+  barraVidas: []
 --- !u!114 &1758213425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8532503309902910152, guid: a401206fb6ee74e4fb48f76ad743b5c8, type: 3}

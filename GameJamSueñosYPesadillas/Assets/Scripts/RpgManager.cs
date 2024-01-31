@@ -23,6 +23,7 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
+    
 
     public ItemController itemPrefabRef;
     public state currentStep;
@@ -44,6 +45,8 @@ public class RpgManager : MonoBehaviour
 
     public GameObject itemButton;
     public GameObject fleeButton;
+
+    
 
     public enum state
     {
@@ -106,6 +109,7 @@ public class RpgManager : MonoBehaviour
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
+            uiController.InitBarraVida(-285 + 645, -215 + 362.8f - 45*i, ally.namePlayer);
             allies.Add(ally);
         }
         for (int i = 0; i < enemyPrefabs.Count; i++)
@@ -671,6 +675,8 @@ public class RpgManager : MonoBehaviour
     {
         for (int i = 0; i < allies.Count; i++)
         {
+            uiController.barraVidas[i].loadLife(allies[i].life, allies[i].maxLife);
+
             if (allies[i].life <= 0)
             {
                 RemoveAlly(i);
