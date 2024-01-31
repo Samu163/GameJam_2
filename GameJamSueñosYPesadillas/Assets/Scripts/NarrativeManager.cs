@@ -49,7 +49,7 @@ public class NarrativeManager : MonoBehaviour
     {
         dialogue.Init(TriggerEvent);
 
-        if (language == "Spanish")
+        if (language == "Español")
         {
             dialogue.AsignConfig(dialogueTexts[indexText]);
         } 
@@ -93,7 +93,7 @@ public class NarrativeManager : MonoBehaviour
             dialogue.gameObject.SetActive(false);
             decision.gameObject.SetActive(true);
 
-            if (language == "Spanish")
+            if (language == "Español")
             {
                 decision.Init(decisionsTexts[indexDecisions], DecisionResult);
             }
@@ -117,7 +117,7 @@ public class NarrativeManager : MonoBehaviour
         {
             indexText++;
 
-            if(language == "Spanish")
+            if(language == "Español")
             {
                 dialogue.AsignConfig(dialogueTexts[indexText]);
             }

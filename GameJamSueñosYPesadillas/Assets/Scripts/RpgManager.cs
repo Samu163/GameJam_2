@@ -571,13 +571,13 @@ public class RpgManager : MonoBehaviour
 
                 if (turns < 4 && !hasChangeSide)
                 {
-                    var player = allies.Find(p => p.config.name == "Carlos");
+                    var player = allies.Find(p => p.config.name == "unknown");
                     if (player != null)
                     {
                         int num= allies.IndexOf(player);
                         RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                         sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
@@ -717,7 +717,22 @@ public class RpgManager : MonoBehaviour
             //Derrota enemigos 
             
             GameManager.instance.SaveRPGResult(1);
-            SceneManager.LoadScene("Narrative");
+
+            if(GameManager.instance.finalValue >= 0)
+            {
+                SceneManager.LoadScene("GoodEnding");
+            }
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
+            {
+                SceneManager.LoadScene("BadEnding");
+            }
+            else if (GameManager.instance.finalValue <= -70)
+            {
+                SceneManager.LoadScene("VeryBadEnding");
+            }
+
+
+
             return false;
         }
 
@@ -725,7 +740,18 @@ public class RpgManager : MonoBehaviour
         {
             //Derrota aliados 
             GameManager.instance.SaveRPGResult(0);
-            SceneManager.LoadScene("Narrative");
+            if (GameManager.instance.finalValue >= 0)
+            {
+                SceneManager.LoadScene("GoodEnding");
+            }
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
+            {
+                SceneManager.LoadScene("BadEnding");
+            }
+            else if (GameManager.instance.finalValue <= -70)
+            {
+                SceneManager.LoadScene("VeryBadEnding");
+            }
             return false;
         }
         return true;
@@ -757,9 +783,10 @@ public class RpgManager : MonoBehaviour
                 var player = allies.Find(p => p.config.name == "unknown");
                 if (player != null)
                 {
-                    allies.Remove(player);
+                    int num = allies.IndexOf(player);
+                    RemoveAlly(num);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                     sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
@@ -770,15 +797,14 @@ public class RpgManager : MonoBehaviour
                 var player = allies.Find(p => p.config.name == "unknown");
                 if (player != null)
                 {
-                    allies.Remove(player);
+                    int num = allies.IndexOf(player);
+                    RemoveAlly(num);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                   
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                     sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
                 hasChangeSide = true;
-
             }
 
         }
@@ -822,14 +848,14 @@ public class RpgManager : MonoBehaviour
         {
             case "Puñetazo Chungo":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
-
+      
                 //Añadir animacion de ataque
                 Debug.Log("vaya reventada, tenia " + allies[j].life);
                 allies[j].life -= enemies[activeEnemy].attack * 2 - allies[j].defense;
                 Debug.Log("Y le ha hecho 10 de daño al player:" + j + "por lo que ahora tiene" + allies[j].life);
                 break;
             case "Intimidar":
-                enemies[activeEnemy].enemyAnimator.SetTrigger("EintimidarTrigger");
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
                 allies[j].attackPower -= 5;
                 Debug.Log(allies[j].attackPower);
                 break;
@@ -842,7 +868,7 @@ public class RpgManager : MonoBehaviour
                 }
                 break;
             case "Blow Bottle":
-                enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
+                enemies[activeEnemy].enemyAnimator.SetTrigger("PunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
                 Debug.Log(allies[j].life);
                 Debug.Log("Botellazo");
@@ -914,6 +940,8 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Sube defensa a aliado");
                 break;
             case "Shout":
+                //ProtaSegundaShoutTrigger
+                allies[activePlayer].AnimatorPlayer.SetTrigger("ShoutTrigger");
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].defense -= 5;
@@ -922,10 +950,14 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Baja defensas enemigos");
                 break;
             case "Hide Emotions":
+                allies[activePlayer].AnimatorPlayer.SetTrigger("HideTrigger");
+                // ProtaSegunda
                 allies[activePlayer].defense += 10;
                 Debug.Log(allies[activePlayer].defense);
                 break;
             case "Let's Go":
+                //EXRoarTrigger
+                allies[activePlayer].AnimatorPlayer.SetTrigger("RoarTrigger");
                 for (int i = 0; i < allies.Count; i++)
                 {
                     allies[i].attackPower += 5;
@@ -934,14 +966,19 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Suma ataque a Aliado");
                 break;
             case "Run":
+                //RUN
+
+                allies[activePlayer].AnimatorPlayer.SetTrigger("RunningTrigger");
                 allies[activePlayer].attackPower += 10;
                 allies[activePlayer].defense -= 10;
                 Debug.Log("Suma Ataque y baja defensa");
+
                 break;
             case "Blow Bottle":
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 Debug.Log("Botellazo");
+                allies[activePlayer].AnimatorPlayer.SetTrigger("EPunchTrigger");
                 break;
             case "Drink":
 
@@ -949,6 +986,7 @@ public class RpgManager : MonoBehaviour
                 allies[activePlayer].life -= 10;
                 Debug.Log(allies[activePlayer].attackPower);
                 Debug.Log(allies[activePlayer].life);
+                allies[activePlayer].AnimatorPlayer.SetTrigger("EItemTrigger");
                 break;
             default:
                 break;
