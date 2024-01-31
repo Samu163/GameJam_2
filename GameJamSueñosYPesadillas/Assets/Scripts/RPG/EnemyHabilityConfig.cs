@@ -7,5 +7,7 @@ using UnityEngine;
 public class EnemyHabilityConfig : ScriptableObject
 {
     public string habilityName;
+    public string descriptionEspañol;
+    public string descriptionIngles;
     
 }

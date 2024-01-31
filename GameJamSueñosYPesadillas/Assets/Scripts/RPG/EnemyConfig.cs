@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyConfig : ScriptableObject
 {
     public int life;
+    public int maxLife;
     public int attack;
     public int defense;
     public int idEnemy;

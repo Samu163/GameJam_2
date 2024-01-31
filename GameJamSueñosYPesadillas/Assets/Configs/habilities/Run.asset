@@ -16,3 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 1b00619423486404e9f37a88769618df, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
+  "descriptionEspa\xF1ol": "Retirada estrat\xE9gica! (+10 ataque -10 defensa)"
+  descriptionIngles: Strategic retreat! (+10 attack -10 defense)

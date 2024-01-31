@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: Mateo
   m_EditorClassIdentifier: 
-  name: mateo
-  life: 1
+  name: Mateo
+  life: 60
+  maxLife: 60
   attackPower: 15
   defense: 5
   habilities:

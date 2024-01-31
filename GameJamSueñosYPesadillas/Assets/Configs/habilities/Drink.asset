@@ -16,3 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 69c48c9992718684b978bd82615aba67, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
+  "descriptionEspa\xF1ol": "Glup glup! Mi poder est\xE1 sobre 9000! (+10 ataque -10
+    de vida)"
+  descriptionIngles: Glup glup! My power is over 9000! (+10 attack -10 life)

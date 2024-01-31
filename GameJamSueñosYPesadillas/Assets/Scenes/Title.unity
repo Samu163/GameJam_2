@@ -1914,8 +1914,8 @@ MonoBehaviour:
   - {fileID: 1344698479}
   index: 0
   activeOption: 0
-  language: Spanish
-  speed: slow
+  language: "Espa\xF1ol"
+  speed: Slow
 --- !u!1 &1696619931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   OnMe: 0
   myButton: {fileID: 1939559632}
   Indicator: {fileID: 1402826706}
-  languageIndex: 0
+  languageIndex: 1
   speedIndex: 0
   myLanguage: {fileID: 2047453309}
   textSpeed: {fileID: 0}
@@ -2423,13 +2423,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions: 
   finalDecisions: 
-  lastTextIndex: 0
+  lastTextIndex: 35
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0
   day: 0
-  language: Spanish
-  textSpeed: 0
+  language: "Espa\xF1ol"
+  textSpeed: 0.3
   finalValue: 0
 --- !u!4 &2009265625
 Transform:

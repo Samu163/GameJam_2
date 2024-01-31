@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Carlos
   m_EditorClassIdentifier: 
   name: Carlos
-  life: 999
+  life: 70
+  maxLife: 70
   attackPower: 15
   defense: 15
   habilities:

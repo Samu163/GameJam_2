@@ -46,7 +46,7 @@ public class DialogueController: MonoBehaviour
     {
         displayText.text = string.Empty;
         canClick = true;
-        
+        textSpeed = GameManager.instance.textSpeed;
         
     }
 
@@ -101,6 +101,8 @@ public class DialogueController: MonoBehaviour
         {
             itemAnimator.SetBool("isIdCard", false);
         }
+
+
 
         if (Input.GetMouseButtonDown(0) && canClick)
         {

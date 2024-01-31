@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: Desconocido
   m_EditorClassIdentifier: 
-  name: unknown
-  life: 40
+  name: Unknown
+  life: 50
+  maxLife: 50
   attackPower: 15
   defense: 5
   habilities:
