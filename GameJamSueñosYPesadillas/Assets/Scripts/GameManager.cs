@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     public string language = "Spanish";
     public float textSpeed;
-    public int finalValue = 0;
 
     // Start is called before the first frame update
 
