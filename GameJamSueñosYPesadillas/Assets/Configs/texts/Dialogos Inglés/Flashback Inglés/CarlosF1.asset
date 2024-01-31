@@ -20,9 +20,9 @@ MonoBehaviour:
   nameChar: Young Carlos
   characterImg: {fileID: 0}
   backgroundScene: {fileID: 21300000, guid: 454c5bf3cf522bb4891d43eb7b4e0dca, type: 3}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 99f836043bb8fda4c90f4200220e8205, type: 3}
   decision: {fileID: 0}
-  fadeInOut: 0
+  fadeInOut: 1
   changeScenario: 0
   endsDay: 0
   idAnim: 10
