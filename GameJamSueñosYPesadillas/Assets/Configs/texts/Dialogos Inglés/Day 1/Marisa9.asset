@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Marisa9
   m_EditorClassIdentifier: 
   lines:
-  - Yes, I have been keeping it during all this time.
-  - I want you to have it, it will bring you luck and you need it more than me.
+  - Yes, I held onto it for all this years.
+  - But now I want you to have it, it will bring you luck and you need it more than
+    me.
   hasDecision: 0
   nameChar: Marisa
   characterImg: {fileID: 0}

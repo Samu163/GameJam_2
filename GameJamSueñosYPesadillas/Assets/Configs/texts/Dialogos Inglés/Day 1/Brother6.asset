@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Brother6
   m_EditorClassIdentifier: 
   lines:
-  - "Well, if you think so\u2026 Anyways, Marisa told me that wanted to call you."
+  - "Well, if you think so\u2026 Anyways, Marisa told me that she wanted to call
+    you."
   - It seems that she has something important to tell you, but I have no idea what
-    it is about.
+    it is.
   hasDecision: 0
   nameChar: Mateo
   characterImg: {fileID: 0}

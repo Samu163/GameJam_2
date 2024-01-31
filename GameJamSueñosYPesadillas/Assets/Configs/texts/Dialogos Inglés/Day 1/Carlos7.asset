@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carlos7
   m_EditorClassIdentifier: 
   lines:
-  - "You don\u2019t get it, you can\u2019t understand it."
+  - "You don\u2019t get it, you'll never understand it."
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}

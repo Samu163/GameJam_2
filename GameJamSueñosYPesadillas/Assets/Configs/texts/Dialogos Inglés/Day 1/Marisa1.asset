@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Marisa1
   m_EditorClassIdentifier: 
   lines:
-  - Carlos? It's you?
+  - Carlos? Is it really you?
   hasDecision: 0
   nameChar: Marisa
   characterImg: {fileID: 0}

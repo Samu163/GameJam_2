@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Marisa5
   m_EditorClassIdentifier: 
   lines:
-  - Carlos, stop calling you an assassin, it happened a long time ago.
-  - "You have to move forward. You don\u2019t have all the blame for what happened
-    there."
+  - Carlos, stop calling yourself an assassin, it happened a long time ago.
+  - You have to move forward. You musn't bury yourself with all the blame for what
+    happened that day.
   hasDecision: 0
   nameChar: Marisa
   characterImg: {fileID: 0}

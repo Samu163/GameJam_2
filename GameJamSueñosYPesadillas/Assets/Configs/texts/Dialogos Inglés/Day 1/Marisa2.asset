@@ -15,9 +15,9 @@ MonoBehaviour:
   lines:
   - What? No, nothing like that. I will never judge you for what you did in that
     situation. I called you to tell you something very important.
-  - "It\u2019s probably something I had to tell you so much time ago and I\u2019m
-    very sorry."
-  - But I thought that it was better if I was in charge of it alone.
+  - "It\u2019s probably something I should've told you long ago , I just couldn't
+    bring myself to do it and I\u2019m very sorry for it."
+  - But I thought that it was for the better if I was in charge of this alone.
   hasDecision: 0
   nameChar: Marisa
   characterImg: {fileID: 0}

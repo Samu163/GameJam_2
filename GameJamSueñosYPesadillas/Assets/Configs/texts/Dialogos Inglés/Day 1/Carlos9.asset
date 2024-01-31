@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Carlos9
   m_EditorClassIdentifier: 
   lines:
-  - Mateo, it has been more than 30 years that we haven't talked.
-  - She probably will have redone her life. Maybe she only needs to give me something
-    back or something like that.
+  - Mateo, it has been more than 30 years since we last talked.
+  - She must have turned over her life.  She probably just has some old keepsake
+    to return.
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}

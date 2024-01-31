@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Brother4
   m_EditorClassIdentifier: 
   lines:
-  - "You don\u2019t have to worry about anything, Manolete."
-  - You know I will always be grateful about what you did.
-  - "I\u2019m sorry that you had to go through all this because of my fault."
+  - "You don\u2019t have to worry about anything, Carlos."
+  - I will always be grateful about what you did.
+  - "I\u2019m sorry that you had to go through all of this because of my recklesness."
   hasDecision: 0
   nameChar: Mateo
   characterImg: {fileID: 0}

@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - "Don\u2019t be that pessimistic, come on."
-  - "Let\u2019s go to the car and I'm going to bring you home, surely you want to
-    rest."
+  - Get on the car and I'll drive you to your old apartment, you surely want to rest.
   hasDecision: 0
   nameChar: Mateo
   characterImg: {fileID: 0}

@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Carlos3
   m_EditorClassIdentifier: 
   lines:
-  - "Finally free, I can\u2019t believe that I have managed to go out of here after
-    all this time."
-  - I really thought that I was going to rot inside this prison.
-  - I wonder what will be of me from now on?
-  - How is one supposed to resume his life after all this?
-  - Anyway, I only want to go to my apartment and relax a little bit.
-  - "When will my always carefree brother? He was supposed to have arrived by now\u2026"
+  - "Finally free, I can\u2019t believe I'm out , after all this time."
+  - I thought I'd rot away in this prison.
+  - What should my path be from now on?
+  - How is one supposed to resume his life after all of this?
+  - Anyways, I only want to go to my apartment and relax a little bit.
+  - "When will my carefree brother show up? He was supposed to have arrived by now\u2026"
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}

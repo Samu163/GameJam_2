@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brother1
   m_EditorClassIdentifier: 
   lines:
-  - "Carlooos! I\u2019m so happy that I can see you out of that prison, how are you?"
+  - "Carlooos! I\u2019m relieved to see you out of that prison, how are you?"
   hasDecision: 0
   nameChar: Mateo
   characterImg: {fileID: 0}

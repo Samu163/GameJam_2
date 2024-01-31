@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carlos10
   m_EditorClassIdentifier: 
   lines:
-  - "If you say so\u2026 I will think about that."
+  - "If you say so\u2026 I'll give it some thought."
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}

@@ -16,8 +16,8 @@ MonoBehaviour:
   - Marisa? That Marisa? What would she want to tell me?
   - It's been a long time since I knew anything about her, she stopped visiting me
     several months after being in prison.
-  - "She told me that she was very busy and I don\u2019t know more. I thought that
-    she forgot me."
+  - She told me that she was very busy and I never heard of her again. I thought
+    that she forgot about me.
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}

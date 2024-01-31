@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Carlos4
   m_EditorClassIdentifier: 
   lines:
-  - "Fine, I guess. After so much time it\u2019s a bit strange to me being outside."
-  - "I just hope that I\u2019m able to live peacefully the little time I have left
-    in my life."
+  - Fine, I guess. After so much time it kinda feels strange to go outside.
+  - "I just hope that I\u2019m able to live out peacefully what little time I may
+    have"
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}
