@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: Carlos_N2
   m_EditorClassIdentifier: 
-  name: 
+  name: Carlos
   life: 70
   maxLife: 70
   attackPower: 15
