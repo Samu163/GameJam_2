@@ -46,7 +46,7 @@ public class DialogueController: MonoBehaviour
     {
         displayText.text = string.Empty;
         canClick = true;
-        
+        textSpeed = GameManager.instance.textSpeed;
         
     }
 
@@ -102,6 +102,8 @@ public class DialogueController: MonoBehaviour
             itemAnimator.SetBool("isIdCard", false);
         }
 
+
+
         if (Input.GetMouseButtonDown(0) && canClick)
         {
 
@@ -131,6 +133,12 @@ public class DialogueController: MonoBehaviour
                         
                         Punch();
                         Invoke("NextLine", 5);
+                        Invoke("SetCanClick", 6);
+                    }
+                    else if (dialogueConfig.isRoomScene)
+                    {
+                        Room();
+                        Invoke("NextLine", 2);
                         Invoke("SetCanClick", 6);
                     }
                     else
@@ -232,6 +240,12 @@ public class DialogueController: MonoBehaviour
     public void Punch()
     {
         sceneAnimator.Play("PunchAnim");
+
+    }
+
+    public void Room()
+    {
+        sceneAnimator.Play("RoomAnim");
 
     }
 

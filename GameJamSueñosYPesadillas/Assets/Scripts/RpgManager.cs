@@ -830,7 +830,7 @@ public class RpgManager : MonoBehaviour
 
         }
        
-        SetPlayerTurn();
+       Invoke(  "SetPlayerTurn", 2);
     }
 
     public void SetPlayerTurn()

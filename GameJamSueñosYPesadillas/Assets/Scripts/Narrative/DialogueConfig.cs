@@ -30,5 +30,6 @@ public class DialogueConfig : ScriptableObject
     public bool isColgante;
     public bool isGun;
     public bool isIdCard;
+    public bool isRoomScene;
 
 }

@@ -12,7 +12,7 @@ public class titleButton : MonoBehaviour
     public Button myButton;
     public GameObject Indicator;
 
-    public int languageIndex = 0;
+    public int languageIndex = 1;
     public int speedIndex = 0;
 
     public TextMeshProUGUI myLanguage;
@@ -24,6 +24,7 @@ public class titleButton : MonoBehaviour
     void Start()
     {
         title.language = myLanguage.text;
+        title.speed = textSpeed.text;
     }
 
     // Update is called once per frame
@@ -77,7 +78,7 @@ public class titleButton : MonoBehaviour
              textSpeed.text = "Slow";
         }
 
-        title.language = textSpeed.text;
+        title.speed = textSpeed.text;
 
     }
 
