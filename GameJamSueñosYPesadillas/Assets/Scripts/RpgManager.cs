@@ -571,13 +571,13 @@ public class RpgManager : MonoBehaviour
 
                 if (turns < 4 && !hasChangeSide)
                 {
-                    var player = allies.Find(p => p.config.name == "Carlos");
+                    var player = allies.Find(p => p.config.name == "unknown");
                     if (player != null)
                     {
                         int num= allies.IndexOf(player);
                         RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                         sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
@@ -757,9 +757,10 @@ public class RpgManager : MonoBehaviour
                 var player = allies.Find(p => p.config.name == "unknown");
                 if (player != null)
                 {
-                    allies.Remove(player);
+                    int num = allies.IndexOf(player);
+                    RemoveAlly(num);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                     sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
@@ -770,15 +771,14 @@ public class RpgManager : MonoBehaviour
                 var player = allies.Find(p => p.config.name == "unknown");
                 if (player != null)
                 {
-                    allies.Remove(player);
+                    int num = allies.IndexOf(player);
+                    RemoveAlly(num);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                   
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
                     sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
                 hasChangeSide = true;
-
             }
 
         }
