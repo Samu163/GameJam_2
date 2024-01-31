@@ -111,7 +111,7 @@ public class RpgManager : MonoBehaviour
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
-            uiController.InitBarraVida(-285 + canvasRect.rect.width, -215 + canvasRect.rect.height - 45*i, ally.namePlayer);
+            uiController.InitBarraVida(-285 + canvasRect.rect.width, -280 + canvasRect.rect.height - 55*i, ally.namePlayer);
             allies.Add(ally);
         }
         for (int i = 0; i < enemyPrefabs.Count; i++)
