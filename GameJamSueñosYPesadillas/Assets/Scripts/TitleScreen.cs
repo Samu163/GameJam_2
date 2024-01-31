@@ -16,7 +16,7 @@ public class TitleScreen : MonoBehaviour
     public int index;
     public int activeOption = 0;
 
-    public string language = "Spanish";
+    public string language = "Español";
     public string speed = "slow";
 
     // Start is called before the first frame update

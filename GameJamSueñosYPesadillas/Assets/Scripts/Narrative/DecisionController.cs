@@ -81,6 +81,7 @@ public class DecisionController : MonoBehaviour
     {
         resultIndex = index;
         _onButtonClick.Invoke(resultIndex, decisionConfig.nextDecisionsDialogues[resultIndex], decisionConfig.skipDialogues[resultIndex]);
+        GameManager.instance.finalValue += decisionConfig.decisionFinalValue[resultIndex];
         for (int i = 0; i < buttonDecisions.Count; i++)
         {
             Destroy(buttonDecisions[i].gameObject);
