@@ -12,9 +12,11 @@ public class DialogueController: MonoBehaviour
     public Animator transitionAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
+    public Animator itemAnimator;
     public Animator sceneAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
+    
     public int index;
     public bool canClick;
     public float textSpeed = 0.1f;
@@ -45,11 +47,14 @@ public class DialogueController: MonoBehaviour
         displayText.text = string.Empty;
         canClick = true;
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if(dialogueConfig.isOnlyRight)
         {
             characterAnimator2.gameObject.SetActive(false);
@@ -70,11 +75,41 @@ public class DialogueController: MonoBehaviour
              characterAnimator.SetInteger("IdAnim", dialogueConfig.idAnim);
         }
        
-        
+        if(dialogueConfig.isColgante)
+        {
+            itemAnimator.SetBool("isColgante", true);
+        }
+        else
+        {
+            itemAnimator.SetBool("isColgante", false);
+        }
+
+        if (dialogueConfig.isGun)
+        {
+            itemAnimator.SetBool("isGun", true);
+        }
+        else
+        {
+            itemAnimator.SetBool("isGun", false);
+        }
+
+        if (dialogueConfig.isIdCard)
+        {
+            itemAnimator.SetBool("isIdCard", true);
+        }
+        else
+        {
+            itemAnimator.SetBool("isIdCard", false);
+        }
+
         if (Input.GetMouseButtonDown(0) && canClick)
         {
-            
-            
+
+            if(dialogueConfig.policeSound)
+            {
+                soundEffectPlayer.clip = dialogueConfig.soundEffect;
+                soundEffectPlayer.Play();
+            }
 
             if (displayText.text == dialogueConfig.lines[index])
             {
@@ -121,6 +156,7 @@ public class DialogueController: MonoBehaviour
                     sceneAnimator.gameObject.SetActive(false);
                     panelTransition.SetActive(false);
                     NextLine();
+                    
                 }
                 
             }

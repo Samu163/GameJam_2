@@ -16,6 +16,24 @@ MonoBehaviour:
   - Come on, we arrived. Good luck on your first night outside prison. Do you remember
     how to cook?
   hasDecision: 0
+  nameChar: Mateo
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: c028adf2c9d459f49904c3c1637ad643, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 0
   changeScenario: 0
   endsDay: 0
+  idAnim: 12
+  isLeft: 1
+  isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  policeSound: 0
+  isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0
