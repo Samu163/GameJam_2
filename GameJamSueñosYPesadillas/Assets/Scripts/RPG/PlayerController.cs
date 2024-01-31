@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     //public SpriteRenderer playerImage;
     public PlayerConfig config;
-    public int life;
+    public string namePlayer;
+    public float life;
+    public float maxLife;
     public int attackPower;
     public int defense;
     public bool hasAttacked;
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
        AnimatorPlayer = GetComponent<Animator>();
         _applyHability = applyHability;
         life = config.life;
+        maxLife = config.maxLife;
+        namePlayer = config.name;
         attackPower = config.attackPower;
         defense = config.defense;
         ShowPlayerSelectedIcon(false);

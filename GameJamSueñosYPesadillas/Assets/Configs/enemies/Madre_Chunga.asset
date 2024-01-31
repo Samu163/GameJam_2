@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Madre_Chunga
   m_EditorClassIdentifier: 
   life: 90
+  maxLife: 90
   attack: 10
   defense: 25
   idEnemy: 2

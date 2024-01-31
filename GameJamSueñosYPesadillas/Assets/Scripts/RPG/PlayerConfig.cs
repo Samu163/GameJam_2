@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 {
     public string name;
-    public int life;
-    public int maxLife;
+    public float life;
+    public float maxLife;
     public int attackPower;
     public int defense;
     public List<HabilityConfig> habilities;
