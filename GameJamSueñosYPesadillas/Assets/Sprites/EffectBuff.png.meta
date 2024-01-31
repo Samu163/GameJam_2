@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: ed8c83a885fa31f4b99034d69a795a04
+guid: 548081fbb42513349a6a68e573df1f9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2289302617776395149
-    second: Carlos sad_0
+      213: -3640359624989360733
+    second: EffectBuff_0
   - first:
-      213: -5834241590777422719
-    second: Carlos sad_1
+      213: -3315018989252371372
+    second: EffectBuff_1
   - first:
-      213: 8720683116767787299
-    second: Carlos sad_2
+      213: 6103534876756460310
+    second: EffectBuff_2
   - first:
-      213: -9077297349717628416
-    second: Carlos sad_3
+      213: 8191876239592428433
+    second: EffectBuff_3
+  - first:
+      213: 1488966071120685259
+    second: EffectBuff_4
+  - first:
+      213: 2487191009764164155
+    second: EffectBuff_5
+  - first:
+      213: 7076206713027635373
+    second: EffectBuff_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +67,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carlos sad_0
+      name: EffectBuff_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d831fe30a9c35cf10800000000000000
-      internalID: 2289302617776395149
+      spriteID: 3adb5d16538da7dc0800000000000000
+      internalID: -3640359624989360733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carlos sad_1
+      name: EffectBuff_1
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 80
         y: 0
-        width: 1200
-        height: 1200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18cd6ef2f2c980fa0800000000000000
-      internalID: -5834241590777422719
+      spriteID: 45c10f10bcfaef1d0800000000000000
+      internalID: -3315018989252371372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carlos sad_2
+      name: EffectBuff_2
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 160
         y: 0
-        width: 1200
-        height: 1200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 329b0bd2717160970800000000000000
-      internalID: 8720683116767787299
+      spriteID: 613c64be1ac14b450800000000000000
+      internalID: 6103534876756460310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carlos sad_3
+      name: EffectBuff_3
       rect:
         serializedVersion: 2
-        x: 3600
+        x: 240
         y: 0
-        width: 1200
-        height: 1200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +189,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a6c7d6726f60280800000000000000
-      internalID: -9077297349717628416
+      spriteID: 1939ed899046fa170800000000000000
+      internalID: 8191876239592428433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectBuff_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8e1c7b0ced9a410800000000000000
+      internalID: 1488966071120685259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectBuff_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32c981bb07448220800000000000000
+      internalID: 2487191009764164155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectBuff_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da82f3f938cb33260800000000000000
+      internalID: 7076206713027635373
       vertices: []
       indices: 
       edges: []
