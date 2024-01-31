@@ -1428,8 +1428,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663330795382518803}
-  - component: {fileID: 8178804060848627942}
   - component: {fileID: 6440075160602315285}
+  - component: {fileID: 2388176303909561475}
   m_Layer: 0
   m_Name: Malommaloso22
   m_TagString: Untagged
@@ -1460,27 +1460,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 224.8, z: 0}
---- !u!114 &8178804060848627942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5475438207746862761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710b8be694fc046459ac17e62bd75c69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 2eda1fca1ac5c7342866ed2cf5f4ee06, type: 2}
-  life: 0
-  attackPower: 0
-  defense: 0
-  hasAttacked: 0
-  playerSelected: {fileID: 7301775276016588140}
-  habilityPrefabRef: {fileID: 2727088810822376837, guid: f551ad5aaa998fb43a7e49947a56f616, type: 3}
-  buttonHabilities: []
-  isFighting: 0
 --- !u!95 &6440075160602315285
 Animator:
   serializedVersion: 3
@@ -1500,6 +1479,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2388176303909561475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475438207746862761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606630233a0a984993a9e3c0d67b55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: fa4aa47a2b9cc3b40a230a66b861f0a8, type: 2}
+  life: 0
+  attack: 0
+  defense: 0
+  idEnemy: 0
+  selectedIcon: {fileID: 0}
+  enemyAnimator: {fileID: 0}
 --- !u!1 &5526374516836884892
 GameObject:
   m_ObjectHideFlags: 0
