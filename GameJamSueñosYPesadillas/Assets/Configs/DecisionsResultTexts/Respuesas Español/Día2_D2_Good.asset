@@ -23,8 +23,8 @@ MonoBehaviour:
   fadeInOut: 1
   changeScenario: 0
   endsDay: 0
-  idAnim: 0
-  isLeft: 0
+  idAnim: 9
+  isLeft: 1
   isOnlyRight: 0
   isPunch: 0
   isFlashback: 0

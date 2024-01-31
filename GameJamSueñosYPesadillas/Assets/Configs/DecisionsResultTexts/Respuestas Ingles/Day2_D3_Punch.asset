@@ -10,32 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Carlos12
+  m_Name: Day2_D3_Punch
   m_EditorClassIdentifier: 
-  lines:
-  - "Home sweet home, I guess. Marisa huh\u2026 "
-  - I wonder what she wants to tell me with this urgence.
-  - "And now what I\u2019m going to do with my life at 64 years old?"
-  - "I\u2019m a killer that lost half of his life. Do I even deserve to redo my life?"
+  lines: []
   hasDecision: 0
   nameChar: Carlos
   characterImg: {fileID: 0}
-  backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
-  soundEffect: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
+  soundEffect: {fileID: 8300000, guid: ad83713e729537148a24c1e0bb8f95f4, type: 3}
   decision: {fileID: 0}
-  fadeInOut: 0
-  changeScenario: 0
+  fadeInOut: 1
+  changeScenario: 1
   endsDay: 0
-  idAnim: 4
+  idAnim: 2
   isLeft: 0
-  isOnlyRight: 1
-  isPunch: 0
+  isOnlyRight: 0
+  isPunch: 1
   isFlashback: 0
   startFlashback: 0
   endFlashback: 0
-  endDecision: 0
+  endDecision: 1
   policeSound: 0
   isDay2: 0
   isColgante: 0
   isGun: 0
-  isIdCard: 0
+  isIdCard: 1

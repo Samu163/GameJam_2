@@ -25,9 +25,12 @@ public class NarrativeManager : MonoBehaviour
     public AudioClip flashbackSound;
     public List<DialogueConfig> dialogueTexts;
     public List<DecisionConfig> decisionsTexts;
+    public List<DialogueConfig> dialogueTextsEnglish;
+    public List<DecisionConfig> decisionsTextsEnglish;
     public List<int> decisions;
     public int indexText = 0;
     public int indexDecisions = 0;
+    public string language;
     
 
 
@@ -36,6 +39,7 @@ public class NarrativeManager : MonoBehaviour
     {
         indexText = GameManager.instance.lastTextIndex;
         indexDecisions = GameManager.instance.lastDecisionIndex;
+        language = GameManager.instance.language;
     }
 
     //Notas: no pongais en la lista de dialogos los dialogos de la recompensa de decisiones
@@ -44,8 +48,20 @@ public class NarrativeManager : MonoBehaviour
     void Start()
     {
         dialogue.Init(TriggerEvent);
-        dialogue.AsignConfig(dialogueTexts[indexText]);
+
+        if (language == "Spanish")
+        {
+            dialogue.AsignConfig(dialogueTexts[indexText]);
+        } 
+        else if (language == "English")
+        {
+            dialogue.AsignConfig(dialogueTextsEnglish[indexText]);
+        }
+        
+
         dialogue.StartDialogue();
+
+
         dialogue.transitionAnimator = transitionAnimator;
         dialogue.characterAnimator = characterAnimator;
         dialogue.characterAnimator2 = characterAnimator2;
@@ -76,7 +92,18 @@ public class NarrativeManager : MonoBehaviour
             musicPlayer.Play();
             dialogue.gameObject.SetActive(false);
             decision.gameObject.SetActive(true);
-            decision.Init(decisionsTexts[indexDecisions], DecisionResult);
+
+            if (language == "Spanish")
+            {
+                decision.Init(decisionsTexts[indexDecisions], DecisionResult);
+            }
+            else if (language == "English")
+            {
+                decision.Init(decisionsTextsEnglish[indexDecisions], DecisionResult);
+            }
+            
+
+
             indexDecisions++;
         }
         else if (dialogue.dialogueConfig.endsDay)
@@ -89,7 +116,18 @@ public class NarrativeManager : MonoBehaviour
         else
         {
             indexText++;
-            dialogue.AsignConfig(dialogueTexts[indexText]);
+
+            if(language == "Spanish")
+            {
+                dialogue.AsignConfig(dialogueTexts[indexText]);
+            }
+            else if (language == "English")
+            {
+                dialogue.AsignConfig(dialogueTextsEnglish[indexText]);
+            }
+            
+
+
             dialogue.StartDialogue();
             nameChar.text = dialogue.dialogueConfig.nameChar;
             background.sprite = dialogue.dialogueConfig.backgroundScene;

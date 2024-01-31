@@ -15,6 +15,24 @@ MonoBehaviour:
   lines:
   - Thanks.
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: 5a5e9230fdad8994f9148f12024b422b, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 1
   changeScenario: 1
   endsDay: 0
+  idAnim: 0
+  isLeft: 0
+  isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  policeSound: 0
+  isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 1

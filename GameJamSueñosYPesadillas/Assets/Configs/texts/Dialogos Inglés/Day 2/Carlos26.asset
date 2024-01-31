@@ -16,6 +16,24 @@ MonoBehaviour:
   - "I need to clear my mind. I\u2019m going to go out and find a bar to drink some
     beer."
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: ff834f52a267a2443afede4a0469d6ca, type: 3}
+  soundEffect: {fileID: 8300000, guid: 6e1b6c28d1a59204eb5e82ba454fc610, type: 3}
   decision: {fileID: 0}
+  fadeInOut: 1
   changeScenario: 0
   endsDay: 0
+  idAnim: 4
+  isLeft: 0
+  isOnlyRight: 1
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 1
+  policeSound: 0
+  isDay2: 1
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0

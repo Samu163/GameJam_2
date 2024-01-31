@@ -80,8 +80,23 @@ public class TitleScreen : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Narrative");
+        
+        GameManager.instance.language = language;
 
+        if (speed == "slow")
+        {
+            GameManager.instance.textSpeed = 0.1f;
+        }
+        else if (speed == "medium")
+        {
+            GameManager.instance.textSpeed = 0.3f;
+        }
+        else if (speed == "fast")
+        {
+            GameManager.instance.textSpeed = 0.5f;
+        }
+
+        SceneManager.LoadScene("Narrative");
 
     }
 

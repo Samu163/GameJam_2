@@ -16,6 +16,24 @@ MonoBehaviour:
   - "Marisa\u2026 This\u2026 I don\u2019t know if I can have it. Also, what is your
     husband going to say?"
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: ff834f52a267a2443afede4a0469d6ca, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 0
   changeScenario: 0
   endsDay: 0
+  idAnim: 3
+  isLeft: 0
+  isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  policeSound: 0
+  isDay2: 0
+  isColgante: 1
+  isGun: 0
+  isIdCard: 0

@@ -10,11 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916bbdf46460d654b9ed7251569fda5c, type: 3}
-  m_Name: Day2_D3
+  m_Name: CarlosAfterFlashback
   m_EditorClassIdentifier: 
   lines:
-  - Fuck my life.
+  - It still gives me shivers...
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: c028adf2c9d459f49904c3c1637ad643, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 0
   changeScenario: 0
   endsDay: 0
+  idAnim: 4
+  isLeft: 0
+  isOnlyRight: 1
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 1
+  policeSound: 0
+  isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0

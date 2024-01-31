@@ -17,6 +17,24 @@ MonoBehaviour:
   - "It\u2019s still difficult for me to believe that I had a son all this time\u2026 "
   - But I guess that presenting an assassin to your newborn kid is not the best decision.
   hasDecision: 0
+  nameChar: Carlos
+  characterImg: {fileID: 0}
+  backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
+  fadeInOut: 0
   changeScenario: 0
   endsDay: 0
+  idAnim: 4
+  isLeft: 0
+  isOnlyRight: 0
+  isPunch: 0
+  isFlashback: 0
+  startFlashback: 0
+  endFlashback: 0
+  endDecision: 0
+  policeSound: 0
+  isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0
