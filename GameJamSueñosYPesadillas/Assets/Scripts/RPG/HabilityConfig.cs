@@ -10,5 +10,6 @@ public class HabilityConfig : ScriptableObject
     public Sprite icon;
     public bool hasTarget;
     public bool hasTargetEnemy;
-    public string description;
+    public string descriptionEspañol;
+    public string descriptionIngles;
 }

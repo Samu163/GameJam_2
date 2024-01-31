@@ -22,7 +22,24 @@ public class HabilityController : MonoBehaviour
         hasTargetPlayer = hability.hasTarget;
         hasTargetEnemy = hability.hasTargetEnemy;
         _onHabilityClick = onHabilityClick;
-        description = hability.description;
+        if(GameManager.instance.language != null)
+        {
+            if (GameManager.instance.language == "Español")
+            {
+                description = hability.descriptionEspañol;
+
+            }
+            else
+            {
+                description = hability.descriptionIngles;
+
+            }
+        }
+        else
+        {
+            description = hability.descriptionIngles;
+        }
+
         ShowSelectedImage(false);
     }
 
