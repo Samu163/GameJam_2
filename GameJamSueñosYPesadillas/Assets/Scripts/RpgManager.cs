@@ -564,12 +564,14 @@ public class RpgManager : MonoBehaviour
 
                 if (turns < 4 && !hasChangeSide)
                 {
-                    var player = allies.Find(p => p.config.name == "unknown");
+                    var player = allies.Find(p => p.config.name == "Carlos");
                     if (player != null)
                     {
-                        allies.Remove(player);
+                        int num= allies.IndexOf(player);
+                        RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
                         sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
                     hasChangeSide = true;
@@ -739,6 +741,7 @@ public class RpgManager : MonoBehaviour
                     allies.Remove(player);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
                     sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
                 hasChangeSide = true;
@@ -750,7 +753,9 @@ public class RpgManager : MonoBehaviour
                 {
                     allies.Remove(player);
                     var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                   
                     sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 600, sombreritoMalo.transform.position.y - 350, sombreritoMalo.transform.position.z);
+                    sombreritoMalo.Init();
                     enemies.Add(sombreritoMalo);
                 }
                 hasChangeSide = true;
