@@ -133,6 +133,12 @@ public class DialogueController: MonoBehaviour
                         Invoke("NextLine", 5);
                         Invoke("SetCanClick", 6);
                     }
+                    else if (dialogueConfig.isRoomScene)
+                    {
+                        Room();
+                        Invoke("NextLine", 2);
+                        Invoke("SetCanClick", 6);
+                    }
                     else
                     {
                         sceneAnimator.gameObject.SetActive(false);
@@ -232,6 +238,12 @@ public class DialogueController: MonoBehaviour
     public void Punch()
     {
         sceneAnimator.Play("PunchAnim");
+
+    }
+
+    public void Room()
+    {
+        sceneAnimator.Play("RoomAnim");
 
     }
 

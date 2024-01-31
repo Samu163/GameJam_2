@@ -36,3 +36,4 @@ MonoBehaviour:
   isColgante: 0
   isGun: 0
   isIdCard: 0
+  isRoomScene: 1
