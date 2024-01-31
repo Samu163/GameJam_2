@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: Marisa
   m_EditorClassIdentifier: 
+  name: 
   life: 50
+  maxLife: 50
   attackPower: 5
   defense: 15
   habilities:

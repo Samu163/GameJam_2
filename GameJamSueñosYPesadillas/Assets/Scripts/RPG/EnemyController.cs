@@ -13,6 +13,14 @@ public class EnemyController : MonoBehaviour
     public int idEnemy;
     public SpriteRenderer selectedIcon;
     public Animator enemyAnimator;
+
+    public void Update()
+    {
+        if (config.life >= config.maxLife)
+        {
+            config.life = config.maxLife;
+        }
+    }
     public void Init()
     {
         enemyAnimator = GetComponent<Animator>();

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: unknown
   life: 40
+  maxLife: 40
   attackPower: 15
   defense: 5
   habilities:

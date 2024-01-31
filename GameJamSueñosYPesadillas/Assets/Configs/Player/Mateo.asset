@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Mateo
   m_EditorClassIdentifier: 
   name: mateo
-  life: 1
+  life: 60
+  maxLife: 60
   attackPower: 15
   defense: 5
   habilities:

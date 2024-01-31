@@ -22,6 +22,14 @@ public class PlayerController : MonoBehaviour
 
     public bool isFighting = false;
 
+    public void Update()
+    {
+        if(config.life >= config.maxLife)
+        {
+            config.life = config.maxLife;
+        }
+    }
+
     public void Init(UnityAction<string, bool,bool> applyHability)
     {
        AnimatorPlayer = GetComponent<Animator>();
