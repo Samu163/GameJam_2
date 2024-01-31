@@ -10,6 +10,7 @@ public class NarrativeManager : MonoBehaviour
 {
     public DialogueController dialogue;
     public DecisionController decision;
+    public GameObject filtroAzul;
     public Image characterTalking;
     public Text nameChar;
     public Image background;
@@ -152,11 +153,13 @@ public class NarrativeManager : MonoBehaviour
         }
         if (dialogue.dialogueConfig.startFlashback)
         {
+            filtroAzul.SetActive(true);
             musicPlayer.clip = flashbackSound;
             musicPlayer.Play();
         }
         if (dialogue.dialogueConfig.endFlashback)
         {
+            filtroAzul.SetActive(false);
             musicPlayer.clip = ambientSound;
             musicPlayer.Play();
         }
