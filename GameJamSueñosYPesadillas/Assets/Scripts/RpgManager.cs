@@ -38,7 +38,7 @@ public class RpgManager : MonoBehaviour
     public bool selectAction = false;
     public int maxItemsInARow = 4;
     public int turns;
-    public string habilityName;
+    public string habilityNameRPGManager;
 
     bool hasChangeSide;
 
@@ -119,9 +119,9 @@ public class RpgManager : MonoBehaviour
         {
             if (GameManager.instance.decisions[2] == 0 || GameManager.instance.decisions[2] == 1)
             {
-                enemies[0].life *= 2;
-                enemies[0].attack *= 2;
-                enemies[0].defense *= 2;
+                enemies[0].life += 20;
+                enemies[0].attack += 5;
+                enemies[0].defense += 5;
             }
         }
             
@@ -349,7 +349,11 @@ public class RpgManager : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    CheckHability(habilityName);
+                    var hability = allies[activePlayer].buttonHabilities.Find(p => p.habilityName == habilityNameRPGManager);
+                    uiController.ShowTextDisplay(true);
+                    uiController.textDisplay.Init(hability.description);
+                    uiController.textDisplay.SetFalse();
+                    Invoke("CheckHability", 4);
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
@@ -486,8 +490,11 @@ public class RpgManager : MonoBehaviour
                 {
                     enemies[activeEnemy].ShowSelectedIcon(false);
 
-
-                    CheckHability(habilityName);
+                    var hability = allies[activePlayer].buttonHabilities.Find(p => p.habilityName == habilityNameRPGManager);
+                    uiController.ShowTextDisplay(true);
+                    uiController.textDisplay.Init(hability.description);
+                    uiController.textDisplay.SetFalse();
+                    Invoke("CheckHability", 4);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -766,6 +773,12 @@ public class RpgManager : MonoBehaviour
 
     }
 
+
+    //public void SetText(string text)
+    //{
+    //    uiController.but
+    //}
+
     public void EnemyTurn()
     {
         if (allies[activePlayer] != null)
@@ -898,7 +911,7 @@ public class RpgManager : MonoBehaviour
     //Si afecta a todos los enemigos/aliados no hace falta poner traget 
     public void CheckHabilityTarget(string habilityName, bool targetEnemy, bool targetPlayer)
     {
-        this.habilityName = habilityName;
+        habilityNameRPGManager = habilityName;
         if (targetEnemy)
         {
             currentStep = state.SELECT_ENEMY;
@@ -909,18 +922,23 @@ public class RpgManager : MonoBehaviour
         }
         else
         {
-            CheckHability(habilityName);
-
+            var hability = allies[activePlayer].buttonHabilities.Find(p => p.habilityName == habilityName);
+            uiController.ShowTextDisplay(true);
+            uiController.textDisplay.Init(hability.description);
+            uiController.textDisplay.SetFalse();
+            Invoke("CheckHability" , 4);
         }
 
     }
 
 
-    public void CheckHability(string habilityName)
+
+
+    public void CheckHability()
     {
-     
+        uiController.ShowTextDisplay(false);
         //active enemy es el enemigo a atacar y active player es el player al que se le aplica la accion (puede ser a si mismo) 
-        switch (habilityName)
+        switch (habilityNameRPGManager)
         {
             case "Punch":
                 //Añadir animacion de ataque

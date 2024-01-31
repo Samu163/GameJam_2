@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b779a5313e942429ffbcb13d00a1a6, type: 3}
   m_Name: Carlos_N2
   m_EditorClassIdentifier: 
+  name: 
   life: 70
   attackPower: 15
   defense: 15
   habilities:
   - {fileID: 11400000, guid: 5e03c370687fe2d4293226589fcf5b7e, type: 2}
-  - {fileID: 11400000, guid: 2a925bb6e6236f84f8fe01ff13bc2177, type: 2}
+  - {fileID: 11400000, guid: bd3fd76e603fedb419ae4e5e09a31ee9, type: 2}
   - {fileID: 11400000, guid: 95b7b58bbea7744419828e537116d8c8, type: 2}
   - {fileID: 11400000, guid: b2bd916691a85e744a9d7944343de6b0, type: 2}
