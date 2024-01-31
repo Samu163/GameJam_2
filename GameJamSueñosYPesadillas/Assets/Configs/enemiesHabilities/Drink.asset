@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Drink
   m_EditorClassIdentifier: 
   habilityName: Drink
+  "descriptionEspa\xF1ol": "Glup glup! Mi poder est\xE1 sobre 9000! (+10 ataque -10
+    de vida)"
+  descriptionIngles: Glup glup! My power is over 9000! (+10 attack -10 life)
