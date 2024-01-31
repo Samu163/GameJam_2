@@ -23,12 +23,11 @@ public class UiController : MonoBehaviour
         ShowTextDisplay(false);
     }
 
-    public void InitBarraVida(float x, float y, string namePlayer)
+    public void InitBarraVida(string namePlayer, int i)
     {
-        var barra = Instantiate(barraVida, transform);
-        barra.namePlayer.text = namePlayer;
-        barra.transform.position = new Vector3(x, y, barra.transform.position.z);
-        barraVidas.Add(barra);
+        
+        barraVidas[i].namePlayer.text = namePlayer;
+        
     }
 
     public void ShowItemsBg(bool isActive)
@@ -39,5 +38,12 @@ public class UiController : MonoBehaviour
     public void ShowTextDisplay(bool condition)
     {
         textDisplay.gameObject.SetActive(condition);
+    }
+
+    public void RemoveBarraVida(int index)
+    {
+        var barra = barraVidas[index];
+        barraVidas.Remove(barra);
+        Destroy(barra.gameObject);
     }
 }

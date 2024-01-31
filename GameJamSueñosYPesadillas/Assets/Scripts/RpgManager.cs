@@ -111,7 +111,7 @@ public class RpgManager : MonoBehaviour
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
-            uiController.InitBarraVida(-285 + canvasRect.rect.width, -280 + canvasRect.rect.height - 55*i, ally.namePlayer);
+            uiController.InitBarraVida(ally.namePlayer, i);
             allies.Add(ally);
         }
         for (int i = 0; i < enemyPrefabs.Count; i++)
@@ -681,9 +681,10 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < allies.Count; i++)
         {
             uiController.barraVidas[i].loadLife(allies[i].life, allies[i].maxLife);
-
+            
             if (allies[i].life <= 0)
             {
+                uiController.RemoveBarraVida(i);
                 RemoveAlly(i);
             }
         }
@@ -722,6 +723,8 @@ public class RpgManager : MonoBehaviour
         inventory.Remove(item);
         Destroy(item.gameObject);
     }
+
+    
 
     public void PlayerEndingTurn()
     {
