@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 536771706}
   - component: {fileID: 536771705}
   - component: {fileID: 536771708}
+  - component: {fileID: 536771709}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -692,7 +693,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -740,6 +741,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
   BlockCount: 700
+--- !u!114 &536771709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536771704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeed0d85dbadc5d439d2b9b3d8604351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 536771707}
+  zoomDuration: 2
+  zoomAmount: 2
+  zoomOutDelay: 2
 --- !u!1 &620304847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1581,7 @@ MonoBehaviour:
   - {fileID: 2031149043}
   - {fileID: 1758213425}
   - {fileID: 144074015}
+  zoomCamera: {fileID: 536771709}
   itemPrefabRef: {fileID: 6803394126929050126, guid: 9cfe9addea30c39409b3e54287492ec2, type: 3}
   currentStep: 0
   activePlayer: 0

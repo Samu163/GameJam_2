@@ -24,7 +24,9 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
-    
+
+    public cameraScript zoomCamera;
+
 
     public ItemController itemPrefabRef;
     public state currentStep;
@@ -893,6 +895,7 @@ public class RpgManager : MonoBehaviour
         {
             case "Puñetazo Chungo":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
+                zoomCamera.ZoomIn(enemies[activeEnemy].transform);
       
                 //Añadir animacion de ataque
                 Debug.Log("vaya reventada, tenia " + allies[j].life);
@@ -901,24 +904,28 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Intimidar":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
+                zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                 allies[j].attackPower -= 5;
                 Debug.Log(allies[j].attackPower);
                 break;
             case "Criticas de Madre":
                 for (int i = 0; i < allies.Count; i++)
                 {
+                    zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                     enemies[activeEnemy].enemyAnimator.SetTrigger("ECriticaTrigger");
                     allies[i].life -= 5;
                     Debug.Log(allies[i].life);
                 }
                 break;
             case "Blow Bottle":
+                zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                 enemies[activeEnemy].enemyAnimator.SetTrigger("PunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
                 Debug.Log(allies[j].life);
                 Debug.Log("Botellazo");
                 break;
             case "Drink":
+                zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
                 enemies[activeEnemy].attack += 10;
                 enemies[activeEnemy].life -= 10;
@@ -962,20 +969,21 @@ public class RpgManager : MonoBehaviour
     public void CheckHability()
     {
         uiController.ShowTextDisplay(false);
+        zoomCamera.ZoomIn(allies[activePlayer].transform);
         //active enemy es el enemigo a atacar y active player es el player al que se le aplica la accion (puede ser a si mismo) 
         switch (habilityNameRPGManager)
         {
             case "Punch":
                 //Añadir animacion de ataque
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
-              
-             Debug.Log("Puñetazo");
+                
+                Debug.Log("Puñetazo");
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 break;
             case "Shot":
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTrigerDisp");
-
+             
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
@@ -985,7 +993,7 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Help":
                 allies[activePlayer].AnimatorPlayer.SetTrigger("HurtTrigger");
-
+                
                 allies[activePlayer].defense += 5;
                 Debug.Log(allies[activePlayer].defense);
                 Debug.Log("Sube defensa a aliado");
@@ -993,6 +1001,7 @@ public class RpgManager : MonoBehaviour
             case "Shout":
                 //ProtaSegundaShoutTrigger
                 allies[activePlayer].AnimatorPlayer.SetTrigger("ShoutTrigger");
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].defense -= 5;
