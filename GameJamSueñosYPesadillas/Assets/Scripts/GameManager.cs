@@ -62,5 +62,14 @@ public class GameManager : MonoBehaviour
     public void SaveRPGResult(int result)
     {
         RPGResult = result;
+
+        if (result == 0)
+        {
+            finalValue -= 20;
+        } 
+        else if (result == 1)
+        {
+            finalValue += 20;
+        }
     }
 }

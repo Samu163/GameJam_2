@@ -19,11 +19,11 @@ MonoBehaviour:
   nameChar: Carlos
   characterImg: {fileID: 21300000, guid: 2a2eaf11312d9b743b4b080ccf3ad6ff, type: 3}
   backgroundScene: {fileID: 21300000, guid: 0629e6910c53d5e4aac000ae9e1a6d68, type: 3}
-  soundEffect: {fileID: 8300000, guid: baeecc67f0073bd498a335481745b143, type: 3}
+  soundEffect: {fileID: 0}
   decision: {fileID: 0}
   fadeInOut: 1
   changeScenario: 1
-  endsDay: 0
+  endsDay: 1
   idAnim: 3
   isLeft: 0
   isOnlyRight: 1
@@ -32,4 +32,8 @@ MonoBehaviour:
   startFlashback: 0
   endFlashback: 0
   endDecision: 1
+  policeSound: 0
   isDay2: 0
+  isColgante: 0
+  isGun: 0
+  isIdCard: 0

@@ -718,15 +718,19 @@ public class RpgManager : MonoBehaviour
             
             GameManager.instance.SaveRPGResult(1);
 
-            if(GameManager.instance.finalValue >= 0)
+            if (GameManager.instance.day == 1)
+            {
+                SceneManager.LoadScene("Narrative");
+            }
+            else if (GameManager.instance.finalValue >= 0)
             {
                 SceneManager.LoadScene("GoodEnding");
             }
-            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -110)
             {
                 SceneManager.LoadScene("BadEnding");
             }
-            else if (GameManager.instance.finalValue <= -70)
+            else if (GameManager.instance.finalValue <= -110)
             {
                 SceneManager.LoadScene("VeryBadEnding");
             }
@@ -740,15 +744,19 @@ public class RpgManager : MonoBehaviour
         {
             //Derrota aliados 
             GameManager.instance.SaveRPGResult(0);
-            if (GameManager.instance.finalValue >= 0)
+            if(GameManager.instance.day == 1)
+            {
+                SceneManager.LoadScene("Narrative");
+            }
+            else if (GameManager.instance.finalValue >= 0)
             {
                 SceneManager.LoadScene("GoodEnding");
             }
-            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -70)
+            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -110)
             {
                 SceneManager.LoadScene("BadEnding");
             }
-            else if (GameManager.instance.finalValue <= -70)
+            else if (GameManager.instance.finalValue <= -110)
             {
                 SceneManager.LoadScene("VeryBadEnding");
             }
