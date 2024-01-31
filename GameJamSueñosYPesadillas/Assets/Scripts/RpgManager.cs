@@ -10,6 +10,7 @@ public class RpgManager : MonoBehaviour
     public BoardController board;
     public PlayerController playerPrefabRef;
     public EnemyController sombreritoPrefabRef;
+    public RectTransform canvasRect;
     public List<EnemyController> enemies;
     public List<EnemyController> enemiesDay1;
     public List<EnemyController> enemiesDay2;
@@ -110,7 +111,7 @@ public class RpgManager : MonoBehaviour
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
-            uiController.InitBarraVida(-285 + 645, -215 + 362.8f - 45*i, ally.namePlayer);
+            uiController.InitBarraVida(-285 + canvasRect.rect.width, -215 + canvasRect.rect.height - 45*i, ally.namePlayer);
             allies.Add(ally);
         }
         for (int i = 0; i < enemyPrefabs.Count; i++)

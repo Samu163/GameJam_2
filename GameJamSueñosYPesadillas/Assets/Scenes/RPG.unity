@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1528,6 +1528,7 @@ MonoBehaviour:
   board: {fileID: 0}
   playerPrefabRef: {fileID: 6191159342548961082, guid: 3c113685ef3a84d4dafcc404859709e7, type: 3}
   sombreritoPrefabRef: {fileID: 6275091184610342106}
+  canvasRect: {fileID: 993472914}
   enemies: []
   enemiesDay1:
   - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
