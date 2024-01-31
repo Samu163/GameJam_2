@@ -40,7 +40,7 @@ public class DecisionController : MonoBehaviour
         {
             var button = Instantiate(buttonDecisionPrefabRef, transform);
             button.decisionText.font = fontDecision;
-            button.transform.position = new Vector3(button.transform.position.x-300, button.transform.position.y-50*i, button.transform.position.z);
+            button.transform.position = new Vector3(button.transform.position.x-300, button.transform.position.y-30*i, button.transform.position.z);
             button.Init(i, OnButtonClick, decisionConfig.decisions[i]);
             buttonDecisions.Add(button);
             
