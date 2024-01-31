@@ -29,10 +29,11 @@ MonoBehaviour:
   isPunch: 0
   isFlashback: 0
   startFlashback: 0
-  endFlashback: 0
-  endDecision: 1
+  endFlashback: 1
+  endDecision: 0
   policeSound: 0
   isDay2: 0
   isColgante: 0
   isGun: 0
   isIdCard: 0
+  isRoomScene: 0

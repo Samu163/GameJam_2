@@ -16,3 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 2f437eb811318004b93b6728a3c3ab38, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
+  "descriptionEspa\xF1ol": Vamos chicos! Vosotros podeis! (Todos +5 ataque)
+  descriptionIngles: Let's go guys! You can do it! (Everyone +5 attack)

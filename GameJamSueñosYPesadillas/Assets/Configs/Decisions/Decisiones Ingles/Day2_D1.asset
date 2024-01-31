@@ -24,3 +24,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38240869784115f4e930e65a2a4cd98b, type: 2}
   - {fileID: 11400000, guid: 893400dacd7e6cb47828dca148e84661, type: 2}
   skipDialogues: 000000000000000000000000
+  decisionFinalValue: f6ffffffe7ffffff14000000

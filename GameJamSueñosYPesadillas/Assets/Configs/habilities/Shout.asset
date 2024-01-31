@@ -16,3 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f2116453f3ea76a49949758ffb80bc08, type: 3}
   hasTarget: 0
   hasTargetEnemy: 0
+  "descriptionEspa\xF1ol": Vete a la mierda!! (Enemigos -5 defensa)
+  descriptionIngles: Go to hell!! (Enemies -5 defense)

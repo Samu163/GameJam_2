@@ -85,15 +85,15 @@ public class TitleScreen : MonoBehaviour
 
         if (speed == "Slow")
         {
-            GameManager.instance.textSpeed = 0.3f;
+            GameManager.instance.textSpeed = 0.15f;
         }
         else if (speed == "Medium")
         {
-            GameManager.instance.textSpeed = 0.2f;
+            GameManager.instance.textSpeed = 0.1f;
         }
         else if (speed == "Fast")
         {
-            GameManager.instance.textSpeed = 0.1f;
+            GameManager.instance.textSpeed = 0.05f;
         }
 
         SceneManager.LoadScene("Narrative");

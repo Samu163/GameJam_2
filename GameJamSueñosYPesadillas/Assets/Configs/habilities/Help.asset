@@ -16,3 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e469b1afcc1a02e4598f3b3f887dca69, type: 3}
   hasTarget: 1
   hasTargetEnemy: 0
+  "descriptionEspa\xF1ol": Yo te protejo! (+5 defensa)
+  descriptionIngles: Don't worry! I protect you! (+5 defense)
