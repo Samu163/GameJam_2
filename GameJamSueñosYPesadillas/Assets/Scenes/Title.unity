@@ -1914,8 +1914,8 @@ MonoBehaviour:
   - {fileID: 1344698479}
   index: 0
   activeOption: 0
-  language: Spanish
-  speed: slow
+  language: "Espa\xF1ol"
+  speed: Slow
 --- !u!1 &1696619931
 GameObject:
   m_ObjectHideFlags: 0
