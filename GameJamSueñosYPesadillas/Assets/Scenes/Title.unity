@@ -2518,13 +2518,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0281990bf604443498181ebadeb22fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decisions: 
+  decisions: 0000000000000000000000000000000000000000
   finalDecisions: 
-  lastTextIndex: 40
+  lastTextIndex: 76
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0
-  day: 0
+  day: 1
   language: "Espa\xF1ol"
   textSpeed: 0.3
   finalValue: 0

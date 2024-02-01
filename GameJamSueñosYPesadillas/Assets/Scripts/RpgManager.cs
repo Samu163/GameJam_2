@@ -948,7 +948,7 @@ public class RpgManager : MonoBehaviour
                 soundEffectPlayer.clip = bottleFx;
                 soundEffectPlayer.PlayDelayed(1);
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
-                enemies[activeEnemy].enemyAnimator.SetTrigger("PunchTrigger");
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
                 Debug.Log(allies[j].life);
                 Debug.Log("Botellazo");
@@ -1139,7 +1139,7 @@ public class RpgManager : MonoBehaviour
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 Debug.Log("Botellazo");
-                allies[activePlayer].AnimatorPlayer.SetTrigger("EPunchTrigger");
+                allies[activePlayer].AnimatorPlayer.SetTrigger("PunchTrigger");
                 break;
             case "Drink":
                 soundEffectPlayer.clip = drinkFx;
