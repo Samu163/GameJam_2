@@ -24,6 +24,9 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
 
+    public Animator EnemyText;
+    public Animator PlayerText;
+
 
     public List<string> listOfDialogesDay1Español;
     public List<string> listOfDialogesDay1English;
@@ -55,6 +58,8 @@ public class RpgManager : MonoBehaviour
     bool hasFinishedAttacking;
 
     int _indexForCountingEnemies;
+
+    bool hasInitText = false;
 
     //la logica tiene que ser, ejecutar uno y cuando pase volver a ejecutar otro si sigue el count 
 
@@ -159,7 +164,7 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < allItemConfigs.Count; i++)
         {
             var item = Instantiate(itemPrefabRef, uiController.itemsBg.transform);
-            item.transform.position = new Vector3(item.transform.position.x + 100 * i + 50, item.transform.position.y + 50, item.transform.position.z);
+            item.transform.position = new Vector3(item.transform.position.x + 140 * i + 120, item.transform.position.y +75, item.transform.position.z);
             item.Init(allItemConfigs[i]);
             inventory.Add(item);
         }
@@ -394,6 +399,7 @@ public class RpgManager : MonoBehaviour
                 }
                 break;
             case state.SELECT_CHARACTER_ITEM:
+                
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     allies[activePlayer].ShowPlayerSelectedIcon(false);
@@ -449,26 +455,51 @@ public class RpgManager : MonoBehaviour
                 }
                 break;
             case state.SELECT_ITEM:
+                if (!hasInitText)
+                {
+                    uiController.textDisplay.Init(inventory[activeItem].description);
+                    hasInitText = true;
+                }
+                uiController.textDisplay.SetFalse();
                 inventory[activeItem].ShowSelectedItem(true);
+                uiController.ShowTextDisplay(true);
+                
+                
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
+                    hasInitText = false;
                     inventory[activeItem].ShowSelectedItem(false);
+                 
+
                     FindNextItem(true);
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
+                    hasInitText = false;
+
                     inventory[activeItem].ShowSelectedItem(false);
                     FindNextItem(false);
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    hasInitText = false;
                     inventory[activeItem].ShowSelectedItem(false);
                     uiController.ShowItemsBg(false);
+                    uiController.ShowTextDisplay(false);
+                    uiController.textDisplay.Init(inventory[activeItem].description);
+                    uiController.textDisplay.SetFalse();
+                    currentStep = state.NONE;
                     CheckItemTarget();
 
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    hasInitText = false;
+                    inventory[activeItem].ShowSelectedItem(false);
+                    uiController.ShowItemsBg(false);
+                    uiController.ShowTextDisplay(false);
+                    uiController.textDisplay.Init(inventory[activeItem].description);
+                    uiController.textDisplay.SetFalse();
                     uiController.ShowItemsBg(false);
                     activeItem = 0;
                     currentStep = state.SELECT_ACTION;
@@ -489,7 +520,7 @@ public class RpgManager : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-
+                    currentStep = state.NONE;
                     allies[activePlayer].buttonHabilities[activeHability].ShowSelectedImage(false);
                     allies[activePlayer].buttonHabilities[activeHability].OnButtonClick();
 
@@ -806,12 +837,6 @@ public class RpgManager : MonoBehaviour
 
     }
 
-
-    //public void SetText(string text)
-    //{
-    //    uiController.but
-    //}
-
     public void EnemyTurn()
     {
         if (allies[activePlayer] != null)
@@ -843,6 +868,8 @@ public class RpgManager : MonoBehaviour
 
     public void SetPlayerTurn()
     {
+        //  aqui
+        StartCoroutine("PlayerMessage");
         uiController.ShowTextDisplay(false);
 
         turns++;
@@ -860,6 +887,11 @@ public class RpgManager : MonoBehaviour
     // Botón para usar Items
     public void ItemButton()
     {
+        uiController.textDisplay.Init(inventory[activeItem].description);
+        uiController.ShowTextDisplay(true);
+        inventory[activeItem].ShowSelectedItem(false);
+        uiController.textDisplay.SetFalse();
+
         currentStep = state.SELECT_ITEM;
         uiController.ShowItemsBg(true);
     }
@@ -1099,6 +1131,8 @@ public class RpgManager : MonoBehaviour
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
                 currentStep = state.NONE;
                 activeEnemy = 0;
+                // Poner aqui lo de enemy turn
+                StartCoroutine("EnemyMessage");
                 Invoke("EnemyTurn",2);
             }
             else
@@ -1135,6 +1169,29 @@ public class RpgManager : MonoBehaviour
         currentStep = state.SELECT_HABILITY;
     }
 
+    private IEnumerator EnemyMessage()
+    {
+        bool o = false;
+        while (!o)
+        {
+
+            yield return new WaitForSecondsRealtime(1.2f);
+            EnemyText.SetTrigger("enemyTrigger");
+            o = true;
+        }
+    }
+
+    private IEnumerator PlayerMessage()
+    {
+        bool o = false;
+        while (!o)
+        {
+
+            yield return new WaitForSecondsRealtime(2.0f);
+            PlayerText.SetTrigger("enemyTrigger");
+            o = true;
+        }
+    }
 
     // Botón para Huir del combate
     public void FleeButton()
