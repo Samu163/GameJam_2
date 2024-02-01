@@ -162,7 +162,7 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < allItemConfigs.Count; i++)
         {
             var item = Instantiate(itemPrefabRef, uiController.itemsBg.transform);
-            item.transform.position = new Vector3(item.transform.position.x + 100 * i + 50, item.transform.position.y + 50, item.transform.position.z);
+            item.transform.position = new Vector3(item.transform.position.x + 140 * i + 120, item.transform.position.y +75, item.transform.position.z);
             item.Init(allItemConfigs[i]);
             inventory.Add(item);
         }
