@@ -1041,7 +1041,6 @@ public class RpgManager : MonoBehaviour
             case "Punch":
                 //Añadir animacion de ataque
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
-
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
                 Debug.Log("Puñetazo");
@@ -1053,6 +1052,8 @@ public class RpgManager : MonoBehaviour
              
                 for (int i = 0; i < enemies.Count; i++)
                 {
+                    Invoke("showDmg", 4);
+                    Invoke("deactivateDmg", 8);
                     enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
                     Debug.Log(enemies[i].life);
                 }
@@ -1102,6 +1103,8 @@ public class RpgManager : MonoBehaviour
 
                 break;
             case "Blow Bottle":
+                Invoke("showDmg", 4);
+                Invoke("deactivateDmg", 8);
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 Debug.Log("Botellazo");
