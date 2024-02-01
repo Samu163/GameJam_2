@@ -24,6 +24,9 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
 
+    public Animator EnemyText;
+    public Animator PlayerText;
+
 
     public List<string> listOfDialogesDay1Español;
     public List<string> listOfDialogesDay1English;
@@ -843,6 +846,8 @@ public class RpgManager : MonoBehaviour
 
     public void SetPlayerTurn()
     {
+        //  aqui
+        StartCoroutine("PlayerMessage");
         uiController.ShowTextDisplay(false);
 
         turns++;
@@ -1094,6 +1099,8 @@ public class RpgManager : MonoBehaviour
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
                 currentStep = state.NONE;
                 activeEnemy = 0;
+                // Poner aqui lo de enemy turn
+                StartCoroutine("EnemyMessage");
                 Invoke("EnemyTurn",2);
             }
             else
@@ -1113,6 +1120,29 @@ public class RpgManager : MonoBehaviour
         currentStep = state.SELECT_HABILITY;
     }
 
+    private IEnumerator EnemyMessage()
+    {
+        bool o = false;
+        while (!o)
+        {
+
+            yield return new WaitForSecondsRealtime(1.2f);
+            EnemyText.SetTrigger("enemyTrigger");
+            o = true;
+        }
+    }
+
+    private IEnumerator PlayerMessage()
+    {
+        bool o = false;
+        while (!o)
+        {
+
+            yield return new WaitForSecondsRealtime(2.0f);
+            PlayerText.SetTrigger("enemyTrigger");
+            o = true;
+        }
+    }
 
     // Botón para Huir del combate
     public void FleeButton()
