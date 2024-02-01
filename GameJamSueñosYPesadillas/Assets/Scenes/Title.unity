@@ -2524,7 +2524,7 @@ MonoBehaviour:
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0
-  day: 0
+  day: 1
   language: "Espa\xF1ol"
   textSpeed: 0.3
   finalValue: 0

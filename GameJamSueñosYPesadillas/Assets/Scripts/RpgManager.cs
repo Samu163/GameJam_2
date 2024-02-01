@@ -674,13 +674,13 @@ public class RpgManager : MonoBehaviour
                 Invoke("deactivateDmg", 8);
                 if (turns < 4 && !hasChangeSide)
                 {
-                    var player = allies.Find(p => p.config.name == "unknown");
+                    var player = allies.Find(p => p.config.name == "Unknown");
                     if (player != null)
                     {
                         int num= allies.IndexOf(player);
                         RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
@@ -974,13 +974,13 @@ public class RpgManager : MonoBehaviour
             {
                 if (GameManager.instance.decisions[3] == 0 && turns == 0)
                 {
-                    var player = allies.Find(p => p.config.name == "unknown");
+                    var player = allies.Find(p => p.config.name == "Unknown");
                     if (player != null)
                     {
                         int num = allies.IndexOf(player);
                         RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
@@ -988,13 +988,13 @@ public class RpgManager : MonoBehaviour
                 }
                 else if (turns == 4 && GameManager.instance.decisions[3] == 1)
                 {
-                    var player = allies.Find(p => p.config.name == "unknown");
+                    var player = allies.Find(p => p.config.name == "Unknown");
                     if (player != null)
                     {
                         int num = allies.IndexOf(player);
                         RemoveAlly(num);
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
                         enemies.Add(sombreritoMalo);
                     }
