@@ -1207,7 +1207,7 @@ public class RpgManager : MonoBehaviour
         while (!o)
         {
 
-            yield return new WaitForSecondsRealtime(1.2f);
+            yield return new WaitForSecondsRealtime(2.0f);
             EnemyText.SetTrigger("enemyTrigger");
             o = true;
         }

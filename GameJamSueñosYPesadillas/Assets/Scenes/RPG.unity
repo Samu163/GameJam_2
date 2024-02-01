@@ -1098,9 +1098,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 536771707}
-  zoomDuration: 2
-  zoomAmount: 2
-  minDistance: 2
+  zoomDuration: 0.8
+  zoomAmount: 0.8
+  minDistance: 0.8
 --- !u!1001 &545178355
 PrefabInstance:
   m_ObjectHideFlags: 0
