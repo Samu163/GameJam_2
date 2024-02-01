@@ -369,7 +369,7 @@ Transform:
   m_LocalScale: {x: 0.46410567, y: 0.46410567, z: 0.46410564}
   m_Children: []
   m_Father: {fileID: 2191244854435672393}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -75.388565, y: 10.072922, z: -80.53353}
 --- !u!33 &6045003429580512434
 MeshFilter:
@@ -529,8 +529,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
-  - {fileID: 7122452462184800727}
   - {fileID: 3033591097553545772}
+  - {fileID: 7122452462184800727}
   - {fileID: 5890933532871199975}
   - {fileID: 2587142703078198839}
   m_Father: {fileID: 0}
@@ -568,7 +568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 73f4dbc79b31ebb429f587ff8fae2210, type: 2}
+  namePlayer: 
   life: 0
+  maxLife: 0
   attackPower: 0
   defense: 0
   hasAttacked: 0
@@ -2657,7 +2659,7 @@ Transform:
   m_Children:
   - {fileID: 2930496785897519477}
   m_Father: {fileID: 2191244854435672393}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 95.038, z: 0}
 --- !u!1 &8791527756544847075
 GameObject:
