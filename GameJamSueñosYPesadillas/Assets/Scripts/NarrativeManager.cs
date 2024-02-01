@@ -65,7 +65,6 @@ public class NarrativeManager : MonoBehaviour
 
         dialogue.StartDialogue();
 
-
         dialogue.transitionAnimator = transitionAnimator;
         dialogue.characterAnimator = characterAnimator;
         dialogue.characterAnimator2 = characterAnimator2;

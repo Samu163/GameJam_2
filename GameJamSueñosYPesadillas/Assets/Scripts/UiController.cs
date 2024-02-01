@@ -35,8 +35,7 @@ public class UiController : MonoBehaviour
     public void ShowLifeBar(int index)
     {
         barraVidas[index].gameObject.SetActive(true);
-    }
-
+    } 
 
 
     public void InitBarraVida(string namePlayer, int i)

@@ -12,5 +12,6 @@ public class ItemConfig : ScriptableObject
     public int idObject;
     public bool targetAllies;
     public bool targetEnemies;
+    public string description;
     
 }

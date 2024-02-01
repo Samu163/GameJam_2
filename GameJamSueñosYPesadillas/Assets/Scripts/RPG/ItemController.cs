@@ -13,6 +13,7 @@ public class ItemController : MonoBehaviour
     public int idObject;
     public bool allyTarget;
     public bool enemyTarget;
+    public string description;
 
     public void Init(ItemConfig itemConfig)
     {
@@ -21,6 +22,7 @@ public class ItemController : MonoBehaviour
         idObject = itemConfig.idObject;
         allyTarget = itemConfig.targetAllies;
         enemyTarget = itemConfig.targetEnemies;
+        description = itemConfig.description;
         ShowSelectedItem(false);
     }
 
