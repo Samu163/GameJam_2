@@ -63,6 +63,21 @@ public class RpgManager : MonoBehaviour
 
     public int indexDmg = 0;
 
+    public GameObject bg1;
+    public GameObject bg2;
+
+    public AudioSource soundEffectPlayer;
+    public AudioClip punchFx;
+    public AudioClip shoutFx;
+    public AudioClip shotFx;
+    public AudioClip letsgoFx;
+    public AudioClip drinkFx;
+    public AudioClip bottleFx;
+    public AudioClip runFx;
+    public AudioClip helpFx;
+
+    public Animator blackPanel;
+
     //la logica tiene que ser, ejecutar uno y cuando pase volver a ejecutar otro si sigue el count 
 
 
@@ -82,8 +97,11 @@ public class RpgManager : MonoBehaviour
 
     public void Awake()
     {
+        blackPanel.Play("FadeOut");
         if (GameManager.instance.day == 1)
         {
+            bg1.SetActive(true);
+            bg2.SetActive(false);
             if(GameManager.instance.language == "Español")
             {
                 _listOfDialoges = listOfDialogesDay1Español;
@@ -104,6 +122,8 @@ public class RpgManager : MonoBehaviour
         }
         else if (GameManager.instance.day == 2)
         {
+            bg1.SetActive(false);
+            bg2.SetActive(true);
             if (GameManager.instance.language == "Español")
             {
                 _listOfDialoges = listOfDialogesDay2Español;
@@ -800,22 +820,8 @@ public class RpgManager : MonoBehaviour
             
             GameManager.instance.SaveRPGResult(1);
 
-            if (GameManager.instance.day == 1)
-            {
-                SceneManager.LoadScene("Narrative");
-            }
-            else if (GameManager.instance.finalValue >= 0)
-            {
-                SceneManager.LoadScene("GoodEnding");
-            }
-            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -110)
-            {
-                SceneManager.LoadScene("BadEnding");
-            }
-            else if (GameManager.instance.finalValue <= -110)
-            {
-                SceneManager.LoadScene("VeryBadEnding");
-            }
+            blackPanel.Play("FadeIn");
+            Invoke("LoadNewScene", 4);
 
 
 
@@ -826,22 +832,8 @@ public class RpgManager : MonoBehaviour
         {
             //Derrota aliados 
             GameManager.instance.SaveRPGResult(0);
-            if(GameManager.instance.day == 1)
-            {
-                SceneManager.LoadScene("Narrative");
-            }
-            else if (GameManager.instance.finalValue >= 0)
-            {
-                SceneManager.LoadScene("GoodEnding");
-            }
-            else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -110)
-            {
-                SceneManager.LoadScene("BadEnding");
-            }
-            else if (GameManager.instance.finalValue <= -110)
-            {
-                SceneManager.LoadScene("VeryBadEnding");
-            }
+            blackPanel.Play("FadeIn");
+            Invoke("LoadNewScene", 4);
             return false;
         }
         return true;
@@ -923,7 +915,8 @@ public class RpgManager : MonoBehaviour
         {
             case "Puñetazo Chungo":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
-                
+                soundEffectPlayer.clip = punchFx;
+                soundEffectPlayer.Play();
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
       
                 //Añadir animacion de ataque
@@ -934,10 +927,14 @@ public class RpgManager : MonoBehaviour
             case "Intimidar":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
+                soundEffectPlayer.clip = shoutFx;
+                soundEffectPlayer.PlayDelayed(1);
                 allies[j].attackPower -= 5;
                 Debug.Log(allies[j].attackPower);
                 break;
             case "Criticas de Madre":
+                soundEffectPlayer.clip = shoutFx;
+                soundEffectPlayer.PlayDelayed(1);
                 for (int i = 0; i < allies.Count; i++)
                 {
                     zoomCamera.ZoomIn(enemies[activeEnemy].transform);
@@ -947,6 +944,8 @@ public class RpgManager : MonoBehaviour
                 }
                 break;
             case "Blow Bottle":
+                soundEffectPlayer.clip = bottleFx;
+                soundEffectPlayer.PlayDelayed(1);
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                 enemies[activeEnemy].enemyAnimator.SetTrigger("PunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
@@ -954,6 +953,8 @@ public class RpgManager : MonoBehaviour
                 Debug.Log("Botellazo");
                 break;
             case "Drink":
+                soundEffectPlayer.clip = drinkFx;
+                soundEffectPlayer.PlayDelayed(1);
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EItemTrigger");
                 enemies[activeEnemy].attack += 10;
@@ -1054,6 +1055,8 @@ public class RpgManager : MonoBehaviour
                 //Añadir animacion de ataque
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
                 indexDmg = activeEnemy;
+                soundEffectPlayer.clip = punchFx;
+                soundEffectPlayer.Play(); 
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
                 Debug.Log("Puñetazo");
@@ -1063,6 +1066,8 @@ public class RpgManager : MonoBehaviour
             case "Shot":
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTrigerDisp");
                 indexDmg = activeEnemy;
+                soundEffectPlayer.clip = shotFx;
+                soundEffectPlayer.Play();
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
 
@@ -1076,7 +1081,8 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Help":
                 allies[activePlayer].AnimatorPlayer.SetTrigger("HurtTrigger");
-                
+                soundEffectPlayer.clip = helpFx;
+                soundEffectPlayer.PlayDelayed(1);
                 allies[activePlayer].defense += 5;
                 Debug.Log(allies[activePlayer].defense);
                 Debug.Log("Sube defensa a aliado");
@@ -1084,7 +1090,8 @@ public class RpgManager : MonoBehaviour
             case "Shout":
                 //ProtaSegundaShoutTrigger
                 allies[activePlayer].AnimatorPlayer.SetTrigger("ShoutTrigger");
-
+                soundEffectPlayer.clip = shoutFx;
+                soundEffectPlayer.PlayDelayed(1);
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].defense -= 5;
@@ -1101,6 +1108,8 @@ public class RpgManager : MonoBehaviour
             case "Let's Go":
                 //EXRoarTrigger
                 allies[activePlayer].AnimatorPlayer.SetTrigger("RoarTrigger");
+                soundEffectPlayer.clip = letsgoFx;
+                soundEffectPlayer.PlayDelayed(2);
                 for (int i = 0; i < allies.Count; i++)
                 {
                     allies[i].attackPower += 5;
@@ -1110,7 +1119,8 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Run":
                 //RUN
-
+                soundEffectPlayer.clip = runFx;
+                soundEffectPlayer.PlayDelayed(1);
                 allies[activePlayer].AnimatorPlayer.SetTrigger("RunningTrigger");
                 allies[activePlayer].attackPower += 10;
                 allies[activePlayer].defense -= 10;
@@ -1119,6 +1129,8 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Blow Bottle":
                 indexDmg = activeEnemy;
+                soundEffectPlayer.clip = bottleFx;
+                soundEffectPlayer.PlayDelayed(1);
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
@@ -1127,7 +1139,8 @@ public class RpgManager : MonoBehaviour
                 allies[activePlayer].AnimatorPlayer.SetTrigger("EPunchTrigger");
                 break;
             case "Drink":
-
+                soundEffectPlayer.clip = drinkFx;
+                soundEffectPlayer.PlayDelayed(1);
                 allies[activePlayer].attackPower += 10;
                 allies[activePlayer].life -= 10;
                 Debug.Log(allies[activePlayer].attackPower);
@@ -1217,6 +1230,13 @@ public class RpgManager : MonoBehaviour
     {
         //Derrota aliados 
         GameManager.instance.SaveRPGResult(0);
+        blackPanel.Play("FadeIn");
+        Invoke("LoadNewScene", 4);
+        
+    }
+
+    public void LoadNewScene()
+    {
         if (GameManager.instance.day == 1)
         {
             SceneManager.LoadScene("Narrative");
