@@ -17,3 +17,4 @@ MonoBehaviour:
   idObject: 3
   targetAllies: 0
   targetEnemies: 1
+  description: "Hace mucho da\xF1o a la Madre! Pero cuidado con tu aliado..."

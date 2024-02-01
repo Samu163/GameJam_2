@@ -17,3 +17,4 @@ MonoBehaviour:
   idObject: 2
   targetAllies: 0
   targetEnemies: 0
+  description: Sube el ataque de los aliados y baja el de los enemigos.

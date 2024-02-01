@@ -17,3 +17,4 @@ MonoBehaviour:
   idObject: 4
   targetAllies: 0
   targetEnemies: 0
+  description: "Haz da\xF1o a todos los enemigos"
