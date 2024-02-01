@@ -116,10 +116,14 @@ public class RpgManager : MonoBehaviour
             enemyPrefabs = enemiesDay2;
             allItemConfigs = allItemConfigsDay2;
             //no te da la tarjeta (ultimo item)
-            if (GameManager.instance.decisions[4] == 0)
+            if(GameManager.instance.decisions[3] == 1)
             {
-                RemoveActionButton(2);
+                if (GameManager.instance.decisions[4] == 0)
+                {
+                    RemoveActionButton(2);
+                }
             }
+            
 
         }
 
@@ -349,14 +353,14 @@ public class RpgManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        allies[activePlayer].ShowPlayerSelectedIcon(true);
+        
         allies[activePlayer].AnimatorPlayer.SetTrigger("IdleTrigger");
         enemies[activeEnemy].enemyAnimator.SetTrigger("EIdleTrigger");
         switch (currentStep)
         {
             //Selecciona el personaje 
             case state.SELECT_CHARACTER:
-
+                allies[activePlayer].ShowPlayerSelectedIcon(true);
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     allies[activePlayer].ShowPlayerSelectedIcon(false);
@@ -1002,6 +1006,7 @@ public class RpgManager : MonoBehaviour
             uiController.textDisplay.Init(_listOfDialoges[indexText]);
             uiController.textDisplay.SetFalse();
             activeEnemy = 0;
+            _indexForCountingEnemies = 0;
             Invoke("SetPlayerTurn", 4);
         }
         else

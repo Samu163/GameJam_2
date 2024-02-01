@@ -2414,7 +2414,6 @@ MonoBehaviour:
   - {fileID: 2388176303909561475, guid: 5b146cdb47202e74889d2b8e0b49db5f, type: 3}
   enemiesDay2:
   - {fileID: -2542241813431178223, guid: 376f17889ccb84e46a7024b11d455e57, type: 3}
-  - {fileID: 7387139176941300410, guid: 3371b4ccf15e5414eb3802ce690c6bbe, type: 3}
   enemyPrefabs: []
   allItemConfigsDay1:
   - {fileID: 11400000, guid: e9401fda8b30f1e47a11caf28ba58ab1, type: 2}
@@ -2476,6 +2475,7 @@ MonoBehaviour:
   habilityNameRPGManager: 
   itemButton: {fileID: 1973255396}
   fleeButton: {fileID: 1273814219}
+  indexDmg: 0
 --- !u!82 &2106209816
 AudioSource:
   m_ObjectHideFlags: 0
