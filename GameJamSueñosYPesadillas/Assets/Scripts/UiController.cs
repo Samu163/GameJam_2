@@ -36,6 +36,10 @@ public class UiController : MonoBehaviour
     {
         barraVidas[index].gameObject.SetActive(true);
     } 
+    public void HideLifeBar(int index)
+    {
+        barraVidas[index].gameObject.SetActive(false);
+    } 
 
 
     public void InitBarraVida(string namePlayer, int i)

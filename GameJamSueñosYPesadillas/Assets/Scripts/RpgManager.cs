@@ -682,6 +682,7 @@ public class RpgManager : MonoBehaviour
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
                         sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
+                        uiController.HideLifeBar(uiController.barraVidas.Count - 2);
                         enemies.Add(sombreritoMalo);
                     }
                     hasChangeSide = true;
@@ -982,6 +983,7 @@ public class RpgManager : MonoBehaviour
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
                         sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
+                        uiController.HideLifeBar(uiController.barraVidas.Count - 2);
                         enemies.Add(sombreritoMalo);
                     }
                     hasChangeSide = true;
@@ -996,6 +998,7 @@ public class RpgManager : MonoBehaviour
                         var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
                         sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, -100);
                         sombreritoMalo.Init();
+                        uiController.HideLifeBar(uiController.barraVidas.Count - 2);
                         enemies.Add(sombreritoMalo);
                     }
                     hasChangeSide = true;
