@@ -2569,6 +2569,7 @@ MonoBehaviour:
   - {fileID: 2031149043}
   - {fileID: 1758213425}
   - {fileID: 144074015}
+  light: {fileID: 215697648}
   EnemyText: {fileID: 717643759}
   PlayerText: {fileID: 1714296651}
   "listOfDialogesDay1Espa\xF1ol":

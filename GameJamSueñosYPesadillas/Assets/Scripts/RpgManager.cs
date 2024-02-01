@@ -23,6 +23,8 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
+    public Light light;
+
 
     public Animator EnemyText;
     public Animator PlayerText;
@@ -97,9 +99,12 @@ public class RpgManager : MonoBehaviour
 
     public void Awake()
     {
+
+        
         blackPanel.Play("FadeOut");
         if (GameManager.instance.day == 1)
         {
+            light.color = Color.blue;
             bg1.SetActive(true);
             bg2.SetActive(false);
             if(GameManager.instance.language == "Español")
@@ -122,6 +127,7 @@ public class RpgManager : MonoBehaviour
         }
         else if (GameManager.instance.day == 2)
         {
+            light.color = Color.red;
             bg1.SetActive(false);
             bg2.SetActive(true);
             if (GameManager.instance.language == "Español")
