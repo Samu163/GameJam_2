@@ -21,12 +21,29 @@ public class UiController : MonoBehaviour
     {
         ShowItemsBg(false);
         ShowTextDisplay(false);
+        HideAllLifeBars();
     }
+
+    public void HideAllLifeBars()
+    {
+        for (int i = 0; i < barraVidas.Count; i++)
+        {
+            barraVidas[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowLifeBar(int index)
+    {
+        barraVidas[index].gameObject.SetActive(true);
+    }
+
+
 
     public void InitBarraVida(string namePlayer, int i)
     {
         
         barraVidas[i].namePlayer.text = namePlayer;
+        ShowLifeBar(i);
         
     }
 

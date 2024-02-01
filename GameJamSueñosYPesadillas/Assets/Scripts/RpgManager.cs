@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class RpgManager : MonoBehaviour
 {
     public UiController uiController;
-    public BoardController board;
     public PlayerController playerPrefabRef;
     public EnemyController sombreritoPrefabRef;
     public RectTransform canvasRect;
@@ -25,6 +24,15 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
 
+
+    public List<string> listOfDialogesDay1Español;
+    public List<string> listOfDialogesDay1English;
+    public List<string> listOfDialogesDay2Español;
+    public List<string> listOfDialogesDay2English;
+    List<string> _listOfDialoges;
+
+    public int indexText = 0;
+
     public cameraScript zoomCamera;
 
 
@@ -35,12 +43,6 @@ public class RpgManager : MonoBehaviour
     public int activeHability = 0;
     public int activeEnemy = 0;
     public int activeItem = 0;
-    public int indexOfAlly = 0;
-    public bool hasInitHabilities = false;
-    public bool isPlayerTurn = true;
-    public bool selectCharacter = false;
-    public bool selectAction = false;
-    public int maxItemsInARow = 4;
     public int turns;
     public string habilityNameRPGManager;
     string enemyHabilityName;
@@ -50,7 +52,13 @@ public class RpgManager : MonoBehaviour
     public GameObject itemButton;
     public GameObject fleeButton;
 
-    
+    bool hasFinishedAttacking;
+
+    int _indexForCountingEnemies;
+
+    //la logica tiene que ser, ejecutar uno y cuando pase volver a ejecutar otro si sigue el count 
+
+
 
     public enum state
     {
@@ -69,6 +77,14 @@ public class RpgManager : MonoBehaviour
     {
         if (GameManager.instance.day == 1)
         {
+            if(GameManager.instance.language == "Español")
+            {
+                _listOfDialoges = listOfDialogesDay1Español;
+            }
+            else
+            {
+                _listOfDialoges = listOfDialogesDay1English;
+            }
             alliesInCombatPrefabs = alliesInCombatDay1;
             enemyPrefabs = enemiesDay1;
             allItemConfigs = allItemConfigsDay1;
@@ -81,6 +97,14 @@ public class RpgManager : MonoBehaviour
         }
         else if (GameManager.instance.day == 2)
         {
+            if (GameManager.instance.language == "Español")
+            {
+                _listOfDialoges = listOfDialogesDay2Español;
+            }
+            else
+            {
+                _listOfDialoges = listOfDialogesDay2English;
+            }
             alliesInCombatPrefabs = alliesInCombatDay2;
             enemyPrefabs = enemiesDay2;
             allItemConfigs = allItemConfigsDay2;
@@ -107,9 +131,8 @@ public class RpgManager : MonoBehaviour
         //Aqui es cuando pasamos de escena 
         for (int i = 0; i < alliesInCombatPrefabs.Count; i++)
         {
-
             var ally = Instantiate(alliesInCombatPrefabs[i], transform);
-            ally.transform.position = new Vector3(ally.transform.position.x + 200 *(i%2) -400, ally.transform.position.y - 200 * i +150, ally.transform.position.z);
+            ally.transform.position = new Vector3(ally.transform.position.x -500 + 200*i, ally.transform.position.y -50 -125 * (i%2), ally.transform.position.z);
             ally.Init(CheckHabilityTarget);
             ally.InitHabilities();
             ally.ShowHabilities(false);
@@ -119,7 +142,7 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < enemyPrefabs.Count; i++)
         {
             var enemy = Instantiate(enemyPrefabs[i], transform);
-            enemy.transform.position = new Vector3(enemy.transform.position.x  - 200 * (i % 2) +400, enemy.transform.position.y - 200 * i +150, enemy.transform.position.z);
+            enemy.transform.position = new Vector3(enemy.transform.position.x+   200*i, enemy.transform.position.y - 50 - 125 * (i % 2), enemy.transform.position.z);
             enemy.Init();
             enemies.Add(enemy);
         }
@@ -131,8 +154,7 @@ public class RpgManager : MonoBehaviour
                 enemies[0].attack += 5;
                 enemies[0].defense += 5;
             }
-        }
-            
+        }          
 
         for (int i = 0; i < allItemConfigs.Count; i++)
         {
@@ -148,6 +170,7 @@ public class RpgManager : MonoBehaviour
         }
 
     }
+
     //true es arriba false es abajo
     public void FindNextPlayer(bool direction)
     {
@@ -634,6 +657,7 @@ public class RpgManager : MonoBehaviour
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
                 currentStep = state.NONE;
+                activeEnemy = 0;
                 Invoke("EnemyTurn", 2);
             }
             else
@@ -726,13 +750,6 @@ public class RpgManager : MonoBehaviour
         Destroy(item.gameObject);
     }
 
-    
-
-    public void PlayerEndingTurn()
-    {
-
-    }
-
     public bool CheckBattleResults()
     {
         if (enemies.Count <= 0)
@@ -807,62 +824,27 @@ public class RpgManager : MonoBehaviour
             enemies[activeEnemy].ShowSelectedIcon(false);
 
         }
-        for (int i = 0; i < enemies.Count; i++)
+        var j = enemies[_indexForCountingEnemies].config.habilities.Count;
+        enemyHabilityName = enemies[_indexForCountingEnemies].config.habilities[GetRandomIndex(j)].habilityName;            
+        uiController.ShowTextDisplay(true);
+        if(GameManager.instance.language == "Español")
         {
-            var j = enemies[i].config.habilities.Count;
-            enemyHabilityName = enemies[i].config.habilities[GetRandomIndex(j)].habilityName;            
-            uiController.ShowTextDisplay(true);
-            if(GameManager.instance.language == "Español")
-            {
-                uiController.textDisplay.Init(enemies[i].config.habilities[GetRandomIndex(j)].descriptionEspañol);
-            }
-            else
-            {
-                uiController.textDisplay.Init(enemies[i].config.habilities[GetRandomIndex(j)].descriptionIngles);
-            }
-            uiController.textDisplay.SetFalse();
-            currentStep = state.NONE;
-            Invoke("CheckEnemyHabilityResult", 4);
+            uiController.textDisplay.Init(enemies[_indexForCountingEnemies].config.habilities[GetRandomIndex(j)].descriptionEspañol);
         }
-        //El desconocido se tiene que llamar unknown
-        if (GameManager.instance.day == 2 && !hasChangeSide)
+        else
         {
-            if(GameManager.instance.decisions[3] == 0 && turns ==0)
-            {
-                var player = allies.Find(p => p.config.name == "unknown");
-                if (player != null)
-                {
-                    int num = allies.IndexOf(player);
-                    RemoveAlly(num);
-                    var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
-                    sombreritoMalo.Init();
-                    enemies.Add(sombreritoMalo);
-                }
-                hasChangeSide = true;
-            }
-            else if(turns == 4 && GameManager.instance.decisions[3] == 1)
-            {
-                var player = allies.Find(p => p.config.name == "unknown");
-                if (player != null)
-                {
-                    int num = allies.IndexOf(player);
-                    RemoveAlly(num);
-                    var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
-                    sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
-                    sombreritoMalo.Init();
-                    enemies.Add(sombreritoMalo);
-                }
-                hasChangeSide = true;
-            }
-
+            uiController.textDisplay.Init(enemies[_indexForCountingEnemies].config.habilities[GetRandomIndex(j)].descriptionIngles);
         }
+        uiController.textDisplay.SetFalse();
         currentStep = state.NONE;
-        Invoke("SetPlayerTurn", 4);
+        Invoke("CheckEnemyHabilityResult", 4);
+          
     }
 
     public void SetPlayerTurn()
     {
+        uiController.ShowTextDisplay(false);
+
         turns++;
         for (int i = 0; i < allies.Count; i++)
         {
@@ -941,6 +923,53 @@ public class RpgManager : MonoBehaviour
         }
         CheckState();
         CheckBattleResults();
+        if (_indexForCountingEnemies >= enemies.Count-1)
+        {
+            if (GameManager.instance.day == 2 && !hasChangeSide)
+            {
+                if (GameManager.instance.decisions[3] == 0 && turns == 0)
+                {
+                    var player = allies.Find(p => p.config.name == "unknown");
+                    if (player != null)
+                    {
+                        int num = allies.IndexOf(player);
+                        RemoveAlly(num);
+                        var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.Init();
+                        enemies.Add(sombreritoMalo);
+                    }
+                    hasChangeSide = true;
+                }
+                else if (turns == 4 && GameManager.instance.decisions[3] == 1)
+                {
+                    var player = allies.Find(p => p.config.name == "unknown");
+                    if (player != null)
+                    {
+                        int num = allies.IndexOf(player);
+                        RemoveAlly(num);
+                        var sombreritoMalo = Instantiate(sombreritoPrefabRef, transform);
+                        sombreritoMalo.transform.position = new Vector3(sombreritoMalo.transform.position.x + 200, sombreritoMalo.transform.position.y - 50, sombreritoMalo.transform.position.z);
+                        sombreritoMalo.Init();
+                        enemies.Add(sombreritoMalo);
+                    }
+                    hasChangeSide = true;
+                }
+
+            }
+
+            uiController.ShowTextDisplay(true);
+            uiController.textDisplay.Init(_listOfDialoges[indexText]);
+            uiController.textDisplay.SetFalse();
+            activeEnemy = 0;
+            Invoke("SetPlayerTurn", 4);
+        }
+        else
+        {
+            _indexForCountingEnemies++;
+            activeEnemy++;
+            Invoke("EnemyTurn", 4);
+        }
     }
     //Si afecta a todos los enemigos/aliados no hace falta poner traget 
     public void CheckHabilityTarget(string habilityName, bool targetEnemy, bool targetPlayer)
@@ -1064,6 +1093,7 @@ public class RpgManager : MonoBehaviour
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
                 currentStep = state.NONE;
+                activeEnemy = 0;
                 Invoke("EnemyTurn",2);
             }
             else
@@ -1087,7 +1117,24 @@ public class RpgManager : MonoBehaviour
     // Botón para Huir del combate
     public void FleeButton()
     {
-        //allies[indexOfAlly].DestroyHabilities();
+        //Derrota aliados 
+        GameManager.instance.SaveRPGResult(0);
+        if (GameManager.instance.day == 1)
+        {
+            SceneManager.LoadScene("Narrative");
+        }
+        else if (GameManager.instance.finalValue >= 0)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
+        else if (GameManager.instance.finalValue < 0 && GameManager.instance.finalValue > -110)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (GameManager.instance.finalValue <= -110)
+        {
+            SceneManager.LoadScene("VeryBadEnding");
+        }
     }
 }
 
