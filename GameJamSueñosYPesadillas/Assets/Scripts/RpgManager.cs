@@ -61,6 +61,8 @@ public class RpgManager : MonoBehaviour
 
     bool hasInitText = false;
 
+    public int indexDmg = 0;
+
     //la logica tiene que ser, ejecutar uno y cuando pase volver a ejecutar otro si sigue el count 
 
 
@@ -147,7 +149,7 @@ public class RpgManager : MonoBehaviour
         for (int i = 0; i < enemyPrefabs.Count; i++)
         {
             var enemy = Instantiate(enemyPrefabs[i], transform);
-            enemy.transform.position = new Vector3(enemy.transform.position.x+   200*i, enemy.transform.position.y - 50 - 125 * (i % 2), enemy.transform.position.z);
+            enemy.transform.position = new Vector3(enemy.transform.position.x + 300 + 200*i, enemy.transform.position.y - 50 - 125 * (i % 2), enemy.transform.position.z);
             enemy.Init();
             enemies.Add(enemy);
         }
@@ -1041,6 +1043,7 @@ public class RpgManager : MonoBehaviour
             case "Punch":
                 //Añadir animacion de ataque
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
+                indexDmg = activeEnemy;
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
                 Debug.Log("Puñetazo");
@@ -1049,11 +1052,13 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Shot":
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTrigerDisp");
-             
+                indexDmg = activeEnemy;
+                Invoke("showDmg", 4);
+                Invoke("deactivateDmg", 8);
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
-                    Invoke("showDmg", 4);
-                    Invoke("deactivateDmg", 8);
+                    
                     enemies[i].life -= (allies[activePlayer].attackPower * 2 - 5) - enemies[activeEnemy].defense;
                     Debug.Log(enemies[i].life);
                 }
@@ -1103,6 +1108,7 @@ public class RpgManager : MonoBehaviour
 
                 break;
             case "Blow Bottle":
+                indexDmg = activeEnemy;
                 Invoke("showDmg", 4);
                 Invoke("deactivateDmg", 8);
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
@@ -1161,9 +1167,9 @@ public class RpgManager : MonoBehaviour
 
     public void showDmg()
     {
-        enemies[activeEnemy].dmgReceived = Random.Range(10000, 99999);
-        enemies[activeEnemy].dmg.gameObject.SetActive(true);
-        enemies[activeEnemy].dmg.text = enemies[activeEnemy].dmgReceived.ToString();
+        enemies[indexDmg].dmgReceived = Random.Range(10000, 99999);
+        enemies[indexDmg].dmg.gameObject.SetActive(true);
+        enemies[indexDmg].dmg.text = enemies[indexDmg].dmgReceived.ToString();
     }
     public void FightButton()
     {

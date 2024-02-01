@@ -2411,10 +2411,10 @@ MonoBehaviour:
   enemies: []
   enemiesDay1:
   - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
-  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  - {fileID: 2388176303909561475, guid: 5b146cdb47202e74889d2b8e0b49db5f, type: 3}
   enemiesDay2:
-  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
-  - {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
+  - {fileID: -2542241813431178223, guid: 376f17889ccb84e46a7024b11d455e57, type: 3}
+  - {fileID: 7387139176941300410, guid: 3371b4ccf15e5414eb3802ce690c6bbe, type: 3}
   enemyPrefabs: []
   allItemConfigsDay1:
   - {fileID: 11400000, guid: e9401fda8b30f1e47a11caf28ba58ab1, type: 2}
@@ -2434,11 +2434,11 @@ MonoBehaviour:
   inventory: []
   alliesInCombatDay1:
   - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
-  - {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
-  - {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
+  - {fileID: 377621402206266665, guid: dffa642a43dbe9046ba66dd20f77ad1c, type: 3}
+  - {fileID: 6191159342548961082, guid: 3c113685ef3a84d4dafcc404859709e7, type: 3}
   alliesInCombatDay2:
-  - {fileID: 7534886962045898207, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
-  - {fileID: 3355858164453167607}
+  - {fileID: 377621402206266665, guid: 93839ae5477896542b092dddf276c86b, type: 3}
+  - {fileID: 2610448974110097746, guid: 33fd7c4d63504a74e96e0a3cdb546a8b, type: 3}
   alliesInCombatPrefabs: []
   allies: []
   actionButtons:
@@ -3465,17 +3465,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33fd7c4d63504a74e96e0a3cdb546a8b, type: 3}
---- !u!114 &3355858164453167607 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2610448974110097746, guid: 33fd7c4d63504a74e96e0a3cdb546a8b, type: 3}
-  m_PrefabInstance: {fileID: 3355858164453167606}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710b8be694fc046459ac17e62bd75c69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5133474499136009041
 PrefabInstance:
   m_ObjectHideFlags: 0

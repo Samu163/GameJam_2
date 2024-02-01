@@ -9064,5 +9064,5 @@ MonoBehaviour:
   idEnemy: 0
   dmgReceived: 0
   dmg: {fileID: 7825203446531846522}
-  selectedIcon: {fileID: 0}
+  selectedIcon: {fileID: 1171474979501091892}
   enemyAnimator: {fileID: 0}
