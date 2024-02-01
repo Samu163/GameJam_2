@@ -19,7 +19,7 @@ MonoBehaviour:
   characterImg: {fileID: 21300000, guid: 3445c72aea0274d42a5754c7d60889a8, type: 3}
   backgroundScene: {fileID: 21300000, guid: 7caff46716fde214b8f292e7ebcfed1a, type: 3}
   soundEffect: {fileID: 0}
-  decision: {fileID: 0}
+  decision: {fileID: 11400000, guid: 73a9ea0595684a248b66b076f042b418, type: 2}
   fadeInOut: 0
   changeScenario: 0
   endsDay: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
   isColgante: 0
   isGun: 0
   isIdCard: 1
+  isRoomScene: 0
