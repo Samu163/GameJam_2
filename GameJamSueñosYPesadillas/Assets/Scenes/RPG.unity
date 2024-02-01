@@ -2353,6 +2353,34 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2106209815}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FleeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RpgManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371570453645714768, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1848a736195f8c64c91a9a2d880d3eba, type: 3}
 --- !u!224 &2093807836 stripped
@@ -2476,6 +2504,7 @@ MonoBehaviour:
   habilityNameRPGManager: 
   itemButton: {fileID: 1973255396}
   fleeButton: {fileID: 1273814219}
+  indexDmg: 0
 --- !u!82 &2106209816
 AudioSource:
   m_ObjectHideFlags: 0
