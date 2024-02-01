@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1700562917}
   playerPrefabRef: {fileID: 6191159342548961082, guid: 3c113685ef3a84d4dafcc404859709e7, type: 3}
-  sombreritoPrefabRef: {fileID: 6275091184610342106}
+  sombreritoPrefabRef: {fileID: 7387139176941300410, guid: 3371b4ccf15e5414eb3802ce690c6bbe, type: 3}
   canvasRect: {fileID: 993472914}
   enemies: []
   enemiesDay1:
@@ -3672,17 +3672,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
---- !u!114 &6275091184610342106 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1899085920742918796, guid: e83780cc56fba1c45b3213f849c3ff3a, type: 3}
-  m_PrefabInstance: {fileID: 6275091184610342105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5606630233a0a984993a9e3c0d67b55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6845961506782967188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5995404586448289285, guid: b8cf6c83d4da11248939ca43a11144f2, type: 3}
