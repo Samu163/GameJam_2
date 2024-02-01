@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions: 
   finalDecisions: 
-  lastTextIndex: 77
+  lastTextIndex: 35
   lastDecisionIndex: 0
   finalIndex: 0
   RPGResult: 0

@@ -1499,7 +1499,7 @@ MonoBehaviour:
   idEnemy: 0
   dmgReceived: 0
   dmg: {fileID: 7390890090235401470}
-  selectedIcon: {fileID: 0}
+  selectedIcon: {fileID: 7301775276016588140}
   enemyAnimator: {fileID: 0}
 --- !u!1 &5526374516836884892
 GameObject:
