@@ -973,7 +973,7 @@ public class RpgManager : MonoBehaviour
         {
             if (GameManager.instance.day == 2 && !hasChangeSide)
             {
-                if (GameManager.instance.decisions[3] == 0 && turns == 0)
+                if (GameManager.instance.decisions[3] == 0 && turns == 4)
                 {
                     var player = allies.Find(p => p.config.name == "Unknown");
                     if (player != null)
