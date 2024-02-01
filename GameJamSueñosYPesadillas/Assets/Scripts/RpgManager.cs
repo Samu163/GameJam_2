@@ -624,6 +624,9 @@ public class RpgManager : MonoBehaviour
                 allies[activePlayer].life += 15;
                 break;
             case "Molotov":
+                indexDmg = activeEnemy;
+                Invoke("showDmg", 4);
+                Invoke("deactivateDmg", 8);
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].life -= 10;
@@ -642,7 +645,9 @@ public class RpgManager : MonoBehaviour
                 break;
             case "Card":
                 // Cuando se use, el Desconocido se cambia al bando enemigo
-
+                indexDmg = activeEnemy;
+                Invoke("showDmg", 4);
+                Invoke("deactivateDmg", 8);
                 if (turns < 4 && !hasChangeSide)
                 {
                     var player = allies.Find(p => p.config.name == "unknown");
