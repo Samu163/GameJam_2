@@ -16,6 +16,8 @@ public class NarrativeManager : MonoBehaviour
     public Image background;
     public Animator transitionAnimator;
     public Animator sceneAnimator;
+    public Animator dreamAnimator;
+    public Animator blackDreamAnimator;
     public Animator characterAnimator;
     public Animator characterAnimator2;
     public Animator itemAnimator;
@@ -32,6 +34,7 @@ public class NarrativeManager : MonoBehaviour
     public int indexText = 0;
     public int indexDecisions = 0;
     public string language;
+    public bool isEndingDay = false;
     
 
 
@@ -68,6 +71,7 @@ public class NarrativeManager : MonoBehaviour
         dialogue.characterAnimator2 = characterAnimator2;
         dialogue.sceneAnimator = sceneAnimator;
         dialogue.itemAnimator = itemAnimator;
+        dialogue.blackDreamAnimator = blackDreamAnimator;
         characterAnimator2.SetInteger("IdAnim", 13);
         characterAnimator.SetInteger("IdAnim", 0);
         background.sprite = dialogue.dialogueConfig.backgroundScene;
@@ -109,10 +113,19 @@ public class NarrativeManager : MonoBehaviour
         }
         else if (dialogue.dialogueConfig.endsDay)
         {
+
+            dreamAnimator.gameObject.SetActive(true);
+            transitionAnimator.gameObject.SetActive(true);
+            blackDreamAnimator.gameObject.SetActive(true);
+
+            Black();
+            Dream();
+
             GameManager.instance.SaveNarrative(decisions, indexText, indexDecisions);
-            //Carga la escena del rpg
-            SceneManager.LoadScene("RPG");
-            //dialogue.gameObject.SetActive(false);
+
+            Invoke("BlackDream", 10);
+            Invoke("LoadRPG", 13);
+
         }
         else
         {
@@ -177,5 +190,28 @@ public class NarrativeManager : MonoBehaviour
         characterTalking.sprite = dialogue.dialogueConfig.characterImg;
         background.sprite = dialogue.dialogueConfig.backgroundScene;
         nameChar.text = dialogue.dialogueConfig.nameChar;
+    }
+    public void Dream()
+    {
+        dreamAnimator.Play("DreamAnim");
+    }
+
+    public void Black()
+    {
+        transitionAnimator.Play("InBlack");
+    }
+
+    public void BlackDream()
+    {
+        blackDreamAnimator.Play("FadeInOut");
+    }
+
+    public void LoadRPG()
+    {
+
+        //Carga la escena del rpg
+        SceneManager.LoadScene("RPG");
+        isEndingDay = false;
+
     }
 }

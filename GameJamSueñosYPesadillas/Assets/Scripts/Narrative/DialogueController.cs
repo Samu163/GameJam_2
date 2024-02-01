@@ -14,6 +14,7 @@ public class DialogueController: MonoBehaviour
     public Animator characterAnimator2;
     public Animator itemAnimator;
     public Animator sceneAnimator;
+    public Animator blackDreamAnimator;
     public GameObject panelTransition;
     public AudioSource soundEffectPlayer;
     
@@ -24,6 +25,7 @@ public class DialogueController: MonoBehaviour
     UnityAction _onDialogueEnd;
 
     private bool hasAnimated = false;
+    public bool endingDay = false;
 
     public void Init(UnityAction onDialogueEnd)
     {
@@ -141,6 +143,14 @@ public class DialogueController: MonoBehaviour
                         Invoke("NextLine", 2);
                         Invoke("SetCanClick", 6);
                     }
+                    else if (dialogueConfig.endsDay && !endingDay)
+                    {
+                        blackDreamAnimator.gameObject.SetActive(true);
+                        blackDreamAnimator.Play("FadeInOut");
+                        Invoke("NextLine", 3);
+                        Invoke("SetCanClick", 6);
+                        endingDay = true;
+                    }
                     else
                     {
                         sceneAnimator.gameObject.SetActive(false);
@@ -158,8 +168,12 @@ public class DialogueController: MonoBehaviour
                 }
                 else
                 {
-                
-                    transitionAnimator.Play("Idle");
+
+                    if (!dialogueConfig.endsDay)
+                    {
+                        transitionAnimator.gameObject.SetActive(false);
+                    }
+                    
                     sceneAnimator.Play("Idle");
                     sceneAnimator.gameObject.SetActive(false);
                     panelTransition.SetActive(false);
@@ -237,6 +251,8 @@ public class DialogueController: MonoBehaviour
 
     }
 
+    
+
     public void Punch()
     {
         sceneAnimator.Play("PunchAnim");
@@ -252,7 +268,10 @@ public class DialogueController: MonoBehaviour
     public void SetCanClick()
     {
         canClick = true;
-        panelTransition.SetActive(false);
+        if (!dialogueConfig.endsDay)
+        {
+            transitionAnimator.gameObject.SetActive(false);
+        }
     }
 
 }
