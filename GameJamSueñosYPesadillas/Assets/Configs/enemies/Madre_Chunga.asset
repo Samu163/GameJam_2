@@ -15,8 +15,9 @@ MonoBehaviour:
   life: 90
   maxLife: 90
   attack: 10
-  defense: 25
+  defense: 20
   idEnemy: 2
+  dmgReceived: 0
   enemyIcon: {fileID: 21300000, guid: 242f58a86f3ee8e418809e5fc269d531, type: 3}
   habilities:
   - {fileID: 11400000, guid: d9328705f5cb2e74bbc22344697edf82, type: 2}
