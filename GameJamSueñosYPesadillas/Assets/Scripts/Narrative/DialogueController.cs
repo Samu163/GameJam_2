@@ -148,7 +148,7 @@ public class DialogueController: MonoBehaviour
                         blackDreamAnimator.gameObject.SetActive(true);
                         blackDreamAnimator.Play("FadeInOut");
                         Invoke("NextLine", 3);
-                        Invoke("SetCanClick", 6);
+                        Invoke("SetCanClick", 18);
                         endingDay = true;
                     }
                     else
