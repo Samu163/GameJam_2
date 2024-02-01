@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec14dc5f51ef2d4b8ffad7e2e2127b5, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: 
-  imageObject: {fileID: 21300000, guid: c7aa62ae78ffca0498c89e5f45f94c0e, type: 3}
+  imageObject: {fileID: 21300000, guid: 171fa7aec78607a48a85d0c0dd6d26c7, type: 3}
   nameObject: Potion
   idObject: 1
   targetAllies: 0

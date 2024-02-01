@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec14dc5f51ef2d4b8ffad7e2e2127b5, type: 3}
   m_Name: Colgante
   m_EditorClassIdentifier: 
-  imageObject: {fileID: 21300000, guid: 554a30a45860f494ca38586c54b7e5d9, type: 3}
+  imageObject: {fileID: 21300000, guid: 19b89883e57632b4b81db5fd96486b22, type: 3}
   nameObject: Colgante
   idObject: 2
   targetAllies: 0
