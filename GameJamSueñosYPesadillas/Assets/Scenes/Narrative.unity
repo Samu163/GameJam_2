@@ -1903,10 +1903,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a435c980cdb0da479c2244f33700c27, type: 2}
   - {fileID: 11400000, guid: 2daa2f4a3ad644f4c9825fd62d57bbcd, type: 2}
   - {fileID: 11400000, guid: 384fb7ae7bf98a045a939ba5df5c543b, type: 2}
-  decisions: 0000000000000000000000000000000000000000
+  decisions: 
   indexText: 0
   indexDecisions: 0
-  language: 
+  language: "Espa\xF1ol"
   isEndingDay: 0
 --- !u!4 &1770873067
 Transform:

@@ -23,6 +23,8 @@ public class RpgManager : MonoBehaviour
     public List<PlayerController> alliesInCombatPrefabs;
     public List<PlayerController> allies;
     public List<ActionButton> actionButtons;
+    public Light light;
+
 
     public Animator EnemyText;
     public Animator PlayerText;
@@ -97,9 +99,12 @@ public class RpgManager : MonoBehaviour
 
     public void Awake()
     {
+
+        
         blackPanel.Play("FadeOut");
         if (GameManager.instance.day == 1)
         {
+            light.color = Color.blue;
             bg1.SetActive(true);
             bg2.SetActive(false);
             if(GameManager.instance.language == "Español")
@@ -122,6 +127,7 @@ public class RpgManager : MonoBehaviour
         }
         else if (GameManager.instance.day == 2)
         {
+            light.color = Color.red;
             bg1.SetActive(false);
             bg2.SetActive(true);
             if (GameManager.instance.language == "Español")
@@ -948,7 +954,7 @@ public class RpgManager : MonoBehaviour
                 soundEffectPlayer.clip = bottleFx;
                 soundEffectPlayer.PlayDelayed(1);
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
-                enemies[activeEnemy].enemyAnimator.SetTrigger("PunchTrigger");
+                enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
                 allies[j].life -= enemies[activeEnemy].attack * 3 - allies[j].defense;
                 Debug.Log(allies[j].life);
                 Debug.Log("Botellazo");
@@ -973,7 +979,7 @@ public class RpgManager : MonoBehaviour
         {
             if (GameManager.instance.day == 2 && !hasChangeSide)
             {
-                if (GameManager.instance.decisions[3] == 0 && turns == 0)
+                if (GameManager.instance.decisions[3] == 0 && turns == 4)
                 {
                     var player = allies.Find(p => p.config.name == "Unknown");
                     if (player != null)
@@ -1139,7 +1145,7 @@ public class RpgManager : MonoBehaviour
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 3 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
                 Debug.Log("Botellazo");
-                allies[activePlayer].AnimatorPlayer.SetTrigger("EPunchTrigger");
+                allies[activePlayer].AnimatorPlayer.SetTrigger("PunchTrigger");
                 break;
             case "Drink":
                 soundEffectPlayer.clip = drinkFx;
