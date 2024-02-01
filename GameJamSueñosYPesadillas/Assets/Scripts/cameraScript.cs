@@ -5,9 +5,9 @@ using UnityEngine;
 public class cameraScript : MonoBehaviour
 {
     public Transform targetObject; // The object to zoom in on
-    public float zoomDuration = 2f; // Time taken to zoom in
-    public float zoomAmount = 2f; // How much to zoom in
-    public float minDistance = 2f; // Minimum distance between camera and target object
+    public float zoomDuration = 0.2f; // Time taken to zoom in
+    public float zoomAmount = 0.2f; // How much to zoom in
+    public float minDistance = 0.2f; // Minimum distance between camera and target object
 
     private Vector3 originalPosition;
     private float originalScale;

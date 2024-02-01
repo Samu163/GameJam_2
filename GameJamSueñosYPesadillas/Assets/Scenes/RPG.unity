@@ -2212,7 +2212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 1700562917}
-  board: {fileID: 0}
   playerPrefabRef: {fileID: 6191159342548961082, guid: 3c113685ef3a84d4dafcc404859709e7, type: 3}
   sombreritoPrefabRef: {fileID: 6275091184610342106}
   canvasRect: {fileID: 993472914}
@@ -2251,6 +2250,23 @@ MonoBehaviour:
   - {fileID: 2031149043}
   - {fileID: 1758213425}
   - {fileID: 144074015}
+  "listOfDialogesDay1Espa\xF1ol":
+  - Con nosotros no te metas!
+  - Porfavor, ten piedad!
+  - Eres un asesino!
+  listOfDialogesDay1English:
+  - Don't mess with us!
+  - Please, have mercy!
+  - You are a killer.
+  "listOfDialogesDay2Espa\xF1ol":
+  - Eres un desgraciado!
+  - "Ojal\xE1 no haberte criado nunca."
+  - "Un asesino nunca dejar\xE1 de serlo!"
+  listOfDialogesDay2English:
+  - You are a disgrace!
+  - I wish I never raised you.
+  - A killer will never stop being a killer!
+  indexText: 0
   zoomCamera: {fileID: 536771709}
   itemPrefabRef: {fileID: 6803394126929050126, guid: 9cfe9addea30c39409b3e54287492ec2, type: 3}
   currentStep: 0
@@ -2259,12 +2275,6 @@ MonoBehaviour:
   activeHability: 0
   activeEnemy: 0
   activeItem: 0
-  indexOfAlly: 0
-  hasInitHabilities: 0
-  isPlayerTurn: 0
-  selectCharacter: 0
-  selectAction: 0
-  maxItemsInARow: 4
   turns: 0
   habilityNameRPGManager: 
   itemButton: {fileID: 1973255396}
