@@ -880,6 +880,7 @@ public class RpgManager : MonoBehaviour
         {
             case "Puñetazo Chungo":
                 enemies[activeEnemy].enemyAnimator.SetTrigger("EPunchTrigger");
+                
                 zoomCamera.ZoomIn(enemies[activeEnemy].transform);
       
                 //Añadir animacion de ataque
@@ -1008,7 +1009,9 @@ public class RpgManager : MonoBehaviour
             case "Punch":
                 //Añadir animacion de ataque
                 allies[activePlayer].AnimatorPlayer.SetTrigger("AttackTriggerNormal");
-                
+
+                Invoke("showDmg", 4);
+                Invoke("deactivateDmg", 8);
                 Debug.Log("Puñetazo");
                 enemies[activeEnemy].life -= allies[activePlayer].attackPower * 2 - enemies[activeEnemy].defense;
                 Debug.Log(enemies[activeEnemy].life);
@@ -1089,6 +1092,8 @@ public class RpgManager : MonoBehaviour
 
         if (CheckBattleResults())
         {
+
+
             if (CheckAllPlayersHadAttacked())
             {
                 allies[activePlayer].ShowPlayerSelectedIcon(false);
@@ -1106,6 +1111,23 @@ public class RpgManager : MonoBehaviour
         }
     }
 
+    public void deactivateDmg()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i].dmg.IsActive())
+            {
+                enemies[i].dmg.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void showDmg()
+    {
+        enemies[activeEnemy].dmgReceived = Random.Range(10000, 99999);
+        enemies[activeEnemy].dmg.gameObject.SetActive(true);
+        enemies[activeEnemy].dmg.text = enemies[activeEnemy].dmgReceived.ToString();
+    }
     public void FightButton()
     {
 

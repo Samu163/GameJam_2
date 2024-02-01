@@ -11,9 +11,12 @@ public class EnemyController : MonoBehaviour
     public int attack;
     public int defense;
     public int idEnemy;
+    public int dmgReceived;
+    public Text dmg;
     public SpriteRenderer selectedIcon;
     public Animator enemyAnimator;
 
+    
     public void Update()
     {
         if (config.life >= config.maxLife)
@@ -28,6 +31,7 @@ public class EnemyController : MonoBehaviour
         attack = config.attack;
         defense = config.defense;
         idEnemy = config.idEnemy;
+        dmgReceived = config.dmgReceived;
         ShowSelectedIcon(false);
     }
 

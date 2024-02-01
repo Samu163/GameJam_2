@@ -11,6 +11,7 @@ public class EnemyConfig : ScriptableObject
     public int attack;
     public int defense;
     public int idEnemy;
+    public int dmgReceived;
     public Sprite enemyIcon;
     public List<EnemyHabilityConfig> habilities;
 
